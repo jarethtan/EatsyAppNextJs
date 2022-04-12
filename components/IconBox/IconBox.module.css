@@ -1,0 +1,70 @@
+.box {
+  background-color: white;
+  padding: 0rem;
+  border-radius: 1rem;
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem auto 0rem auto;
+}
+
+.card {
+  margin: 0.7rem;
+  background-color: white;
+  border-radius: 1rem;
+  height: 4.2rem;
+  border: 1px solid rgb(16, 80, 16);
+  box-shadow: 1px 2px 2px black;
+  transition: all 0.2s ease-in-out;
+}
+
+.word {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bolder;
+  align-content: center;
+  margin-top: 0.2rem;
+  color: rgb(16, 80, 16);
+}
+
+.imageContainer {
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+}
+
+.iconLink {
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:active {
+  background-color: rgb(172, 172, 172);
+}
+
+@media (max-width: 1400px) {
+  .box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .box {
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .box {
+    width: 80%;
+  }
+}

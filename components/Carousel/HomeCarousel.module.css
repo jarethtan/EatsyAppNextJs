@@ -1,0 +1,716 @@
+.imagePrimary {
+  position: absolute;
+  width: 55%;
+  height: auto;
+  right: 6rem;
+  top: 4rem;
+}
+
+.imageSecondary {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  right: 0;
+  top: 5rem;
+}
+
+.eatsyIcon {
+  position: absolute;
+  width: 12rem;
+  height: auto;
+  top: 6rem;
+  left: 15rem;
+}
+
+.titlePrimary2 {
+  position: absolute;
+  top: 12rem;
+  color: brown;
+  font-weight: bold;
+}
+
+.titlePrimary3 {
+  position: absolute;
+  top: 16rem;
+  color: brown;
+  font-weight: bold;
+}
+
+.titlePrimary4 {
+  position: absolute;
+  top: 20rem;
+  color: brown;
+  font-weight: bold;
+}
+
+.titlePrimaryButton {
+  font-family: "Roboto Slab";
+  background-color: rgb(255, 219, 88);
+  border: 2px solid brown;
+  color: brown;
+  position: absolute;
+  top: 24rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.titlePrimaryButton:hover {
+  background-color: rgb(16, 80, 16);
+  color: white;
+  border: 2px solid rgb(16, 80, 16);
+}
+
+.titleSecondary1 {
+  position: absolute;
+  top: 10rem;
+  color: rgb(16, 80, 16);
+  font-weight: bold;
+}
+
+.titleSecondary2 {
+  position: absolute;
+  top: 10rem;
+  color: brown;
+  font-weight: bold;
+}
+
+.titleSecondary3 {
+  position: absolute;
+  top: 10rem;
+  color: brown;
+  font-weight: bold;
+}
+
+.titleSecondaryButton {
+  font-family: "Roboto Slab";
+  background-color: rgb(255, 219, 88);
+  border: 2px solid brown;
+  color: brown;
+  position: absolute;
+  top: 10rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.titleSecondaryButton:hover {
+  background-color: brown;
+  color: rgb(255, 219, 88);
+  color: white;
+}
+
+.selectCarouselButton {
+  margin-left: 43%;
+  font-size: 1rem;
+}
+
+.carousel {
+  width: 100%;
+  height: 94vh;
+}
+
+@keyframes scooterMove {
+  33% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  66% {
+    transform: translateY(3px);
+  }
+}
+
+@media (max-width: 481px) {
+  .eatsyIcon {
+    width: 10rem;
+    top: 2vh;
+    left: 5%;
+  }
+
+  .titlePrimary2 {
+    font-size: 1rem;
+    left: 1.2rem;
+    top: 15vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 1rem;
+    left: 1.2rem;
+    top: 17.5vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 1rem;
+    left: 1.2rem;
+    top: 20vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 1.1rem;
+    left: 1.2rem;
+    top: 24vh;
+  }
+
+  .imagePrimary {
+    right: 0.5rem;
+    top: 6vh;
+  }
+
+  .titleSecondary1 {
+    top: 5rem;
+    left: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .titleSecondary2 {
+    top: 8rem;
+    left: 1rem;
+    font-size: 1rem;
+  }
+
+  .titleSecondary3 {
+    top: 10rem;
+    left: 1rem;
+    font-size: 1rem;
+  }
+
+  .titleSecondaryButton {
+    top: 13rem;
+    left: 1rem;
+    font-size: 1rem;
+  }
+
+  .imageSecondary {
+    width: 64%;
+    right: 0;
+    top: 5rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 34vh;
+  }
+
+  .carouNav {
+    display: none;
+  }
+
+  .selectCarouselButton {
+    margin-left: 22%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 481px) {
+  .imagePrimary {
+    width: 55%;
+    right: 4%;
+    top: 4vh;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .eatsyIcon {
+    width: 12rem;
+    top: 1vh;
+    left: 4%;
+  }
+
+  .titlePrimary2 {
+    font-size: 1.2rem;
+    left: 1.2rem;
+    top: 9.5rem;
+  }
+
+  .titlePrimary3 {
+    font-size: 1.2rem;
+    left: 1.2rem;
+    top: 11.5rem;
+  }
+
+  .titlePrimary4 {
+    font-size: 1.2rem;
+    left: 1.2rem;
+    top: 13.5rem;
+  }
+
+  .titlePrimaryButton {
+    font-size: 1.5rem;
+    left: 1.2rem;
+    top: 16rem;
+  }
+
+  .imagePrimary {
+    right: 4%;
+    top: 6vh;
+  }
+
+  .titleSecondary1 {
+    top: 5.5rem;
+    left: 1.2rem;
+    font-size: 1.5rem;
+  }
+
+  .titleSecondary2 {
+    top: 9.5rem;
+    left: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .titleSecondary3 {
+    top: 11.5rem;
+    left: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .titleSecondaryButton {
+    top: 16rem;
+    left: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .imageSecondary {
+    width: 64%;
+    right: 0;
+    top: 4.5rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .carouNav {
+    display: none;
+  }
+
+  .selectCarouselButton {
+    margin-left: 26%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 520px) and (max-width: 600px) {
+  .imagePrimary {
+    right: 6%;
+    top: 3vh;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 769px) {
+  .eatsyIcon {
+    width: 17rem;
+    top: 57vh;
+    left: 30%;
+  }
+
+  .titlePrimary2 {
+    font-size: 1.3rem;
+    left: 5%;
+    top: 78vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 1.3rem;
+    left: 37%;
+    top: 78vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 1.3rem;
+    left: 70%;
+    top: 78vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 1.5rem;
+    left: 36%;
+    top: 84vh;
+  }
+
+  .imagePrimary {
+    width: 76%;
+    top: 1.8rem;
+    right: 14%;
+  }
+
+  .titleSecondary1 {
+    top: 35rem;
+    left: 26%;
+    font-size: 2rem;
+  }
+
+  .titleSecondary2 {
+    top: 39rem;
+    left: 35%;
+    font-size: 1.3rem;
+  }
+
+  .titleSecondary3 {
+    top: 42rem;
+    left: 46.5%;
+    font-size: 1.3rem;
+  }
+
+  .titleSecondaryButton {
+    top: 45rem;
+    left: 36%;
+    font-size: 1.5rem;
+  }
+
+  .imageSecondary {
+    width: 100%;
+    right: 0;
+    top: 4rem;
+  }
+
+  .selectCarouselButton {
+    margin-left: 30%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 660px) {
+  .imagePrimary {
+    width: 85%;
+    top: 3.5rem;
+    right: 9.5%;
+  }
+}
+
+@media (min-width: 660px) and (max-width: 730px) {
+  .imagePrimary {
+    width: 80%;
+    top: 2.5rem;
+    right: 12.5%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 869px) {
+  .eatsyIcon {
+    width: 17rem;
+    top: 57vh;
+    left: 35%;
+  }
+
+  .titlePrimary2 {
+    font-size: 1.5rem;
+    left: 5%;
+    top: 79vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 1.5rem;
+    left: 37%;
+    top: 79vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 1.5rem;
+    left: 69%;
+    top: 79vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 1.7rem;
+    left: 36%;
+    top: 84vh;
+  }
+
+  .imagePrimary {
+    width: 70%;
+    top: 1rem;
+    right: 16%;
+  }
+
+  .titleSecondary1 {
+    top: 36rem;
+    left: 28%;
+    font-size: 2rem;
+  }
+
+  .titleSecondary2 {
+    top: 40rem;
+    left: 37%;
+    font-size: 1.3rem;
+  }
+
+  .titleSecondary3 {
+    top: 43rem;
+    left: 47%;
+    font-size: 1.3rem;
+  }
+
+  .titleSecondaryButton {
+    top: 46rem;
+    left: 38%;
+    font-size: 1.5rem;
+  }
+
+  .imageSecondary {
+    width: 100%;
+    right: 0;
+    top: 0rem;
+  }
+
+  .selectCarouselButton {
+    margin-left: 33%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 800px) {
+  .imagePrimary {
+    top: 2.5rem;
+  }
+}
+
+@media (min-width: 869px) and (max-width: 1024px) {
+  .eatsyIcon {
+    width: 20rem;
+    top: 3vh;
+    left: 7%;
+  }
+
+  .titlePrimary2 {
+    font-size: 2rem;
+    left: 7%;
+    top: 28vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 2rem;
+    left: 7%;
+    top: 34vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 2rem;
+    left: 7%;
+    top: 40vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 48vh;
+  }
+
+  .imagePrimary {
+    top: 2.5rem;
+    right: 5%;
+  }
+  .titleSecondary1 {
+    font-size: 2.5rem;
+    left: 7%;
+    top: 12vh;
+  }
+
+  .titleSecondary2 {
+    font-size: 1.8rem;
+    left: 7%;
+    top: 22vh;
+  }
+
+  .titleSecondary3 {
+    font-size: 1.8rem;
+    left: 7%;
+    top: 30vh;
+  }
+
+  .titleSecondaryButton {
+    font-size: 2rem;
+    left: 7%;
+    top: 38vh;
+  }
+
+  .imageSecondary {
+    width: 60%;
+    right: 2rem;
+    top: 6rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 62vh;
+  }
+
+  .selectCarouselButton {
+    margin-left: 36%;
+  }
+}
+
+@media (min-width: 869px) and (max-width: 930px) {
+  .imagePrimary {
+    top: 10vh;
+    right: 3%;
+  }
+  .imageSecondary {
+    right: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1250px) {
+  .eatsyIcon {
+    width: 22rem;
+    top: 3vh;
+    left: 7%;
+  }
+
+  .titlePrimary2 {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 31vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 38vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 45vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 2.5rem;
+    left: 7%;
+    top: 55vh;
+  }
+
+  .imagePrimary {
+    top: 6vh;
+    right: 7%;
+  }
+
+  .titleSecondary1 {
+    font-size: 3rem;
+    left: 7%;
+    top: 16vh;
+  }
+
+  .titleSecondary2 {
+    font-size: 2rem;
+    left: 7%;
+    top: 28vh;
+  }
+
+  .titleSecondary3 {
+    font-size: 2rem;
+    left: 7%;
+    top: 36vh;
+  }
+
+  .titleSecondaryButton {
+    font-size: 2.2rem;
+    left: 7%;
+    top: 48vh;
+  }
+
+  .imageSecondary {
+    width: 60%;
+    right: 0;
+    top: 8rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  .imagePrimary {
+    top: 8vh;
+    right: 7%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .eatsyIcon {
+    width: 28rem;
+    top: 2vh;
+    left: 7%;
+  }
+
+  .titlePrimary2 {
+    font-size: 2.5rem;
+    left: 9%;
+    top: 38vh;
+  }
+
+  .titlePrimary3 {
+    font-size: 2.5rem;
+    left: 9%;
+    top: 46vh;
+  }
+
+  .titlePrimary4 {
+    font-size: 2.5rem;
+    left: 9%;
+    top: 54vh;
+  }
+
+  .titlePrimaryButton {
+    font-size: 2.7rem;
+    left: 9%;
+    top: 64vh;
+  }
+
+  .imagePrimary {
+    width: 45%;
+    top: 7rem;
+    right: 10%;
+  }
+
+  .titleSecondary1 {
+    font-size: 3.5rem;
+    left: 7%;
+    top: 22vh;
+  }
+
+  .titleSecondary2 {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 34vh;
+  }
+
+  .titleSecondary3 {
+    font-size: 2.3rem;
+    left: 7%;
+    top: 42vh;
+  }
+
+  .titleSecondaryButton {
+    font-size: 2.5rem;
+    left: 7%;
+    top: 54vh;
+  }
+
+  .imageSecondary {
+    width: 60%;
+    right: 0;
+    top: 8rem;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1380px) {
+  .imagePrimary {
+    top: 10rem;
+  }
+  .imageSecondary {
+    top: 11rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .imagePrimary {
+    width: 48%;
+    top: 2vh;
+    right: 6%;
+  }
+  .imageSecondary {
+    top: 5rem;
+  }
+}

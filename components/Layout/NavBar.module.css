@@ -1,0 +1,333 @@
+.container {
+  font-family: "Roboto Slab";
+  position: fixed;
+  background-color: rgb(255, 219, 88);
+}
+
+.navBarBg {
+  background-color: rgb(255, 219, 88);
+}
+
+.eatsyIcon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  background-color: white;
+}
+
+.eatsyIcon:hover {
+  outline: none;
+  background-color: rgb(255, 219, 88);
+  animation: scooterMove 1500ms ease-out;
+}
+
+.link {
+  color: brown;
+  text-align: center;
+  display: inline-block;
+  margin: 0 0.5rem;
+  text-transform: capitalize;
+}
+
+.word {
+  font-family: "Roboto Slab";
+  color: brown;
+  display: block;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.word:hover,
+.word:active {
+  border-bottom: solid 2px brown;
+  font-weight: 700;
+  transform: scale(1.1);
+}
+
+.button {
+  margin-left: 0.5rem;
+  padding: 0;
+}
+
+.button:focus {
+  border: 2px solid brown;
+}
+
+.cartButton {
+  margin: auto 0;
+  margin-left: auto;
+}
+
+.profileAvatar {
+  background-color: rgb(16, 80, 16);
+  color: rgb(255, 219, 88);
+  margin-left: 0.6rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.profileAvatar:hover {
+  background-color: brown;
+  transform: scale(1.1);
+}
+
+/***************************************** Modal Styling!! ***********************************************/
+
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: "50%";
+  left: "50%";
+  transform: "translate(-50%; -50%)";
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContainer {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 10rem;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.searchSelect {
+  background-color: white;
+  width: 13rem;
+}
+
+.searchParameter {
+  background-color: white;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+}
+
+.searchTitle {
+  color: black;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 219, 88, 0.8);
+}
+
+.searchSubmitButton {
+  margin: 0rem auto;
+  background-color: white;
+  width: 50%;
+  font-size: 1.5rem;
+  color: rgb(16, 80, 16);
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 0.7rem 0rem 0.7rem 0rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchSubmitButton:hover {
+  background-color: rgba(255, 219, 88);
+  font-weight: bold;
+}
+
+.searchSubmitButton:active {
+  background-color: rgba(255, 219, 88);
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.modalCLoseButton {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+}
+
+.modalCLoseIcon {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.modalCLoseIcon:hover {
+  transform: scale(1.2);
+}
+
+/***************************************** NavBarSearch Styling!! ***********************************************/
+
+.searchButton {
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.1s ease-in-out;
+}
+
+.searchButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.searchButton:active {
+  background-color: brown;
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.searchButton:active .searchIcon {
+  color: rgb(255, 219, 88);
+}
+
+/***************************************** NavCartButton Styling!! ***********************************************/
+
+.buttons {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0.2rem 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons:hover,
+.buttons:active {
+  background-color: brown;
+  transform: scale(1.1);
+  color: rgb(255, 219, 88);
+}
+
+.icons {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: brown;
+}
+
+.buttons:hover .icons {
+  color: rgb(255, 219, 88);
+}
+
+.badges {
+  background-color: rgb(255, 219, 88);
+  font-size: 1.3rem;
+  padding: 0rem 0.7rem;
+  border-radius: 25px;
+  margin-left: 0.2rem;
+  color: rgb(165, 42, 42);
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons:hover .badges {
+  background-color: brown;
+  color: rgb(255, 219, 88);
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1) rotateZ(0);
+  }
+  20% {
+    transform: scale(0.9) rotateZ(15deg);
+  }
+  40% {
+    transform: scale(1.1) rotateZ(0);
+  }
+  50% {
+    transform: scale(1.15) rotateZ(-15deg);
+  }
+  60% {
+    transform: scale(1) rotateZ(0);
+  }
+  70% {
+    transform: scale(1.15) rotateZ(15deg);
+  }
+  80% {
+    transform: scale(1) rotateZ(0);
+  }
+  100% {
+    transform: scale(0.9) rotateZ(-15deg);
+  }
+}
+
+/***************************************** End NavCartButton Styling!! ***********************************************/
+
+@keyframes scooterMove {
+  0% {
+    transform: scale(1.3) rotateZ(0);
+  }
+  5% {
+    transform: scale(1.3) rotateZ(10deg);
+  }
+  10% {
+    transform: scale(1.3) rotateZ(0);
+  }
+  15% {
+    transform: scale(1.3) rotateZ(-10deg);
+  }
+  20% {
+    transform: scale(1.3) rotateZ(0deg);
+  }
+  25% {
+    transform: scale(1.3) rotateZ(10deg);
+  }
+  30% {
+    transform: scale(1.3) rotateZ(0);
+  }
+  40% {
+    transform: scale(1.3) translateX(30px);
+  }
+  50% {
+    transform: scale(1.3) translateX(60px);
+  }
+  60% {
+    transform: scale(1.3) translateX(90px);
+  }
+  70% {
+    transform: scale(1.3) translateX(120px);
+  }
+  80% {
+    transform: scale(1.3) translateX(150px);
+  }
+  80% {
+    transform: scale(1.3) translateX(150px);
+  }
+  100% {
+    transform: scale(1.3) translateX(150px);
+  }
+}
+
+@media (max-width: 900px) {
+  .searchTitle {
+    font-size: 2.5rem;
+  }
+  .modalCLoseIcon {
+    font-size: 2.5rem;
+  }
+}

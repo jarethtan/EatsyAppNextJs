@@ -1,0 +1,119 @@
+.container {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 40%;
+  text-align: center;
+  margin: 8rem auto 6rem auto;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  background-image: url("/eatsyIcons/EatsyIcon.jpeg");
+  background-size: 12rem;
+  background-repeat: space;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+
+.loginButton {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  color: rgb(16, 80, 16);
+  border-radius: 0.2rem;
+  background-color: rgb(255, 219, 88);
+  width: 34%;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  border: 2px solid rgb(16, 80, 16);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+  background-color: rgb(16, 80, 16);
+  color: rgb(255, 219, 88);
+}
+
+.googleButton {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(255, 219, 88);
+  border-radius: 0.2rem;
+  background-color: rgb(16, 80, 16);
+  width: 30%;
+  padding: 0.5rem;
+  margin: 1rem 1.5rem;
+  border: 2px solid rgb(26, 85, 26);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.googleButton:hover {
+  background-color: rgb(255, 219, 88);
+  color: rgb(26, 85, 26);
+}
+
+.register {
+  text-decoration: underline;
+  color: blue;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 869px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 660px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .loginButton {
+    font-size: 1.2rem;
+  }
+
+  .googleButton {
+    font-size: 0.8rem;
+  }
+}

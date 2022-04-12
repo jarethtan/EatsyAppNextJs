@@ -1,0 +1,28 @@
+.appleButton {
+  background-color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.creditCardButton {
+  background-color: rgb(16, 80, 16);
+  transition: all 0.2s ease-in-out;
+}
+
+.cryptoButton {
+  background-color: rgb(255, 219, 88);
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.appleButton:hover {
+  background-color: black;
+  color: rgb(255, 219, 88);
+}
+.creditCardButton:hover {
+  background-color: rgb(16, 80, 16);
+  color: rgb(255, 219, 88);
+}
+.cryptoButton:hover {
+  background-color: rgb(255, 219, 88);
+  color: brown;
+}

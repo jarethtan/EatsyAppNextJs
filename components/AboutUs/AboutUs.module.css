@@ -1,0 +1,130 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 7rem 5rem 7rem;
+  width: 60%;
+  text-align: center;
+  margin: 8rem auto 6rem auto;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  background-image: url("/eatsyIcons/EatsyIcon.jpeg");
+  background-size: 12rem;
+  background-repeat: space;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.imageIcon {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 3rem auto 0rem auto;
+}
+
+.content {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: rgb(16, 80, 16);
+}
+
+.imageTeam {
+  width: 80%;
+  margin: auto;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: brown;
+  padding-bottom: 0;
+  margin-bottom: 0.1rem;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 2rem 2rem 5rem 2rem;
+  }
+  .content {
+    font-size: 0.8rem;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .imageIcon {
+    width: 80%;
+  }
+  .imageTeam {
+    width: 90%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 2rem 2rem 5rem 2rem;
+  }
+  .content {
+    font-size: 0.9rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .imageIcon {
+    width: 60%;
+  }
+  .imageTeam {
+    width: 80%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .container {
+    width: 80%;
+    padding: 2rem 4rem 5rem 4rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .imageIcon {
+    width: 55%;
+  }
+  .imageTeam {
+    width: 80%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1260px) {
+  .container {
+    width: 70%;
+    padding: 2rem 5rem 5rem 5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .imageIcon {
+    width: 45%;
+  }
+}

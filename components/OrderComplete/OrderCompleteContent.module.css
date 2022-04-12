@@ -1,0 +1,38 @@
+.container {
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+.productLink {
+  text-decoration: underline;
+  color: blue;
+}
+
+.info {
+  font-size: 1.2rem;
+  font-family: "Roboto Slab";
+}
+
+.iconImage {
+  width: 18rem;
+  margin: auto;
+  animation: scooterMove 0.6s ease-out;
+  animation-iteration-count: infinite;
+}
+
+.road {
+  margin-top: -2rem;
+  margin-bottom: 7rem;
+}
+
+@keyframes scooterMove {
+  33% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  66% {
+    transform: translateY(5px);
+  }
+}

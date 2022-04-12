@@ -1,0 +1,210 @@
+.container {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 80%;
+  margin: 8rem auto;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px grey;
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  background-image: url("/eatsyIcons/EatsyIcon.jpeg");
+  background-size: 12rem;
+  background-repeat: space;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.userImage {
+  width: 80%;
+  height: auto;
+  margin: 1rem 0;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px grey;
+  background-color: white;
+}
+
+.subTitleInfo {
+  font-family: "Roboto Slab";
+  font-size: 1.3rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  margin-left: 6rem;
+  font-weight: bold;
+  color: rgb(16, 80, 16);
+}
+
+.info {
+  font-family: "Roboto Slab";
+  text-align: start;
+  margin-left: 6rem;
+  color: brown;
+  font-weight: 500;
+}
+
+.eachPaidCart {
+  margin-bottom: 1rem;
+}
+
+.subTitleOrder {
+  font-family: "Roboto Slab";
+  font-size: 1.3rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  margin-left: 2rem;
+  font-weight: bold;
+  color: rgb(16, 80, 16);
+}
+
+.orderNum {
+  font-family: "Roboto Slab";
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  margin-left: 2rem;
+  font-weight: bold;
+  color: brown;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.orderInfo {
+  font-family: "Roboto Slab";
+  margin: 0;
+  text-align: start;
+  margin-left: 2rem;
+  margin: 0.1rem 0rem 0.1rem 2rem;
+  color: brown;
+  font-weight: 500;
+}
+
+.seeOrderButton {
+  margin: 0 0.2rem;
+  color: brown;
+  font-weight: 500;
+  padding: 0 0.3rem;
+  box-shadow: 0 0 3px brown;
+}
+
+.seeOrderButton:hover {
+  background-color: rgba(165, 42, 42, 0.2);
+  font-weight: bold;
+}
+
+@media (min-width: 1100px) and (max-width: 1350px) {
+  .container {
+    padding: 2rem 1rem;
+    width: 90%;
+  }
+  .userImage {
+    width: 90%;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1100px) {
+  .container {
+    padding: 2rem 1rem;
+    width: 90%;
+  }
+  .userImage {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .subTitleInfo {
+    margin-left: 0;
+  }
+
+  .info {
+    margin-left: 0;
+  }
+
+  .subTitleOrder {
+    margin-left: 0;
+  }
+
+  .orderInfo {
+    margin-left: 0;
+  }
+
+  .orderNum {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 900px) {
+  .userImage {
+    width: 60%;
+    margin: 2rem 20%;
+  }
+
+  .subTitleInfo {
+    margin-left: 25%;
+  }
+
+  .info {
+    margin-left: 25%;
+  }
+
+  .subTitleOrder {
+    margin-left: 25%;
+  }
+
+  .orderInfo {
+    margin-left: 25%;
+  }
+
+  .orderNum {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 1rem 0.5rem;
+    width: 95%;
+  }
+
+  .userImage {
+    width: 80%;
+    margin: 2rem 10%;
+  }
+
+  .subTitleInfo {
+    margin-left: 10%;
+  }
+
+  .info {
+    margin-left: 10%;
+  }
+
+  .subTitleOrder {
+    margin-left: 10%;
+  }
+
+  .orderInfo {
+    margin-left: 10%;
+  }
+
+  .orderNum {
+    margin-left: 10%;
+  }
+}

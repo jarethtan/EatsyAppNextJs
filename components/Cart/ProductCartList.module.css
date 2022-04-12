@@ -1,0 +1,227 @@
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+.header {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header div {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid brown;
+  color: brown;
+  margin-bottom: 2rem;
+}
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.body p {
+  font-size: 1rem;
+  color: rgb(16, 80, 16);
+  font-weight: bolder;
+}
+
+.body > * {
+  flex: 1;
+}
+
+.image {
+  width: 7.5rem;
+  height: 6rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 3px black;
+}
+
+.buttons > * {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: black;
+  color: white;
+  border: none;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(16, 80, 16);
+  background-color: rgb(255, 219, 88);
+  border: 2px solid rgb(16, 80, 16);
+  border-radius: 0.2rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.buttons button:hover {
+  color: rgb(255, 219, 88);
+  background-color: rgb(16, 80, 16);
+}
+
+.finalPrice {
+  color: rgb(16, 80, 16);
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.checkoutButton {
+  background-color: rgb(16, 80, 16);
+  color: rgb(255, 219, 88);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  outline: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(16, 80, 16);
+  box-shadow: 0 2px 5px grey;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.checkoutButton:hover {
+  transform: scale(1.1);
+  color: rgb(16, 80, 16);
+  background-color: rgb(255, 219, 88);
+}
+
+@media (max-width: 1050px) {
+  .header div {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .header div {
+    font-size: 0.8rem;
+  }
+
+  .buttons > * {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .image {
+    width: 5.5rem;
+    height: 4rem;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .header div {
+    font-size: 0.8rem;
+  }
+
+  .buttons > * {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .imageLink {
+    display: none;
+  }
+
+  .imageTitle {
+    display: none;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+
+  .finalPrice {
+    font-size: 1.3rem;
+  }
+
+  .checkoutButton {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .header div {
+    font-size: 0.8rem;
+  }
+
+  .buttons > * {
+    width: 1.3rem;
+    height: 1.3rem;
+    padding: 0;
+    margin: 0.1rem;
+  }
+
+  .imageLink,
+  .priceInfo {
+    display: none;
+  }
+
+  .imageTitle,
+  .priceTitle {
+    display: none;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+
+  .finalPrice {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+
+  .checkoutButton {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header div {
+    font-size: 0.8rem;
+  }
+
+  .buttons > * {
+    width: 1.3rem;
+    height: 1.3rem;
+    padding: 0;
+    margin: 0.1rem;
+  }
+
+  .imageLink,
+  .priceInfo,
+  .requestInfo {
+    display: none;
+  }
+
+  .imageTitle,
+  .priceTitle,
+  .requestTitle {
+    display: none;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+
+  .finalPrice {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+
+  .checkoutButton {
+    font-size: 1.1rem;
+  }
+}

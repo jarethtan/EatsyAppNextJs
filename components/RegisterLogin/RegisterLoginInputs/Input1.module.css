@@ -1,0 +1,51 @@
+.imageInput {
+  width: 32.5%;
+  color: transparent;
+}
+
+.imageInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.imageInput::before {
+  content: "Upload User Image";
+  display: inline-block;
+  position: absolute;
+  border: 2px solid rgb(49, 107, 34);
+  border-radius: 3px;
+  padding: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: rgb(60, 129, 42);
+  color: white;
+  transition: all 0.2s;
+  right: 34.5%;
+  width: 28%;
+  text-align: center;
+}
+.imageInput:hover::before {
+  border-color: rgb(49, 107, 34);
+  color: rgb(49, 107, 34);
+  background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1480px) {
+  .imageInput::before {
+    right: 31.5%;
+    width: 33.5%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .imageInput::before {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .imageInput::before {
+    content: "User Image";
+  }
+}
