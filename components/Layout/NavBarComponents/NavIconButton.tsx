@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "../NavBar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -47,17 +48,17 @@ const NavIconButton: React.FC<{
         {links.map((link, index) => (
           <div key={link}>
             <MenuItem onClick={handleCloseNavMenu}>
-              <a href={link} className={classes.link}>
-                {pages[index]}
-              </a>
+              <Link href={link}>
+                <a className={classes.link}>{pages[index]}</a>
+              </Link>
             </MenuItem>
           </div>
         ))}
         {session.data?.role === "admin" ? (
           <MenuItem onClick={handleCloseNavMenu}>
-            <a className={classes.link} href="/products/addProduct">
-              Add Product
-            </a>
+            <Link href="/products/addProduct">
+              <a className={classes.link}>Add Product</a>
+            </Link>
             {asPath === "/cartPage" ? <br /> : ""}
           </MenuItem>
         ) : (
@@ -66,21 +67,21 @@ const NavIconButton: React.FC<{
         {session.status === "unauthenticated" ? (
           <div>
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/userRegister">
-                Register
-              </a>
+              <Link href="/personnel/userRegister">
+                <a className={classes.link}>Register</a>
+              </Link>
             </MenuItem>
             {asPath === "/cartPage" ? <br /> : ""}
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/userLogin">
-                User Login
-              </a>
+              <Link href="/personnel/userLogin">
+                <a className={classes.link}>User Login</a>
+              </Link>
             </MenuItem>
             {asPath === "/cartPage" ? <br /> : ""}
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/adminLogin">
-                Admin Login
-              </a>
+              <Link href="/personnel/adminLogin">
+                <a className={classes.link}>Admin Login</a>
+              </Link>
             </MenuItem>
           </div>
         ) : (

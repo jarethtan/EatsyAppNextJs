@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "../NavBar.module.css";
+import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
@@ -40,9 +41,11 @@ const ProfileNavButton: React.FC<{
         onClose={handleCloseUserMenu}
       >
         <MenuItem onClick={handleCloseUserMenu}>
-          <a href="/profile" className={classes.link} onClick={profileAlert}>
-            Profile
-          </a>
+          <Link href="/profile">
+            <a className={classes.link} onClick={profileAlert}>
+              Profile
+            </a>
+          </Link>
         </MenuItem>
         {asPath === "/cartPage" ? <br /> : ""}
         {session.status === "authenticated" ? (

@@ -5,6 +5,7 @@ import NavProfileButton from "./NavBarComponents/NavProfileButton";
 import NavMainLinks from "./NavBarComponents/NavMainLinks";
 import NavButtonIcon from "./NavBarComponents/NavButtonIcon";
 import NavBarSearch from "./NavBarComponents/NavBarSearch/NavBarSearch";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AppBar, Toolbar, Container } from "@mui/material";
 import { useSession } from "next-auth/react";
@@ -70,9 +71,11 @@ const NavBar = () => {
           />
           <NavBarSearch />
           {asPath !== "/checkout" ? (
-            <a className={classes.cartButton} href="/cartPage">
-              <NavButtonCart />
-            </a>
+            <Link href="/cartPage">
+              <a className={classes.cartButton}>
+                <NavButtonCart />
+              </a>
+            </Link>
           ) : (
             ""
           )}

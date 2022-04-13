@@ -1,5 +1,4 @@
 import Input from "../../../ui/Input";
-import { useFormContext } from "react-hook-form";
 import { Fragment, useState } from "react";
 import { fileToDataURL } from "../../../lib/middlewares/fileToDataUrl";
 import ImageInput from "../../../ui/ImageInput";
@@ -23,7 +22,7 @@ const Input1: React.FC<{ receiveImageUrl: any }> = ({ receiveImageUrl }) => {
       {imageUrl ? (
         <Fragment key={imageUrl}>
           <br />
-          <img src={imageUrl} width={100} height={100} style={{ border: "2px solid green", borderRadius: "8px" }} />
+          <img src={imageUrl} width={100} height={100} alt="" style={{ border: "2px solid green", borderRadius: "8px" }} />
         </Fragment>
       ) : (
         ""

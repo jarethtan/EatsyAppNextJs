@@ -19,9 +19,9 @@ const orderCompleteContent = () => {
         </p>
         <p className={classes.info}>
           Click {""}
-          <a href="/" className={classes.productLink}>
-            here
-          </a>
+          <Link href="/">
+            <a className={classes.productLink}>here</a>
+          </Link>
           {""} to continue browsing our food menu.
         </p>
       </div>

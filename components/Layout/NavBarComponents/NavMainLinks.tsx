@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "../NavBar.module.css";
+import Link from "next/link";
 import { Box, Typography, Menu, Tooltip, MenuItem, Button } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -23,19 +24,19 @@ const NavMainLinks: React.FC<{
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
           <Button onClick={handleCloseNavMenu} key={link} className={classes.button}>
-            <a href={link}>
+            <Link href={link}>
               <Typography className={classes.word}>{pages[index]}</Typography>
-            </a>
+            </Link>
           </Button>
         )
       )}
       {session.data?.role === "admin" ? (
         <Button onClick={handleCloseNavMenu} className={classes.button}>
-          <a href="/products/addProduct">
+          <Link href="/products/addProduct">
             <Typography className={classes.word} color="white">
               Add Product
             </Typography>
-          </a>
+          </Link>
         </Button>
       ) : (
         ""
@@ -66,21 +67,21 @@ const NavMainLinks: React.FC<{
             onClose={handleCloseLoginMenu}
           >
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/userRegister">
-                Register
-              </a>
+              <Link href="/personnel/userRegister">
+                <a className={classes.link}>Register</a>
+              </Link>
             </MenuItem>
             {asPath === "/cartPage" ? <br /> : ""}
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/userLogin">
-                User Login
-              </a>
+              <Link href="/personnel/userLogin">
+                <a className={classes.link}>User Login</a>
+              </Link>
             </MenuItem>
             {asPath === "/cartPage" ? <br /> : ""}
             <MenuItem onClick={handleCloseLoginMenu}>
-              <a className={classes.link} href="/personnel/adminLogin">
-                Admin Login
-              </a>
+              <Link href="/personnel/adminLogin">
+                <a className={classes.link}>Admin Login</a>
+              </Link>
             </MenuItem>
           </Menu>
         </Fragment>
