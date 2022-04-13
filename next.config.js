@@ -15,7 +15,7 @@ const generateCsp = () => {
     "base64"
   )}' 'self' 'unsafe-inline' ${
     production ? "" : "'unsafe-eval'"
-  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com 'self' data:;`;
+  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:;`;
 };
 
 module.exports = {

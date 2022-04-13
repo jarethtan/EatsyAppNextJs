@@ -24,7 +24,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
     };
   }
   return {
-    props: { providers: await getProviders(context) },
+    props: { providers: await getProviders() },
   };
 };
 
