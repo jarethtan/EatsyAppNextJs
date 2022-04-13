@@ -22,7 +22,6 @@ const ImageInput: React.FC<{ handlePreviewImage: any; disable: boolean; name: st
         className={name === "productImage" ? classes.imageInput : classCss.imageInput}
       />
       <br />
-      <br />
       {errors.productImage ? <span style={{ color: "rgb(206, 51, 51)" }}>{errors.productImage?.message}</span> : ""}
       {errors.userImage ? <span style={{ color: "rgb(206, 51, 51)" }}>{errors.userImage?.message}</span> : ""}
     </Fragment>
