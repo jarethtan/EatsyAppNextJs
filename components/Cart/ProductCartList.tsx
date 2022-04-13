@@ -25,7 +25,7 @@ const ProductCartList: React.FC<{ cart: ProductModel[] }> = (props) => {
           {props.cart.map((product: ProductModel) => (
             <div className={classes.body} key={product._id}>
               <a href={`/products/${product._id}`} className={classes.imageLink}>
-                <img src={product.productImage[0]} className={classes.image} />
+                <img src={product.productImage[0]} alt="" className={classes.image} />
               </a>
               <p>
                 <a href={`/products/${product._id}`}>{product.productName}</a>

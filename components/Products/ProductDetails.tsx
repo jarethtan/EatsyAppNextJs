@@ -73,7 +73,7 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
             </Typography>
             <Typography gutterBottom variant="h5" component="div" className={props.foundProduct.productName.length > 17 ? classes.div3 : classes.div6}>
               <span className={classes.word}>Region:</span>
-              <img src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))} width={60} height={35} />
+              <img src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))} alt="" width={60} height={35} />
             </Typography>
             <Typography variant="body1" color="text.secondary" className={classes.description}>
               {props.foundProduct.productDescription}

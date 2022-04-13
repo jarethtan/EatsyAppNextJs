@@ -132,7 +132,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
             {imageUrl
               ? imageUrl.map((imageUrl) => (
                   <Fragment key={imageUrl}>
-                    <img src={imageUrl} width={150} height={120} className={classes.previewImage} />
+                    <img src={imageUrl} width={150} height={120} alt="" className={classes.previewImage} />
                     <br />
                   </Fragment>
                 )) // Preview uploaded images.

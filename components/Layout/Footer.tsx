@@ -36,7 +36,7 @@ const Footer = () => {
               </div>
             </Grid>
             <Grid item xs={12} sm={2} order={{ xs: 1, sm: 3 }}>
-              <img src="/eatsyIcons/EatsyNavIcon.jpeg" className={classes.eatsyIcon} />
+              <img src="/eatsyIcons/EatsyNavIcon.jpeg" alt="" className={classes.eatsyIcon} />
             </Grid>
             <Grid item xs={6} sm={2.5} order={{ xs: 4, sm: 4 }}>
               <div className={classes.header}>About</div>
@@ -55,19 +55,13 @@ const Footer = () => {
               <div className={classes.header}>Follow Us</div>
               <div>
                 <Link href="/">
-                  <a href="/">
-                    <FacebookIcon className={classes.icon} fontSize="large" />
-                  </a>
+                  <FacebookIcon className={classes.icon} fontSize="large" />
                 </Link>
                 <Link href="/">
-                  <a href="/">
-                    <InstagramIcon className={classes.instaIcon} fontSize="large" />
-                  </a>
+                  <InstagramIcon className={classes.instaIcon} fontSize="large" />
                 </Link>
                 <Link href="/">
-                  <a href="/">
-                    <TwitterIcon className={classes.icon} fontSize="large" />
-                  </a>
+                  <TwitterIcon className={classes.icon} fontSize="large" />
                 </Link>
               </div>
             </Grid>

@@ -21,7 +21,7 @@ const ProductCheckoutList: React.FC<{ cart: ProductModel[] }> = (props) => {
           {props.cart.map((product: ProductModel) => (
             <div className={classes.body} key={product._id}>
               <div className={classes.imageDiv}>
-                <img src={product.productImage[0]} height="80" width="80" className={classes.image} />
+                <img src={product.productImage[0]} height="80" width="80" alt="" className={classes.image} />
               </div>
               <p>{product.productName}</p>
               <p className={classes.priceInfo}>$ {product.productPrice}</p>

@@ -81,7 +81,7 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
                     {product.productName}
                   </Typography>
                   <div className={classes.countryIconButton}>
-                    <img src={icons.find((element) => element.includes(product.productCategory.replace(/ /g, "")))} className={classes.countryImage} />
+                    <img src={icons.find((element) => element.includes(product.productCategory.replace(/ /g, "")))} alt="" className={classes.countryImage} />
                   </div>
                   <Typography noWrap variant="body2" color="text.secondary" className={classes.description}>
                     {product.productDescription}

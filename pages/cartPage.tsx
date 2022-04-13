@@ -63,7 +63,7 @@ const CartPage = () => {
       }
     }
     return () => abortCont.abort();
-  }, []);
+  });
 
   const onCheckout = async () => {
     if (session.status === "authenticated" && session.data.role !== "admin" && !!Number(id) === false) {

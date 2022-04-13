@@ -21,7 +21,7 @@ const IconBox = () => {
                 }}
               >
                 <span className={classes.imageContainer}>
-                  <Image src={icon[0]} width="100%" height={50} className={classes.image} />
+                  <Image src={icon[0]} width="100%" height={50} alt="" className={classes.image} />
                 </span>
                 <CardContent className={classes.content}>
                   <Typography className={classes.word}>{icon[1]}</Typography>
