@@ -5,7 +5,15 @@ import { getSession } from "next-auth/react";
 
 const addProduct = () => {
   const session = useSession();
-  return <Fragment>{session.data?.role === "admin" ? <AddEditProductForm /> : <h2>Access denied. Only adminstrator is able to visit this page.</h2>}</Fragment>;
+  return (
+    <Fragment>
+      {session.data?.role === "admin" ? (
+        <AddEditProductForm foundProductForEdit={null} />
+      ) : (
+        <h2>Access denied. Only adminstrator is able to visit this page.</h2>
+      )}
+    </Fragment>
+  );
 };
 
 export async function getServerSideProps(context: any) {

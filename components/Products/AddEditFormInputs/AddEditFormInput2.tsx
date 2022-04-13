@@ -6,6 +6,7 @@ import ImageDelete from "../../../ui/ImageDelete";
 const AddEditFormInput2: React.FC<{ foundProduct: ProductModel; imgLen: number }> = ({ foundProduct, imgLen }) => {
   return (
     <Fragment>
+      <br />
       {imgLen > 1 ? (
         <label htmlFor="deleteImage">Select up to {imgLen - 1} Image(s) to delete</label>
       ) : (
@@ -20,7 +21,6 @@ const AddEditFormInput2: React.FC<{ foundProduct: ProductModel; imgLen: number }
           </label>
         </div>
       ))}
-      <br />
     </Fragment>
   );
 };

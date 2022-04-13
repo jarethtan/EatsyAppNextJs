@@ -18,7 +18,7 @@ import { fileToDataURL } from "../../lib/middlewares/fileToDataUrl";
 import { alertService } from "../../lib/services/alert";
 import { Button } from "@mui/material";
 
-const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (props) => {
+const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }> = (props) => {
   const [imageUrl, setImageUrl] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const session = useSession();
@@ -29,10 +29,10 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
 
   const method = useForm<ProductInputModel>({
     defaultValues: {
-      productName: formStatus ? "" : foundProduct.productName,
-      productDescription: formStatus ? "" : foundProduct.productDescription,
-      productPrice: formStatus ? "" : foundProduct.productPrice,
-      productCategory: formStatus ? "" : foundProduct.productCategory,
+      productName: formStatus ? "" : foundProduct?.productName,
+      productDescription: formStatus ? "" : foundProduct?.productDescription,
+      productPrice: formStatus ? "" : foundProduct?.productPrice,
+      productCategory: formStatus ? "" : foundProduct?.productCategory,
       productImage: formStatus ? [] : null,
       deleteImage: "",
     },
@@ -41,9 +41,9 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
 
   const handlePreviewImage = async (event: any) => {
     alertService.clear();
-    if (!formStatus && foundProduct.productImage.length + event.target.files.length > 3) {
+    if (!formStatus && foundProduct?.productImage.length + event.target.files.length > 3) {
       alertService.warn(
-        `Only a max of ${3 - foundProduct.productImage.length} image(s) is allowed to be uploaded. If continue, form submission will fail validation.`,
+        `Only a max of ${3 - foundProduct!.productImage.length} image(s) is allowed to be uploaded. If continue, form submission will fail validation.`,
         { autoClose: false, keepAfterRouteChange: false }
       );
     }
@@ -86,7 +86,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
         }
       } else {
         setIsLoading(true);
-        const editProductInputResponse = await fetch(`/api/products/${foundProduct._id}`, {
+        const editProductInputResponse = await fetch(`/api/products/${foundProduct?._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -96,12 +96,12 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
         const editProductInputStatus = await editProductInputResponse.json();
         if (editProductInputStatus.message !== "Product updated in Cloudinary and Mongodb Database") {
           setIsLoading(false);
-          await router.push(`/products/${foundProduct._id}`);
+          await router.push(`/products/${foundProduct?._id}`);
           alertService.error(`${editProductInputStatus.message}: ${editProductInputStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
         } else {
           setIsLoading(false);
           setImageUrl([]);
-          await router.push(`/products/${foundProduct._id}`);
+          await router.push(`/products/${foundProduct?._id}`);
           alertService.success(editProductInputStatus.message, { keepAfterRouteChange: true });
         }
       }
@@ -143,10 +143,10 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
                 <ImageInput handlePreviewImage={handlePreviewImage} disable={false} name="productImage" />
               </Fragment>
             ) : (
-              <AddEditFormInput3 handlePreviewImage={handlePreviewImage} imgLen={foundProduct.productImage.length} />
+              <AddEditFormInput3 handlePreviewImage={handlePreviewImage} imgLen={foundProduct!.productImage.length} />
             )}
             {
-              formStatus ? "" : <AddEditFormInput2 foundProduct={foundProduct} imgLen={foundProduct.productImage.length} /> // display delete images array
+              formStatus ? "" : <AddEditFormInput2 foundProduct={foundProduct!} imgLen={foundProduct!.productImage.length} /> // display delete images array
             }
             <br />
             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>
@@ -156,7 +156,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel }> = (pro
               ""
             ) : (
               <Fragment>
-                <br /> <Link href={"/products/" + foundProduct._id}>Cancel</Link>
+                <br /> <Link href={"/products/" + foundProduct?._id}>Cancel</Link>
               </Fragment>
             )}
           </form>
