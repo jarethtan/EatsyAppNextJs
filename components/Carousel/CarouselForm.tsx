@@ -79,7 +79,7 @@ const CarouselForm: React.FC<{ allProducts: ProductModel[] }> = (props) => {
         >
           {props.allProducts.map((product: ProductModel, i: number) => (
             <MenuItem key={i} value={product.productName}>
-              <Checkbox checked={productCheckbox.indexOf(product.productName) > -1} />
+              <Checkbox checked={productCheckbox.indexOf(product.productName as never) > -1} />
               <ListItemText primary={product.productName} />
             </MenuItem>
           ))}
