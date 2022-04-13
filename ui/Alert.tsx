@@ -15,9 +15,9 @@ Alert.defaultProps = {
   fade: true,
 };
 
-function Alert({ id, fade }) {
+function Alert({ id, fade }: { id: any; fade: any }) {
   const router = useRouter();
-  const [alerts, setAlerts] = useState([]);
+  const [alerts, setAlerts] = useState<string[]>([]);
 
   useEffect(() => {
     // subscribe to new alert notifications
