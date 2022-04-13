@@ -2,8 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import classes from "./CheckoutForm.module.css";
 import LoadingSpinner from "../../ui/LoadingSpinner";
 import PaymentButtons from "./PaymentButtons";
-import Input3 from "../RegisterLogin/Input3";
 import DeliveryPickupTimeInput from "./CheckoutInput";
+import Input from "../../ui/Input";
 import { useSession } from "next-auth/react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
@@ -93,7 +93,9 @@ const CheckoutForm: React.FC<{ totalCartPrice: string; user: RegisterInputModel;
             {deliveryMethod ? (
               <Fragment>
                 {otherLoginRoute ? <h4>Enter your delivery address</h4> : <h4>Confirm delivery address</h4>}
-                <Input3 />
+                <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="checkout" multiLines={false} disable={false} />
+                <Input names="postalCode" type="text" label="Postal Code" pageType="checkout" multiLines={false} disable={false} />
+                <Input names="contactNumber" type="text" label="Contact Number" pageType="checkout" multiLines={false} disable={false} />
               </Fragment>
             ) : (
               ""

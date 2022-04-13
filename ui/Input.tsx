@@ -33,7 +33,7 @@ const Input: React.FC<{
             rows={3}
             error={!!fieldState.error}
             helperText={fieldState.error ? fieldState.error?.message : ""}
-            style={{ backgroundColor: "white" }}
+            style={pageType === "checkout" ? { backgroundColor: "white", width: "100%" } : { backgroundColor: "white" }}
             className={pageType === "product" ? classes.inputField : ""}
           />
         )}

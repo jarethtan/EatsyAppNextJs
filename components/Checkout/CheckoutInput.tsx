@@ -7,6 +7,7 @@ import TimePicker from "@mui/lab/TimePicker";
 import DatePicker from "@mui/lab/DatePicker";
 import { format } from "date-fns";
 import { Tooltip } from "@mui/material";
+import Input from "../../ui/Input";
 
 export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (props) => {
   const {
@@ -20,26 +21,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
   return (
     <Fragment>
       {!props.deliveryMethod ? (
-        <Fragment>
-          <br />
-          <br />
-          <Controller
-            name="contactNumPickUp"
-            control={control}
-            defaultValue=""
-            render={({ field }) => (
-              <TextField
-                {...field}
-                type="number"
-                label="Contact Number"
-                variant="outlined"
-                error={!!errors.contactNumPickUp}
-                helperText={errors.contactNumPickUp ? errors.contactNumPickUp?.message : ""}
-                style={{ backgroundColor: "white", width: "100%" }}
-              />
-            )}
-          />
-        </Fragment>
+        <Input names="contactNumPickUp" type="number" label="Contact Number" pageType="checkout" multiLines={false} disable={false} />
       ) : (
         ""
       )}
