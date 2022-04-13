@@ -1,22 +1,22 @@
-const { nanoid } = require("nanoid");
-const crypto = require("crypto");
+// const { nanoid } = require("nanoid");
+// const crypto = require("crypto");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 };
 
-const generateCsp = () => {
-  const hash = crypto.createHash("sha256");
-  hash.update(nanoid());
-  const production = process.env.NODE_ENV === "production";
+// const generateCsp = () => {
+//   const hash = crypto.createHash("sha256");
+//   hash.update(nanoid());
+//   const production = process.env.NODE_ENV === "production";
 
-  return `default-src 'self' http://localhost:3000 http://localhost:3000/api/cartStorage; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
-    "base64"
-  )}' 'self' 'unsafe-inline' ${
-    production ? "" : "'unsafe-eval'"
-  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000 http://localhost:3000/api/cartStorage`;
-};
+//   return `default-src 'self' http://localhost:3000 ; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
+//     "base64"
+//   )}' 'self' 'unsafe-inline' ${
+//     production ? "" : "'unsafe-eval'"
+//   }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000`;
+// };
 
 module.exports = {
   nextConfig,
@@ -41,10 +41,10 @@ module.exports = {
     {
       source: "/(.*)",
       headers: [
-        {
-          key: "Content-Security-Policy",
-          value: generateCsp(),
-        },
+        // {
+        //   key: "Content-Security-Policy",
+        //   value: generateCsp(),
+        // },
         {
           key: "X-DNS-Prefetch-Control",
           value: "on",
