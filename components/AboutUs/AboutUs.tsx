@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./AboutUs.module.css";
 
-const AboutUs = () => {
+const AboutUsSection = () => {
   return (
     <div className={classes.container}>
       <img src="/eatsyIcons/EatsyAboutUsIcon.jpeg" alt="Eatsy Icon" className={classes.imageIcon} />
@@ -39,4 +39,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutUsSection;

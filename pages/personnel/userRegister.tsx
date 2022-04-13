@@ -3,7 +3,7 @@ import RegisterForm from "../../components/RegisterLogin/RegisterForm";
 import { getSession } from "next-auth/react";
 import { NextPageContext } from "next";
 
-const userRegister = () => {
+const UserRegister = () => {
   return (
     <Fragment>
       <RegisterForm />
@@ -28,4 +28,4 @@ export const getServerSideProps = async (context: NextPageContext) => {
   };
 };
 
-export default userRegister;
+export default UserRegister;

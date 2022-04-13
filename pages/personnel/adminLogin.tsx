@@ -4,7 +4,7 @@ import { getSession } from "next-auth/react";
 import { NextPageContext } from "next";
 import Footer from "../../components/Layout/Footer";
 
-const userLogin: React.FC<{ providers: object }> = (props) => {
+const UserLogin: React.FC<{ providers: object }> = (props) => {
   return (
     <Fragment>
       <LoginForm providers={props.providers} />
@@ -29,4 +29,4 @@ export const getServerSideProps = async (context: NextPageContext) => {
   };
 };
 
-export default userLogin;
+export default UserLogin;

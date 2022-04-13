@@ -3,7 +3,7 @@ import LoginForm from "../../components/RegisterLogin/LoginForm";
 import { getSession, getProviders } from "next-auth/react";
 import { NextPageContext } from "next";
 
-const userLogin: React.FC<{ providers: object }> = (props) => {
+const UserLogin: React.FC<{ providers: object }> = (props) => {
   return (
     <Fragment>
       <LoginForm providers={props.providers} />
@@ -28,4 +28,4 @@ export const getServerSideProps = async (context: NextPageContext) => {
   };
 };
 
-export default userLogin;
+export default UserLogin;

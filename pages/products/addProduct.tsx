@@ -3,7 +3,7 @@ import AddEditProductForm from "../../components/Products/AddEditProductForm";
 import { useSession } from "next-auth/react";
 import { getSession } from "next-auth/react";
 
-const addProduct = () => {
+const AddProduct = () => {
   const session = useSession();
   return (
     <Fragment>
@@ -33,4 +33,4 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-export default addProduct;
+export default AddProduct;

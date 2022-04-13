@@ -12,7 +12,7 @@ import { alertService } from "../lib/services/alert";
 import { GetServerSideProps } from "next";
 import { RegisterInputModel } from "../models/formInputTypes";
 
-const checkoutItems: React.FC<{ user: RegisterInputModel }> = (props) => {
+const CheckoutItems: React.FC<{ user: RegisterInputModel }> = (props) => {
   const [userCart, setUserCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const otherLoginRoute = props.user === undefined;
@@ -78,4 +78,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } else return { props: {} };
 };
 
-export default checkoutItems;
+export default CheckoutItems;

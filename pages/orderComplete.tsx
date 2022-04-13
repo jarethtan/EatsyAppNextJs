@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import OrderCompleteContent from "../components/OrderComplete/OrderCompleteContent";
 
-const orderComplete = () => {
+const OrderComplete = () => {
   return (
     <Fragment>
       <Head>
@@ -15,4 +15,4 @@ const orderComplete = () => {
   );
 };
 
-export default orderComplete;
+export default OrderComplete;

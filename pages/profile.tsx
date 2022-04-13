@@ -4,7 +4,7 @@ import { getSession } from "next-auth/react";
 import Error from "next/error";
 import UserProfile from "../components/Profile/UserProfile";
 
-const profile: React.FC<{ userProfile: object; status: number; message: string }> = (props) => {
+const Profile: React.FC<{ userProfile: object; status: number; message: string }> = (props) => {
   if (props.status > 300) {
     return <Error statusCode={props.status} title={props.message} />;
   }
@@ -32,4 +32,4 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-export default profile;
+export default Profile;

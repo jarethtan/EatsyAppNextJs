@@ -6,7 +6,7 @@ import Error from "next/error";
 import { useSession, getSession } from "next-auth/react";
 import getOneProduct from "../../../../lib/helpers/productHelpers/getOneProduct";
 
-const editProduct: React.FC<{ status: number; message: string; foundProductForEdit: ProductModel }> = (props) => {
+const EditProduct: React.FC<{ status: number; message: string; foundProductForEdit: ProductModel }> = (props) => {
   const session = useSession();
   if (props.status > 300) {
     return <Error statusCode={props.status} title={props.message} />; // generate error page. Error page is used instead of alert because if product is not generated, it will be directed to an error page. In the edit/create/delete page, we will use alert to notify the user cause we dont want to redirect in an error case so the user is able to change any input if necessary.
@@ -42,4 +42,4 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   };
 };
 
-export default editProduct;
+export default EditProduct;
