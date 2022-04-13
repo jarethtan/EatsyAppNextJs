@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { saveCartToDB, loadCartFromLocal } from "../../cartStorageOption";
 import { clearCartState } from "../../redux/cart";
 
-const register = () => {
+const Register = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string>("");
@@ -125,4 +125,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;

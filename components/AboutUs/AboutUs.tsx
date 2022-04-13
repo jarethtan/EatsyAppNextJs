@@ -17,7 +17,7 @@ const AboutUsSection = () => {
         you of home wherever you are. Do keep a look out for our latest offering as we post monthly featured dish and promotion on our homepage carousel.
       </p>
       <img src="/eatsyIcons/EatsyTeam.jpg" alt="EatsyTeam" className={classes.imageTeam} />
-      <figcaption className={classes.caption}>Eatsy's incredible four man band.</figcaption>
+      <figcaption className={classes.caption}>Eatsy&apos;s incredible four man band.</figcaption>
       <h3 className={classes.title}>Our Story...</h3>
       <p className={classes.content}>
         Established in 2010, this app was the brain child of the reclusive but brillant individuals, Spongebob and Patrick. The idea of Eatsy was born out of
@@ -31,9 +31,9 @@ const AboutUsSection = () => {
       </p>
       <p className={classes.content}>
         In the mid of 2015, the Eatsy family further expanded with the inclusion of two important members. Firstly, Mr Krabs, an establish legend in the
-        industry joined team to support communications and marketing. Rounding up the four member team is Squidward. The team has been leveraging Squidward's
-        decades of experience in customer service/support to maintain Eatsy's high customer satisfaction. On a side note, the food app "Eatsi" has no
-        affiliation to Eatsy. Eatsi app was founded by our competitor/arch nemesis/mortal enemy "Plankton".
+        industry joined team to support communications and marketing. Rounding up the four member team is Squidward. The team has been leveraging
+        Squidward&apos;s decades of experience in customer service/support to maintain Eatsy&apos;s high customer satisfaction. On a side note, the food app
+        &quot;Eatsi&quot; has no affiliation to Eatsy. Eatsi app was founded by our competitor/arch nemesis/mortal enemy &quot;Plankton&quot;.
       </p>
     </div>
   );

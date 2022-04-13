@@ -14,6 +14,7 @@ import { alertService } from "../../lib/services/alert";
 import { useDispatch } from "react-redux";
 import { saveCartToDB, loadCartFromLocal } from "../../cartStorageOption";
 import { clearCartState } from "../../redux/cart";
+import Link from "next/link";
 
 const LoginForm: React.FC<{ providers: object }> = (props) => {
   const router = useRouter();
@@ -117,9 +118,9 @@ const LoginForm: React.FC<{ providers: object }> = (props) => {
             </div>
             <p>
               Not yet registered? Click{" "}
-              <a className={classes.register} href="/personnel/userRegister">
-                here
-              </a>{" "}
+              <Link href="/personnel/userRegister">
+                <a className={classes.register}>here</a>
+              </Link>{" "}
               to register.
             </p>
           </FormProvider>

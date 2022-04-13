@@ -31,9 +31,9 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
         <div>
           <img src="/eatsyIcons/EatsyCarouImage.jpeg" alt="eatsyCarouImage" className={classes.eatsyIcon} />
           <img src="/carousel/pieChart.png" alt="Carousel Image" className={classes.imagePrimary} />
-          <span className={classes.titlePrimary2}>"Fresh Ingredents"</span>
-          <span className={classes.titlePrimary3}>"Affordable Prices"</span>
-          <span className={classes.titlePrimary4}>"Quality Dishes"</span>
+          <span className={classes.titlePrimary2}>&quot;Fresh Ingredents&quot;</span>
+          <span className={classes.titlePrimary3}>&quot;Affordable Prices&quot;</span>
+          <span className={classes.titlePrimary4}>&quot;Quality Dishes&quot;</span>
           <Button href="/products" variant="contained" color="primary" className={classes.titlePrimaryButton}>
             See our menu
           </Button>
@@ -42,7 +42,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <div>
             <img src={props.selectedCarousel[0].productImage[0]} alt="Carousel Image" className={classes.imageSecondary} />
             <>
-              <span className={classes.titleSecondary1}>This Month's Special</span>
+              <span className={classes.titleSecondary1}>This Month&apos;s Special</span>
               <span className={classes.titleSecondary2}>{props.selectedCarousel[0].productName}</span>
               <span className={classes.titleSecondary3}>${props.selectedCarousel[0].productPrice}</span>
               <Button
@@ -63,7 +63,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <div>
             <img src={props.selectedCarousel[1].productImage[0]} alt="Carousel Image" className={classes.imageSecondary} />
             <>
-              <span className={classes.titleSecondary1}>This Month's Special</span>
+              <span className={classes.titleSecondary1}>This Month&apos;s Special</span>
               <span className={classes.titleSecondary2}>{props.selectedCarousel[1].productName}</span>
               <span className={classes.titleSecondary3}>${props.selectedCarousel[1].productPrice}</span>
               <Button
@@ -84,7 +84,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <div>
             <img src={props.selectedCarousel[2].productImage[0]} alt="Carousel Image" className={classes.imageSecondary} />
             <>
-              <span className={classes.titleSecondary1}>This Month's Special</span>
+              <span className={classes.titleSecondary1}>This Month&apos;s Special</span>
               <span className={classes.titleSecondary2}>{props.selectedCarousel[2].productName}</span>
               <span className={classes.titleSecondary3}>${props.selectedCarousel[2].productPrice}</span>
               <Button
@@ -105,7 +105,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <div>
             <img src={props.selectedCarousel[3].productImage[0]} alt="Carousel Image" className={classes.imageSecondary} />
             <>
-              <span className={classes.titleSecondary1}>This Month's Special</span>
+              <span className={classes.titleSecondary1}>This Month&apos;s Special</span>
               <span className={classes.titleSecondary2}>{props.selectedCarousel[3].productName}</span>
               <span className={classes.titleSecondary3}>${props.selectedCarousel[3].productPrice}</span>
               <Button
