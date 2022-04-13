@@ -36,24 +36,24 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
         product[searchData[0].fieldSelect].toLowerCase().includes(searchData[0].fieldParameter.toLowerCase())
       );
       dispatch(clearSearchState(searchData[0]));
-      if (searchArray.length > 0) return setSearchResult(searchArray);
-      else return setSearchResult([]);
+      if (searchArray.length > 0) setSearchResult(searchArray);
+      else setSearchResult([]);
     } else {
       if (searchData[0].greaterOrLessThanPrice === "greaterThan") {
         const searchArray = props.allProducts.filter((product: any) => product[searchData[0].fieldSelect] > searchData[0].fieldParameter);
         dispatch(clearSearchState(searchData[0]));
-        if (searchArray.length > 0) return setSearchResult(searchArray);
-        else return setSearchResult([]);
+        if (searchArray.length > 0) setSearchResult(searchArray);
+        else setSearchResult([]);
       } else if (searchData[0].greaterOrLessThanPrice === "lesserThan") {
         const searchArray = props.allProducts.filter((product: any) => product[searchData[0].fieldSelect] < searchData[0].fieldParameter);
         dispatch(clearSearchState(searchData[0]));
-        if (searchArray.length > 0) return setSearchResult(searchArray);
-        else return setSearchResult([]);
+        if (searchArray.length > 0) setSearchResult(searchArray);
+        else setSearchResult([]);
       } else {
         const searchArray = props.allProducts.filter((product: any) => product[searchData[0].fieldSelect] == searchData[0].fieldParameter);
         dispatch(clearSearchState(searchData[0]));
-        if (searchArray.length > 0) return setSearchResult(searchArray);
-        else return setSearchResult([]);
+        if (searchArray.length > 0) setSearchResult(searchArray);
+        else setSearchResult([]);
       }
     }
   } // this whole block of code is the  search logic to filter the menu base on search parameters.
