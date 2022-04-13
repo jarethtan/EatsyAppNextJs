@@ -1,10 +1,10 @@
 import React from "react";
 import MovingCarousel from "../Carousel/MovingCarousel";
 
-const FreqOrderedList: React.FC<{ allUsers: object[] }> = (props) => {
-  const arr1: any = [];
+const FreqOrderedList = (props) => {
+  const arr1 = [];
   props.allUsers.map((user) => Object.keys(user).filter((k) => (k.startsWith("paidCart") ? arr1.push(Object.values(user[k.toString()])) : null)));
-  const orderArray = arr1.flat().map((order: any) => {
+  const orderArray = arr1.flat().map((order) => {
     return [
       order["quantity"],
       order["productName"],
@@ -16,8 +16,8 @@ const FreqOrderedList: React.FC<{ allUsers: object[] }> = (props) => {
       order["productNote"],
     ];
   });
-  let accumOrder = orderArray.reduce((acc: any, curr: any) => {
-    let order = acc.find((order: string[]) => order[1] === curr[1]);
+  let accumOrder = orderArray.reduce((acc, curr) => {
+    let order = acc.find((order) => order[1] === curr[1]);
     if (order) {
       order[0] += curr[0];
     } else {
