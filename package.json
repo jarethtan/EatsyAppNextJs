@@ -1,6 +1,7 @@
 {
   "name": "reacteshop",
   "private": true,
+  "proxy": "http://localhost:3000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
