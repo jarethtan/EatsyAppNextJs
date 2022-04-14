@@ -1,16 +1,25 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import React from "react";
+import store from "../redux/store";
+import NextNProgress from "nextjs-progressbar";
+import Head from "next/head";
+import Footer from "../components/Layout/Footer";
 import NavBar from "../components/Layout/NavBar";
 import { Fragment } from "react";
 import { Alert } from "../ui/Alert";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
-import store from "../redux/store";
-import NextNProgress from "nextjs-progressbar";
-import Head from "next/head";
-import Footer from "../components/Layout/Footer";
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  React.useEffect(() => {
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <Fragment>
       <Head>

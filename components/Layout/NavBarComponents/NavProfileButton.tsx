@@ -21,7 +21,7 @@ const ProfileNavButton: React.FC<{
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Open settings">
         <IconButton className={classes.avatarButton} onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar className={classes.profileAvatar} alt="User Image" src={userImage ? userImage : ""} />
+          <Avatar className={classes.profileAvatar} alt="User Image" sx={{ width: "2.6rem", height: "2.6rem" }} src={userImage ? userImage : ""} />
         </IconButton>
       </Tooltip>
       <Menu
