@@ -12,16 +12,16 @@ const NavCartButton = () => {
 
   const btnClasses = `${btnIsHighlighted ? classes.bump : ""}`;
 
-  useEffect(() => {
-    if (cart.length === 0) return;
-    setBtnIsHighlighted(true);
+  // useEffect(() => {
+  //   if (cart.length === 0) return;
+  //   setBtnIsHighlighted(true);
 
-    const timer = setTimeout(() => {
-      setBtnIsHighlighted(false);
-    }, 300);
+  //   const timer = setTimeout(() => {
+  //     setBtnIsHighlighted(false);
+  //   }, 300);
 
-    return () => clearTimeout(timer);
-  }, [cart]);
+  //   return () => clearTimeout(timer);
+  // }, [cart]);
 
   return (
     <Link href="/cartPage">

@@ -1,6 +1,6 @@
 import React from "react";
 import { GetStaticProps } from "next";
-import GetAllProducts from "../../components/Products/GetAllProducts";
+import dynamic from "next/dynamic";
 import IconBox from "../../components/IconBox/IconBox";
 import Error from "next/error";
 import ProductModel from "../../models/productModelClass";
@@ -8,6 +8,8 @@ import Head from "next/head";
 import getAllProduct from "../../lib/helpers/productHelpers/getAllProduct";
 
 const ShowAllProducts: React.FC<{ allProducts: ProductModel[]; status: number; message: string }> = (props) => {
+  const GetAllProductsWithNoSSR = dynamic(() => import("../../components/Products/GetAllProducts"), { ssr: false });
+
   if (props.status > 300) {
     return <Error statusCode={props.status} title={props.message} />;
   }
@@ -19,7 +21,7 @@ const ShowAllProducts: React.FC<{ allProducts: ProductModel[]; status: number; m
       </Head>
       <h1 className="pageHeader">Eatsy Menu</h1>
       <IconBox />
-      <GetAllProducts allProducts={props.allProducts} />
+      <GetAllProductsWithNoSSR allProducts={props.allProducts} />
     </div>
   );
 };

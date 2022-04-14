@@ -55,13 +55,13 @@ const Footer = () => {
               <div className={classes.header}>Follow Us</div>
               <div>
                 <Link href="/">
-                  <FacebookIcon className={classes.icon} fontSize="large" />
+                  <FacebookIcon className={classes.icon} />
                 </Link>
                 <Link href="/">
-                  <InstagramIcon className={classes.instaIcon} fontSize="large" />
+                  <InstagramIcon className={classes.instaIcon} />
                 </Link>
                 <Link href="/">
-                  <TwitterIcon className={classes.icon} fontSize="large" />
+                  <TwitterIcon className={classes.icon} />
                 </Link>
               </div>
             </Grid>

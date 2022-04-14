@@ -24,7 +24,7 @@ const NavFormInputs = () => {
 
   return (
     <Fragment>
-      <FormControl variant="outlined">
+      <FormControl variant="outlined" sx={{ width: "50%" }}>
         <InputLabel id="fieldSelectLabel">Search Field</InputLabel>
         <Select
           {...register("fieldSelect")}
@@ -43,7 +43,7 @@ const NavFormInputs = () => {
       <br />
       {searchFields == "productPrice" ? (
         <Fragment>
-          <FormControl variant="outlined">
+          <FormControl variant="outlined" sx={{ width: "50%" }}>
             <InputLabel id="GreaterOrLessThanPriceLabel">Greater/Lesser</InputLabel>
             <Select
               {...register("greaterOrLessThanPrice")}
@@ -60,7 +60,6 @@ const NavFormInputs = () => {
               {errors.greaterOrLessThanPrice ? errors.greaterOrLessThanPrice?.message : ""}
             </FormHelperText>
           </FormControl>
-          <br />
           <br />
         </Fragment>
       ) : (

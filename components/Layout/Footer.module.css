@@ -47,6 +47,7 @@
 .instaIcon {
   color: rgb(16, 80, 16);
   margin: 0 0.5rem;
+  font-size: 2.5rem;
   transition: all 0.1s ease-in-out;
 }
 
@@ -144,6 +145,7 @@
 
   .icon,
   .instaIcon {
+    font-size: 2rem;
     margin: 0.2rem;
   }
 

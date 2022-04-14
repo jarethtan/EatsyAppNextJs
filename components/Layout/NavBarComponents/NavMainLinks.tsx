@@ -17,7 +17,7 @@ const NavMainLinks: React.FC<{
   const { asPath } = useRouter();
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, color: "white" }}>
+    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
       {links.map(
         (
           link,
@@ -33,9 +33,7 @@ const NavMainLinks: React.FC<{
       {session.data?.role === "admin" ? (
         <Button onClick={handleCloseNavMenu} className={classes.button}>
           <Link href="/products/addProduct">
-            <Typography className={classes.word} color="white">
-              Add Product
-            </Typography>
+            <Typography className={classes.word}>Add Product</Typography>
           </Link>
         </Button>
       ) : (
@@ -45,9 +43,7 @@ const NavMainLinks: React.FC<{
         <Fragment>
           <Tooltip title="Login Options">
             <Button onClick={handleOpenLoginMenu} className={classes.button}>
-              <Typography className={classes.word} color="white">
-                LOGIN
-              </Typography>
+              <Typography className={classes.word}>LOGIN</Typography>
             </Button>
           </Tooltip>
           <Menu
