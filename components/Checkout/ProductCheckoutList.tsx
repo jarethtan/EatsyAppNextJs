@@ -1,8 +1,6 @@
 import { Fragment } from "react";
 import ProductModel from "../../models/productModelClass";
 import classes from "./ProductCheckoutList.module.css";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Button } from "@mui/material";
 import Link from "next/link";
 
 const ProductCheckoutList: React.FC<{ cart: ProductModel[] }> = (props) => {
