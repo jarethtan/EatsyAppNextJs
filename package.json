@@ -1,7 +1,6 @@
 {
   "name": "reacteshop",
   "private": true,
-  "proxy": "https://eatsy-app-next-js.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

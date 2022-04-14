@@ -26,7 +26,7 @@ export const saveCartToLocal = (state: any) => {
 
 export const loadCartFromDB = async (id: any, abortController: any) => {
   try {
-    const getCartResponse = await fetch(`http://localhost:3000/api/cartStorage/${id}`, {
+    const getCartResponse = await fetch(`/api/cartStorage/${id}`, {
       // absolute URL was used in this fetch request is because this function is used in the frontend client side. Such as getstaticprops or getserverprops.
       signal: abortController.signal,
       method: "GET",
@@ -35,6 +35,7 @@ export const loadCartFromDB = async (id: any, abortController: any) => {
       },
     });
     const getCartStatus = await getCartResponse.json();
+    console.log("STATUSSSSS", getCartStatus);
     return getCartStatus;
   } catch (e: any) {
     console.log("Fail to receive Cart information from MongoDB", e.message);

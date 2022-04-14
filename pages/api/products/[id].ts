@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { getSession } from "next-auth/react";
 import createProduct from "../../../lib/helpers/productHelpers/createProduct";
 import editProduct from "../../../lib/helpers/productHelpers/editProduct";
 import deleteProduct from "../../../lib/helpers/productHelpers/deleteProduct";
 import getAllProduct from "../../../lib/helpers/productHelpers/getAllProduct";
 import getOneProduct from "../../../lib/helpers/productHelpers/getOneProduct";
-import { getSession } from "next-auth/react";
 
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req }); // using session to secure api routes.

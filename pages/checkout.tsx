@@ -1,10 +1,11 @@
-import React, { useEffect, useState, Fragment } from "react";
 import classes from "../components/Checkout/ProductCheckoutList.module.css";
 import ProductCheckoutList from "../components/Checkout/ProductCheckoutList";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import ProductModel from "../models/productModelClass";
 import CheckoutForm from "../components/Checkout/CheckoutForm";
+import getOneCart from "../lib/helpers/cartHelpers/getOneCart";
 import Head from "next/head";
+import { useEffect, useState, Fragment } from "react";
 import { Grid } from "@mui/material";
 import { getSession } from "next-auth/react";
 import { loadCartFromLocal, loadCartFromDB } from "../cartStorageOption";
@@ -67,11 +68,12 @@ const CheckoutItems: React.FC<{ user: RegisterInputModel }> = (props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const abortCont = new AbortController();
   const { req } = context;
   const session = await getSession({ req });
   if (!!Number(session?.id) === false) {
-    const { body: user } = await loadCartFromDB(session?.id, abortCont); // get cart from db to display during checkout.
+    const { body: foundUser } = await getOneCart(session?.id); // get cart from db to display during checkout.
+    const user = JSON.parse(JSON.stringify(foundUser));
+
     return {
       props: { user },
     }; // this IF logic is here to ensure when we login using google or github, we will skip getServersideprops render as there is no database to search in mongodb. we will let getserverside run without any props being passed then we will use useEffect from above to render the page again using the localstorage data. since login in through google or github we will be using localstorage all the way to payment unlike with credential login (where we will transfer the localstorage data to mongodb when the user checks out and the information via databse during payment. This is to enable us to track the items being bought for users who use credentials to login (mongodb database.)).

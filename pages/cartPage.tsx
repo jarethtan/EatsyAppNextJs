@@ -1,14 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
 import ProductCartList from "../components/Cart/ProductCartList";
 import classes from "../components/Cart/ProductCartList.module.css";
+import Head from "next/head";
+import LoadingSpinner from "../ui/LoadingSpinner";
+import { useDispatch, useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
 import { Fragment, useEffect, useState } from "react";
 import { clearCartState, addToCart } from "../redux/cart";
 import { saveCartToDB, loadCartFromLocal, loadCartFromDB } from "../cartStorageOption";
 import { useRouter } from "next/router";
 import { alertService } from "../lib/services/alert";
-import Head from "next/head";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import { userInfo } from "os";
 
 const CartPage = () => {
   const cartItems = useSelector((state: any) => state.cart); // initial render of page will use redux state to load (which uses local storage). If local storage is empty or redux states is cleared, useEffect will come into play to load items from user mongo database. most likely the user checksout but decided to go back to cart page to make changes.
@@ -63,7 +64,7 @@ const CartPage = () => {
       }
     }
     return () => abortCont.abort();
-  });
+  }, []);
 
   const onCheckout = async () => {
     if (session.status === "authenticated" && session.data.role !== "admin" && !!Number(id) === false) {
