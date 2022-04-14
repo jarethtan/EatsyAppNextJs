@@ -59,10 +59,12 @@
 }
 
 .profileAvatar {
-  background-color: rgb(16, 80, 16);
   color: rgb(255, 219, 88);
-  margin-left: 0.6rem;
+  background-color: rgb(16, 80, 16);
+  height: 2.8rem;
+  width: 2.8rem;
   transition: all 0.1s ease-in-out;
+  border-radius: 50%;
 }
 
 .profileAvatar:hover {

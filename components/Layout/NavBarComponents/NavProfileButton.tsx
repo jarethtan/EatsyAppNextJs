@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
 import { profileAlert } from "../../../lib/helpers/alertHelpers/profileAlert";
 import { signOut } from "next-auth/react";
-import { Box, Typography, Menu, Tooltip, MenuItem, Avatar, IconButton } from "@mui/material";
+import { Box, Typography, Menu, Tooltip, MenuItem, Avatar, IconButton, Button } from "@mui/material";
 
 const ProfileNavButton: React.FC<{
   userImage: any;
@@ -20,9 +20,15 @@ const ProfileNavButton: React.FC<{
   return (
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Open settings">
-        <IconButton className={classes.avatarButton} onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar className={classes.profileAvatar} alt="User Image" sx={{ width: "2.6rem", height: "2.6rem" }} src={userImage ? userImage : ""} />
-        </IconButton>
+        {userImage ? (
+          <IconButton onClick={handleOpenUserMenu}>
+            <img src={userImage} alt="User Image" className={classes.profileAvatar} />
+          </IconButton>
+        ) : (
+          <IconButton onClick={handleOpenUserMenu}>
+            <Avatar className={classes.profileAvatar} alt="User Image" />
+          </IconButton>
+        )}
       </Tooltip>
       <Menu
         sx={{ mt: "3rem", ml: "0.8rem" }}
