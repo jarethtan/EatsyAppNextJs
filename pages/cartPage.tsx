@@ -9,7 +9,6 @@ import { clearCartState, addToCart } from "../redux/cart";
 import { saveCartToDB, loadCartFromLocal, loadCartFromDB } from "../cartStorageOption";
 import { useRouter } from "next/router";
 import { alertService } from "../lib/services/alert";
-import { userInfo } from "os";
 
 const CartPage = () => {
   const cartItems = useSelector((state: any) => state.cart); // initial render of page will use redux state to load (which uses local storage). If local storage is empty or redux states is cleared, useEffect will come into play to load items from user mongo database. most likely the user checksout but decided to go back to cart page to make changes.

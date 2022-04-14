@@ -47,7 +47,11 @@
   color: white;
   background-color: gray;
   border: 2px solid gray;
-  margin-top: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
 }
 
 .backCartButton:hover {

@@ -8,7 +8,7 @@ import Head from "next/head";
 import { useEffect, useState, Fragment } from "react";
 import { Grid } from "@mui/material";
 import { getSession } from "next-auth/react";
-import { loadCartFromLocal, loadCartFromDB } from "../cartStorageOption";
+import { loadCartFromLocal } from "../cartStorageOption";
 import { alertService } from "../lib/services/alert";
 import { GetServerSideProps } from "next";
 import { RegisterInputModel } from "../models/formInputTypes";

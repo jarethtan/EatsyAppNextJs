@@ -3,6 +3,7 @@ import ProductModel from "../../models/productModelClass";
 import classes from "./ProductCheckoutList.module.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 const ProductCheckoutList: React.FC<{ cart: ProductModel[] }> = (props) => {
   return (
@@ -31,9 +32,9 @@ const ProductCheckoutList: React.FC<{ cart: ProductModel[] }> = (props) => {
               </p>
             </div>
           ))}
-          <Button disableRipple className={classes.backCartButton} href="/cartPage" startIcon={<ArrowBackIcon />}>
-            back to Cart
-          </Button>
+          <Link href="/cartPage">
+            <a className={classes.backCartButton}>Back to Cart</a>
+          </Link>
         </div>
       )}
     </Fragment>

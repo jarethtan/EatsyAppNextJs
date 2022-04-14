@@ -35,7 +35,6 @@ export const loadCartFromDB = async (id: any, abortController: any) => {
       },
     });
     const getCartStatus = await getCartResponse.json();
-    console.log("STATUSSSSS", getCartStatus);
     return getCartStatus;
   } catch (e: any) {
     console.log("Fail to receive Cart information from MongoDB", e.message);
