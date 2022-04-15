@@ -38,7 +38,12 @@ input:disabled {
 
 #menu-appbar {
   position: absolute;
-  top: -10px;
+  top: 60px;
+  left: 40px;
+  z-index: 10;
+  background-color: white;
+  width: 140px;
+  height: 240px;
 }
 
 /****************************************** All page header styling *******************************************/
