@@ -4,7 +4,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
 import { signOut } from "next-auth/react";
 
@@ -16,7 +15,6 @@ const NavIconButton: React.FC<{
   anchorElNav: any;
 }> = ({ links, pages, handleCloseNavMenu, handleOpenNavMenu, anchorElNav }) => {
   const session: any = useSession();
-  const { asPath } = useRouter();
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -60,7 +58,6 @@ const NavIconButton: React.FC<{
             <Link href="/products/addProduct">
               <a className={classes.link}>Add Product</a>
             </Link>
-            {asPath === "/cartPage" ? <br /> : ""}
           </MenuItem>
         ) : (
           ""
