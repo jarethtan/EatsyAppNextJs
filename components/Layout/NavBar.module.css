@@ -29,7 +29,8 @@
   text-transform: capitalize;
 }
 
-.word {
+.word,
+.word1 {
   font-family: "Roboto Slab";
   color: brown;
   display: block;
@@ -39,7 +40,8 @@
 }
 
 .word:hover,
-.word:active {
+.word1:hover .word:active,
+.word1:active {
   border-bottom: solid 2px brown;
   font-weight: 700;
   transform: scale(1.1);
@@ -334,5 +336,11 @@
   }
   .modalCLoseIcon {
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .word1 {
+    display: none;
   }
 }

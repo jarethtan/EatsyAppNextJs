@@ -4,6 +4,7 @@ import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Footer from "../components/Layout/Footer";
 import NavBar from "../components/Layout/NavBar";
+import { StylesProvider } from "@material-ui/core/styles";
 import { Fragment } from "react";
 import { Alert } from "../ui/Alert";
 import { SessionProvider } from "next-auth/react";
@@ -12,12 +13,6 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-  useEffect(() => {
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles);
-    }
-  }, []);
   return (
     <Fragment>
       <Head>
@@ -30,10 +25,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         <SessionProvider session={pageProps.session}>
           <div className="wrapperMain">
             <div className="wrapperContent">
-              <NavBar />
-              <Alert />
-              <NextNProgress color="rgb(16, 80, 16)" />
-              <Component {...pageProps} />
+              <StylesProvider injectFirst>
+                <NavBar />
+                <Alert />
+                <NextNProgress color="rgb(16, 80, 16)" />
+                <Component {...pageProps} />
+              </StylesProvider>
             </div>
             <Footer />
           </div>

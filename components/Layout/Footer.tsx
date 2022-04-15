@@ -5,8 +5,12 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import Link from "next/link";
 import { profileAlert } from "../../lib/helpers/alertHelpers/profileAlert";
 import { Grid } from "@mui/material";
+import { useSession } from "next-auth/react";
+import { alertService } from "../../lib/services/alert";
+import { signOut } from "next-auth/react";
 
 const Footer = () => {
+  const session: any = useSession();
   return (
     <footer>
       <div>
@@ -27,9 +31,23 @@ const Footer = () => {
             <Grid item xs={6} sm={2.5} order={{ xs: 3, sm: 2 }}>
               <div className={classes.header}>Access</div>
               <div>
-                <Link href="/personnel/userLogin">
-                  <a className={classes.link}>Login</a>
-                </Link>
+                {session.status === "unauthenticated" ? (
+                  <Link href="/personnel/userLogin">
+                    <a className={classes.link}>Login</a>
+                  </Link>
+                ) : (
+                  <Link href="">
+                    <a
+                      className={classes.link}
+                      onClick={() => {
+                        signOut({ callbackUrl: `/` });
+                        alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+                      }}
+                    >
+                      Logout
+                    </a>
+                  </Link>
+                )}
                 <Link href="/personnel/userRegister">
                   <a className={classes.link}>Register</a>
                 </Link>
