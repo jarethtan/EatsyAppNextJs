@@ -22,10 +22,8 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Button onClick={handleCloseNavMenu} key={link} className={classes.button}>
-            <Link href={link}>
-              <Typography className={classes.word}>{pages[index]}</Typography>
-            </Link>
+          <Button onClick={handleCloseNavMenu} key={link} className={classes.button} href={link}>
+            <Typography className={classes.word}>{pages[index]}</Typography>
           </Button>
         )
       )}
