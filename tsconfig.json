@@ -22,7 +22,8 @@
     "**/*.tsx",
     "lib/middlewares/mongodbd.ts",
     "pages/api/auth/[...nextauth].ts",
-    "components/Products/FreqOrderedList.jsx"
+    "components/Products/FreqOrderedList.jsx",
+    "pages/_app.js"
   ],
   "exclude": ["node_modules"]
 }

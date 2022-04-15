@@ -4,15 +4,19 @@ import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Footer from "../components/Layout/Footer";
 import NavBar from "../components/Layout/NavBar";
+import createEmotionCache from "../utility/emotion";
 import { StylesProvider } from "@material-ui/core/styles";
 import { Fragment } from "react";
 import { Alert } from "../ui/Alert";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
-import type { AppProps } from "next/app";
+import { CacheProvider } from "@emotion/react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+const clientSideEmotionCache = createEmotionCache();
+
+function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps: { session, ...pageProps } }) {
   return (
     <Fragment>
       <Head>
@@ -22,19 +26,22 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         <link rel="shortcut icon" href="/favicon/EatsyIcon.ico"></link>
       </Head>
       <Provider store={store}>
-        <SessionProvider session={pageProps.session}>
-          <div className="wrapperMain">
-            <div className="wrapperContent">
-              <StylesProvider injectFirst>
-                <NavBar />
-                <Alert />
-                <NextNProgress color="rgb(16, 80, 16)" />
-                <Component {...pageProps} />
-              </StylesProvider>
+        <CacheProvider value={emotionCache}>
+          <SessionProvider session={pageProps.session}>
+            <div className="wrapperMain">
+              <div className="wrapperContent">
+                <StylesProvider injectFirst>
+                  <NavBar />
+                  <Alert />
+                  <NextNProgress color="rgb(16, 80, 16)" />
+                  <CssBaseline />
+                  <Component {...pageProps} />
+                </StylesProvider>
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </SessionProvider>
+          </SessionProvider>
+        </CacheProvider>
       </Provider>
     </Fragment>
   );
