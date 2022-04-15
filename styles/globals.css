@@ -35,11 +35,11 @@ input:disabled {
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* 
 #menu-appbar,
 #login-appbar {
   display: none;
-}
+} */
 
 /****************************************** All page header styling *******************************************/
 .pageHeader {

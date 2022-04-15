@@ -47,7 +47,7 @@ const NavMainLinks: React.FC<{
             </Button>
           </Tooltip>
           <Menu
-            sx={{ mt: "3rem", ml: "1.5rem" }}
+            sx={{ mt: "3rem", ml: "1.5rem", display: "inline-block" }}
             id="login-appbar"
             anchorEl={anchorElLogin}
             anchorOrigin={{
