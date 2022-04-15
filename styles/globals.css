@@ -40,7 +40,6 @@ input:disabled {
   position: absolute;
   top: 60px;
   left: 40px;
-  z-index: -10;
   background-color: white;
   width: 200px;
   height: 140px;
