@@ -1,22 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import store from "../redux/store";
 import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Footer from "../components/Layout/Footer";
 import NavBar from "../components/Layout/NavBar";
-import createEmotionCache from "../utility/emotion";
 import { StylesProvider } from "@material-ui/core/styles";
 import { Fragment } from "react";
 import { Alert } from "../ui/Alert";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
-import { CacheProvider } from "@emotion/react";
-import { ThemeProvider, CssBaseline } from "@mui/material";
+import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
-const clientSideEmotionCache = createEmotionCache();
-
-function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps: { session, ...pageProps } }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <Fragment>
       <Head>
@@ -26,22 +22,19 @@ function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps: { 
         <link rel="shortcut icon" href="/favicon/EatsyIcon.ico"></link>
       </Head>
       <Provider store={store}>
-        <CacheProvider value={emotionCache}>
-          <SessionProvider session={pageProps.session}>
-            <div className="wrapperMain">
-              <div className="wrapperContent">
-                <StylesProvider injectFirst>
-                  <NavBar />
-                  <Alert />
-                  <NextNProgress color="rgb(16, 80, 16)" />
-                  <CssBaseline />
-                  <Component {...pageProps} />
-                </StylesProvider>
-              </div>
-              <Footer />
+        <SessionProvider session={pageProps.session}>
+          <div className="wrapperMain">
+            <div className="wrapperContent">
+              <StylesProvider injectFirst>
+                <NavBar />
+                <Alert />
+                <NextNProgress color="rgb(16, 80, 16)" />
+                <Component {...pageProps} />
+              </StylesProvider>
             </div>
-          </SessionProvider>
-        </CacheProvider>
+            <Footer />
+          </div>
+        </SessionProvider>
       </Provider>
     </Fragment>
   );

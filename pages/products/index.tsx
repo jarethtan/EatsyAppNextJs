@@ -1,5 +1,5 @@
 import React from "react";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import GetAllProducts from "../../components/Products/GetAllProducts";
 import IconBox from "../../components/IconBox/IconBox";
 import Error from "next/error";
@@ -24,7 +24,7 @@ const ShowAllProducts: React.FC<{ allProducts: ProductModel[]; status: number; m
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { body: allProducts, message, status } = await getAllProduct();
   return {
     props: { allProducts, status, message },
