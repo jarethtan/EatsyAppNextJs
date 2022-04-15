@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import classes from "../NavBar.module.css";
-import { Box, Button } from "@mui/material";
+import Link from "next/link";
+import { Box, Typography, Button } from "@mui/material";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
 import { signOut } from "next-auth/react";
 
@@ -11,6 +13,7 @@ const NavMainLinks: React.FC<{
   handleCloseNavMenu: any;
 }> = ({ links, pages, handleCloseNavMenu }) => {
   const session: any = useSession();
+  const { asPath } = useRouter();
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -19,31 +22,36 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Button onClick={handleCloseNavMenu} key={link} href={link} className={classes.mainLinkButton}>
-            {pages[index]}
+          <Button onClick={handleCloseNavMenu} key={link} className={classes.button}>
+            <Link href={link}>{pages[index]}</Link>
           </Button>
         )
       )}
       {session.data?.role === "admin" ? (
-        <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton} href="/products/addProduct">
-          Add Product
+        <Button onClick={handleCloseNavMenu} className={classes.button}>
+          <Link href="/products/addProduct">Add Product</Link>
         </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-          LOGIN
-        </Button>
+        <Fragment>
+          <Button href="/personnel/userLogin" className={classes.button}>
+            LOGIN
+          </Button>
+        </Fragment>
       ) : (
-        <Button
-          className={classes.mainLinkButton}
-          onClick={() => {
-            signOut({ callbackUrl: `/` });
-            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-          }}
-        >
-          Logout
+        <Button className={classes.button}>
+          <Typography
+            className={classes.word}
+            textAlign="center"
+            onClick={() => {
+              signOut({ callbackUrl: `/` });
+              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+            }}
+          >
+            Logout
+          </Typography>
         </Button>
       )}
     </Box>
