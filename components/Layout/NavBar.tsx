@@ -13,8 +13,8 @@ import { useRouter } from "next/router";
 import { loadCartFromDB } from "../../cartStorageOption";
 import { RegisterInputModel } from "../../models/formInputTypes";
 
-const links = ["/", "/products", "/aboutUs"];
-const pages = ["Home", "Menu", "About"];
+const links = ["/", "/aboutUs"];
+const pages = ["Home", "About"];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
