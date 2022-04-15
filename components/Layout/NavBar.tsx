@@ -43,7 +43,7 @@ const NavBar = () => {
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
-    <AppBar position="fixed" className={classes.navBarBg}>
+    <AppBar position="sticky" className={classes.navBarBg}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <NavButtonIcon />

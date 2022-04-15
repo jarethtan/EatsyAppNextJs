@@ -32,13 +32,13 @@ const NavIconButton: React.FC<{
         id="menu-appbar"
         anchorEl={anchorElNav}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
+          vertical: 30,
+          horizontal: 30,
         }}
         keepMounted
         transformOrigin={{
-          vertical: "top",
-          horizontal: "left",
+          vertical: -10,
+          horizontal: 30,
         }}
         open={Boolean(anchorElNav)}
         onClose={handleCloseNavMenu}
