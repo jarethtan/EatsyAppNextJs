@@ -4,15 +4,14 @@ import Link from "next/link";
 import { Box, Typography, Menu, Tooltip, MenuItem, Button } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { alertService } from "../../../lib/services/alert";
+import { signOut } from "next-auth/react";
 
 const NavMainLinks: React.FC<{
   links: string[];
   pages: string[];
-  handleCloseLoginMenu: any;
-  handleOpenLoginMenu: any;
   handleCloseNavMenu: any;
-  anchorElLogin: any;
-}> = ({ links, pages, handleCloseLoginMenu, handleOpenLoginMenu, handleCloseNavMenu, anchorElLogin }) => {
+}> = ({ links, pages, handleCloseNavMenu }) => {
   const session: any = useSession();
   const { asPath } = useRouter();
 
@@ -41,48 +40,23 @@ const NavMainLinks: React.FC<{
       )}
       {session.status === "unauthenticated" ? (
         <Fragment>
-          <Tooltip title="Login Options">
-            <Button onClick={handleOpenLoginMenu} className={classes.button}>
-              <Typography className={classes.word}>LOGIN</Typography>
-            </Button>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "3rem", ml: "1.5rem", display: "inline-block" }}
-            id="login-appbar"
-            anchorEl={anchorElLogin}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElLogin)}
-            onClose={handleCloseLoginMenu}
-          >
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/userRegister">
-                <a className={classes.link}>Register</a>
-              </Link>
-            </MenuItem>
-            {asPath === "/cartPage" ? <br /> : ""}
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/userLogin">
-                <a className={classes.link}>User Login</a>
-              </Link>
-            </MenuItem>
-            {asPath === "/cartPage" ? <br /> : ""}
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/adminLogin">
-                <a className={classes.link}>Admin Login</a>
-              </Link>
-            </MenuItem>
-          </Menu>
+          <Button href="/personnel/userLogin" className={classes.button}>
+            <Typography className={classes.word}>LOGIN</Typography>
+          </Button>
         </Fragment>
       ) : (
-        ""
+        <Button className={classes.button}>
+          <Typography
+            className={classes.word}
+            textAlign="center"
+            onClick={() => {
+              signOut({ callbackUrl: `/` });
+              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+            }}
+          >
+            Logout
+          </Typography>
+        </Button>
       )}
     </Box>
   );

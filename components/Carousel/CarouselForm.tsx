@@ -88,7 +88,7 @@ const CarouselForm: React.FC<{ allProducts: ProductModel[] }> = (props) => {
       <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>
         {errors.selectedProducts ? errors.selectedProducts.message : ""}
       </FormHelperText>
-      <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 3, fontSize: 24 }}>
+      <Button type="submit" variant="contained" color="primary" sx={{ marginLeft: 5, marginTop: 3, fontSize: 24 }}>
         Submit
       </Button>
     </form>

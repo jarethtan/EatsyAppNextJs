@@ -34,6 +34,7 @@
   color: brown;
   display: block;
   font-weight: bold;
+  margin: 0 0.3rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -51,6 +52,7 @@
 
 .button:focus {
   border: 2px solid brown;
+  padding: 0.5rem;
 }
 
 .cartButton {

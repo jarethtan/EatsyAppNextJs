@@ -18,8 +18,6 @@ const pages = ["Home", "Menu", "About"];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const [anchorElLogin, setAnchorElLogin] = useState<null | HTMLElement>(null);
   const [userImage, setUserImage] = useState<null | RegisterInputModel>(null);
   const session: any = useSession();
   const { asPath } = useRouter();
@@ -43,32 +41,14 @@ const NavBar = () => {
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => setAnchorElNav(event.currentTarget); // logic for expanding and condensing the navbar once the screen goes bigger or smaller.
   const handleCloseNavMenu = () => setAnchorElNav(null);
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => setAnchorElUser(event.currentTarget); // must have different elanchor for menu and login because they different different links in the navbar.
-  const handleCloseUserMenu = () => setAnchorElUser(null);
-  const handleOpenLoginMenu = (event: React.MouseEvent<HTMLElement>) => setAnchorElLogin(event.currentTarget); // must have different elanchor for menu and login because they different different links in the navbar.
-  const handleCloseLoginMenu = () => setAnchorElLogin(null);
 
   return (
     <AppBar position="sticky" className={classes.navBarBg}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <NavButtonIcon />
-          <NavIconButton
-            handleCloseNavMenu={handleCloseNavMenu}
-            handleOpenNavMenu={handleOpenNavMenu}
-            anchorElNav={anchorElNav}
-            handleCloseLoginMenu={handleCloseLoginMenu}
-            links={links}
-            pages={pages}
-          />
-          <NavMainLinks
-            handleOpenLoginMenu={handleOpenLoginMenu}
-            handleCloseLoginMenu={handleCloseLoginMenu}
-            handleCloseNavMenu={handleCloseNavMenu}
-            anchorElLogin={anchorElLogin}
-            links={links}
-            pages={pages}
-          />
+          <NavIconButton handleCloseNavMenu={handleCloseNavMenu} handleOpenNavMenu={handleOpenNavMenu} anchorElNav={anchorElNav} links={links} pages={pages} />
+          <NavMainLinks handleCloseNavMenu={handleCloseNavMenu} links={links} pages={pages} />
           <NavBarSearch />
           {asPath !== "/checkout" ? (
             <Link href="/cartPage">
@@ -79,12 +59,7 @@ const NavBar = () => {
           ) : (
             ""
           )}
-          <NavProfileButton
-            userImage={userImage}
-            anchorElUser={anchorElUser}
-            handleOpenUserMenu={handleOpenUserMenu}
-            handleCloseUserMenu={handleCloseUserMenu}
-          />
+          <NavProfileButton userImage={userImage} />
         </Toolbar>
       </Container>
     </AppBar>

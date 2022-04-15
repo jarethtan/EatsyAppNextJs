@@ -3,6 +3,7 @@ import Head from "next/head";
 import Input2 from "./RegisterLoginInputs/Input2";
 import LoadingSpinner from "../../ui/LoadingSpinner";
 import Swal from "sweetalert2";
+import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form"; // use formprovider to split the different type of input field into two different components.
@@ -14,7 +15,6 @@ import { alertService } from "../../lib/services/alert";
 import { useDispatch } from "react-redux";
 import { saveCartToDB, loadCartFromLocal } from "../../cartStorageOption";
 import { clearCartState } from "../../redux/cart";
-import Link from "next/link";
 
 const LoginForm: React.FC<{ providers: object }> = (props) => {
   const router = useRouter();
@@ -122,6 +122,13 @@ const LoginForm: React.FC<{ providers: object }> = (props) => {
                 <a className={classes.register}>here</a>
               </Link>{" "}
               to register.
+            </p>
+            <p>
+              Are you an Adminstrator? Click{" "}
+              <Link href="/personnel/adminLogin">
+                <a className={classes.register}>here</a>
+              </Link>{" "}
+              to login.
             </p>
           </FormProvider>
         </div>

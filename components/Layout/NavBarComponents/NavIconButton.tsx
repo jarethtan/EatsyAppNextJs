@@ -2,18 +2,19 @@ import React from "react";
 import classes from "../NavBar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import { Box, IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { alertService } from "../../../lib/services/alert";
+import { signOut } from "next-auth/react";
 
 const NavIconButton: React.FC<{
   links: string[];
   pages: string[];
-  handleCloseLoginMenu: any;
   handleCloseNavMenu: any;
   handleOpenNavMenu: any;
   anchorElNav: any;
-}> = ({ links, pages, handleCloseLoginMenu, handleCloseNavMenu, handleOpenNavMenu, anchorElNav }) => {
+}> = ({ links, pages, handleCloseNavMenu, handleOpenNavMenu, anchorElNav }) => {
   const session: any = useSession();
   const { asPath } = useRouter();
 
@@ -65,27 +66,24 @@ const NavIconButton: React.FC<{
           ""
         )}
         {session.status === "unauthenticated" ? (
-          <div>
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/userRegister">
-                <a className={classes.link}>Register</a>
-              </Link>
-            </MenuItem>
-            {asPath === "/cartPage" ? <br /> : ""}
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/userLogin">
-                <a className={classes.link}>User Login</a>
-              </Link>
-            </MenuItem>
-            {asPath === "/cartPage" ? <br /> : ""}
-            <MenuItem onClick={handleCloseLoginMenu}>
-              <Link href="/personnel/adminLogin">
-                <a className={classes.link}>Admin Login</a>
-              </Link>
-            </MenuItem>
-          </div>
+          <MenuItem>
+            <Link href="/personnel/userLogin">
+              <a className={classes.link}>Login</a>
+            </Link>
+          </MenuItem>
         ) : (
-          ""
+          <MenuItem>
+            <Typography
+              className={classes.link}
+              textAlign="center"
+              onClick={() => {
+                signOut({ callbackUrl: `/` });
+                alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+              }}
+            >
+              Logout
+            </Typography>
+          </MenuItem>
         )}
       </Menu>
     </Box>
