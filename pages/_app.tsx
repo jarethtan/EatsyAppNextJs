@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import store from "../redux/store";
 import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
@@ -12,6 +12,12 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  useEffect(() => {
+    const jssStyles = document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
   return (
     <Fragment>
       <Head>
