@@ -1,9 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import classes from "../NavBar.module.css";
-import Link from "next/link";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
 import { signOut } from "next-auth/react";
 
@@ -13,7 +11,6 @@ const NavMainLinks: React.FC<{
   handleCloseNavMenu: any;
 }> = ({ links, pages, handleCloseNavMenu }) => {
   const session: any = useSession();
-  const { asPath } = useRouter();
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -22,38 +19,31 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Button onClick={handleCloseNavMenu} key={link} className={classes.button} href={link}>
-            <Typography className={classes.word}>{pages[index]}</Typography>
+          <Button onClick={handleCloseNavMenu} key={link} href={link} className={classes.mainLinkButton}>
+            {pages[index]}
           </Button>
         )
       )}
       {session.data?.role === "admin" ? (
-        <Button onClick={handleCloseNavMenu} className={classes.button}>
-          <Link href="/products/addProduct">
-            <Typography className={classes.word}>Add Product</Typography>
-          </Link>
+        <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton} href="/products/addProduct">
+          Add Product
         </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Fragment>
-          <Button href="/personnel/userLogin" className={classes.button}>
-            <Typography className={classes.word}>LOGIN</Typography>
-          </Button>
-        </Fragment>
+        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
+          LOGIN
+        </Button>
       ) : (
-        <Button className={classes.button}>
-          <Typography
-            className={classes.word}
-            textAlign="center"
-            onClick={() => {
-              signOut({ callbackUrl: `/` });
-              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-            }}
-          >
-            Logout
-          </Typography>
+        <Button
+          className={classes.mainLinkButton}
+          onClick={() => {
+            signOut({ callbackUrl: `/` });
+            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+          }}
+        >
+          Logout
         </Button>
       )}
     </Box>
