@@ -16,45 +16,42 @@ const NavMainLinks: React.FC<{
   const { asPath } = useRouter();
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+    <div className={classes.mainLinkDiv}>
       {links.map(
         (
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Button onClick={handleCloseNavMenu} key={link} className={classes.button}>
-            <Link href={link}>{pages[index]}</Link>
+          <Button onClick={handleCloseNavMenu} key={link} className={classes.mainLinkButton} href={link}>
+            {pages[index]}
           </Button>
         )
       )}
       {session.data?.role === "admin" ? (
-        <Button onClick={handleCloseNavMenu} className={classes.button}>
-          <Link href="/products/addProduct">Add Product</Link>
+        <Button onClick={handleCloseNavMenu} className={classes.button} href="/products/addProduct">
+          Add Product
         </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
         <Fragment>
-          <Button href="/personnel/userLogin" className={classes.button}>
+          <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
             LOGIN
           </Button>
         </Fragment>
       ) : (
-        <Button className={classes.button}>
-          <Typography
-            className={classes.word}
-            textAlign="center"
-            onClick={() => {
-              signOut({ callbackUrl: `/` });
-              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-            }}
-          >
-            Logout
-          </Typography>
+        <Button
+          className={classes.mainLinkButton}
+          onClick={() => {
+            signOut({ callbackUrl: `/` });
+            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+          }}
+        >
+          Logout
         </Button>
       )}
-    </Box>
+    </div>
   );
 };
 

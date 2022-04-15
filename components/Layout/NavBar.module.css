@@ -29,6 +29,12 @@
   text-transform: capitalize;
 }
 
+.mainLinkDiv {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
 .mainLinkButton {
   font-family: "Roboto Slab";
   color: brown;
@@ -48,10 +54,10 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-/* .mainLinkButton:focus {
+.mainLinkButton:focus {
   border: 2px solid brown;
-  padding: 0.5rem;
-} */
+  padding: 0.3rem;
+}
 
 .cartButton {
   margin: auto 0;
@@ -337,6 +343,12 @@
 
 @media (max-width: 600px) {
   .word1 {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mainLinkButton {
     display: none;
   }
 }
