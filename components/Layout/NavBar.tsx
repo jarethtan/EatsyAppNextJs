@@ -12,8 +12,8 @@ import { useRouter } from "next/router";
 import { loadCartFromDB } from "../../cartStorageOption";
 import { RegisterInputModel } from "../../models/formInputTypes";
 
-const links = ["/", "/aboutUs"];
-const pages = ["Home", "About"];
+const links = ["/", "/products", "/aboutUs"];
+const pages = ["Home", "Menu", "About"];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -67,7 +67,7 @@ const NavBar = () => {
       <div className={classes.tool}>
         <NavButtonIcon />
         <NavIconButton handleCloseNavMenu={handleCloseNavMenu} handleOpenNavMenu={handleOpenNavMenu} anchorElNav={anchorElNav} links={links} pages={pages} />
-        <NavMainLinks />
+        <NavMainLinks links={links} pages={pages} />
         <NavBarSearch />
         {asPath !== "/checkout" ? (
           <Link href="/cartPage">

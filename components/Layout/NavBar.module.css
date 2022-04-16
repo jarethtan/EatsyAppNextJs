@@ -41,10 +41,13 @@
 
 .mainLinkButton {
   font-family: "Roboto Slab";
+  border: none;
+  text-transform: uppercase;
+  background-color: rgb(255, 219, 88);
   color: brown;
   display: block;
   font-weight: bold;
-  margin: auto 0.3rem;
+  margin: auto 0rem;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
 }
