@@ -42,7 +42,7 @@ const LoginForm: React.FC<{ providers: object }> = (props) => {
     } else {
       if (localStorage.cart === undefined || JSON.parse(localStorage.cart).cart.length === 0) {
         // localstorage.cart will be undefined once we go into checkout. it will clear the cart key in localstorage. so we can use localstorage.cart = undefined. if we never checkout and just log out, localstorage will still have the cart key. in this case when we log in, we need to chat that the length of the array in the cart key is 0. if it is zero we will still just login normal. if the length is more than  0, we will redirect and prompt user if he want to check out with the item or continue shopping
-        router.push("/products");
+        router.push("/");
         alertService.success(`Welcome back ${data.userName}!`, { keepAfterRouteChange: true });
       } else {
         Swal.fire({

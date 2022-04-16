@@ -109,6 +109,27 @@
 .selectCarouselButton {
   margin-left: 43%;
   font-size: 1rem;
+  background-color: green;
+  color: white;
+}
+
+.selectCarouselSpan {
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+}
+
+.selectCarouselButton:hover {
+  background-color: rgb(255, 219, 88);
+  font-weight: bold;
+  color: brown;
+  border: 2px solid brown;
+}
+
+.selectCarouselButton:hover .selectCarouselSpan {
+  background-color: rgb(255, 219, 88);
+  font-weight: bold;
+  color: brown;
 }
 
 .carousel {

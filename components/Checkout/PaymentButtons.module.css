@@ -1,17 +1,32 @@
 .appleButton {
   background-color: black;
+  color: white;
   transition: all 0.2s ease-in-out;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .creditCardButton {
   background-color: rgb(16, 80, 16);
+  color: white;
   transition: all 0.2s ease-in-out;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .cryptoButton {
   background-color: rgb(255, 219, 88);
   color: black;
   transition: all 0.2s ease-in-out;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .appleButton:hover {

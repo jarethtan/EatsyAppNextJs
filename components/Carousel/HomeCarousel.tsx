@@ -125,8 +125,8 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
         )}
       </Carousel>
       {session.data?.role === "admin" ? (
-        <Button variant="contained" href="/carouselPage" color="success" className={classes.selectCarouselButton}>
-          Select Carousel To Display
+        <Button href="/carouselPage" color="success" className={classes.selectCarouselButton}>
+          <span className={classes.selectCarouselSpan}> Select Carousel To Display</span>
         </Button>
       ) : (
         ""

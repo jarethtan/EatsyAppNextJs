@@ -68,13 +68,13 @@ const Footer = () => {
               <div className={classes.header}>Follow Us</div>
               <div>
                 <Button href="/">
-                  <FacebookIcon fontSize="large" className={classes.icon} />
+                  <FacebookIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.icon} />
                 </Button>
                 <Button href="/">
-                  <InstagramIcon fontSize="large" className={classes.instaIcon} />
+                  <InstagramIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.instaIcon} />
                 </Button>
                 <Button href="/">
-                  <TwitterIcon fontSize="large" className={classes.icon} />
+                  <TwitterIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.icon} />
                 </Button>
               </div>
             </Grid>

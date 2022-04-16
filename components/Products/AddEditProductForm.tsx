@@ -149,9 +149,9 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
               formStatus ? "" : <AddEditFormInput2 foundProduct={foundProduct!} imgLen={foundProduct!.productImage.length} /> // display delete images array
             }
             <br />
-            <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>
+            <button type="submit" className={classes.submitButton}>
               {formStatus ? "Add Product" : "Update Product"}
-            </Button>
+            </button>
             {formStatus ? (
               ""
             ) : (

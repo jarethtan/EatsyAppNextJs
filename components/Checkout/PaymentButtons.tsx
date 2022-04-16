@@ -10,19 +10,19 @@ const PaymentButtons = () => {
     <Fragment>
       <ButtonGroup variant="contained" aria-label="outlined primary button group">
         <Tooltip title="ApplePay">
-          <Button className={classes.appleButton} type="submit">
+          <button className={classes.appleButton} type="submit">
             <AppleIcon fontSize="large" />
-          </Button>
+          </button>
         </Tooltip>
         <Tooltip title="Credit Card">
-          <Button className={classes.creditCardButton} type="submit">
+          <button className={classes.creditCardButton} type="submit">
             <CreditCardIcon fontSize="large" />
-          </Button>
+          </button>
         </Tooltip>
         <Tooltip title="Cryptocurrency">
-          <Button className={classes.cryptoButton} type="submit">
+          <button className={classes.cryptoButton} type="submit">
             <CurrencyBitcoinIcon fontSize="large" />
-          </Button>
+          </button>
         </Tooltip>
       </ButtonGroup>
     </Fragment>
