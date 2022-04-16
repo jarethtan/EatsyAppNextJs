@@ -121,6 +121,7 @@ import React, { useEffect, useState } from "react";
 import classes from "./GetAllProducts.module.css";
 import ProductModel from "../../models/productModelClass";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 import { clearSearchState } from "../../redux/search";
@@ -247,18 +248,16 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
               <CardActionArea disableRipple={true} component="div" sx={{ cursor: "auto" }}>
                 <CardMedia component="img" image={product.productImage[0]} alt={product.productName} className={classes.productImage} />
                 <CardContent className={classes.cardContent}>
-                  <Typography noWrap variant="h5" component="div" className={classes.productName}>
-                    {product.productName}
-                  </Typography>
+                  <div className={classes.productName}>{product.productName}</div>
                   <div className={classes.countryIconButton}>
                     <img src={icons.find((element) => element.includes(product.productCategory.replace(/ /g, "")))} alt="" className={classes.countryImage} />
                   </div>
-                  <Typography noWrap variant="body2" color="text.secondary" className={classes.description}>
+                  <span className={classes.description}>
                     {product.productDescription}
                     <br />
                     <br />
                     <br />
-                  </Typography>
+                  </span>
                   <span className={classes.price}>${product.productPrice}</span>
                   <button
                     onClick={(event) => {
@@ -270,9 +269,9 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
                   >
                     Add to Cart
                   </button>
-                  <Button href={"/products/" + product._id} className={classes.detailsButton}>
-                    Details
-                  </Button>
+                  <Link href={"/products/" + product._id}>
+                    <a className={classes.detailsButton}>Details</a>
+                  </Link>
                 </CardContent>
               </CardActionArea>
             </div>
