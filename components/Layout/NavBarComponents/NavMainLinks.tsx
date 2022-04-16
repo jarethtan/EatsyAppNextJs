@@ -23,35 +23,35 @@ const NavMainLinks: React.FC<{
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
           <Link href="" key={index}>
-            <a className={classes.mainLinkButton} href={link}>
+            <Button className={classes.mainLinkButton} href={link}>
               {pages[index]}
-            </a>
+            </Button>
           </Link>
         )
       )}
       {session.data?.role === "admin" ? (
         <Link href="">
-          <a className={classes.mainLinkButton} href="/products/addProduct">
+          <Button className={classes.mainLinkButton} href="/products/addProduct">
             Add Product
-          </a>
+          </Button>
         </Link>
       ) : (
         ""
       )}
       {asPath !== "/" ? (
         <Link href="">
-          <a className={classes.mainLinkButton} href="/products">
+          <Button className={classes.mainLinkButton} href="/products">
             Menu
-          </a>
+          </Button>
         </Link>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
         <Link href="">
-          <a className={classes.mainLinkButton} href="/personnel/userLogin">
+          <Button className={classes.mainLinkButton} href="/personnel/userLogin">
             Login
-          </a>
+          </Button>
         </Link>
       ) : (
         <Button
