@@ -29,24 +29,23 @@ const NavMainLinks: React.FC<{
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Link href="/personnel/userLogin">
-          <a className={classes.mainLinkLink}>Login</a>
-        </Link>
+        <Button disableRipple href="/personnel/userLogin" className={classes.mainLinkButton}>
+          <span className={classes.mainLinkSpan}>Login</span>
+        </Button>
       ) : (
         ""
       )}
       {session.status === "authenticated" ? (
-        <Link href="">
-          <a
-            onClick={() => {
-              signOut({ callbackUrl: `/` });
-              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-            }}
-            className={classes.mainLinkLink}
-          >
-            Logout
-          </a>
-        </Link>
+        <Button
+          disableRipple
+          onClick={() => {
+            signOut({ callbackUrl: `/` });
+            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+          }}
+          className={classes.mainLinkButton}
+        >
+          <span className={classes.mainLinkSpan}>Logout</span>
+        </Button>
       ) : (
         ""
       )}

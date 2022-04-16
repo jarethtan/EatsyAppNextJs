@@ -13,13 +13,13 @@ const ProfileNavButton: React.FC<{
       {userImage ? (
         <Link href="/profile">
           <a onClick={profileAlert}>
-            <img src={userImage} alt="User Image" className={classes.profileAvatar} />
+            <img src={userImage} alt="User Image" className={classes.profileAvatar1} />
           </a>
         </Link>
       ) : (
         <Link href="/profile">
           <a onClick={profileAlert}>
-            <PersonIcon fontSize="large" className={classes.profileAvatar} />
+            <PersonIcon sx={{ width: "2.6rem", height: "2.6rem" }} className={classes.profileAvatar2} />
           </a>
         </Link>
       )}
