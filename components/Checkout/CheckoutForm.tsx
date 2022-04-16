@@ -93,9 +93,9 @@ const CheckoutForm: React.FC<{ totalCartPrice: string; user: RegisterInputModel;
             {deliveryMethod ? (
               <Fragment>
                 {otherLoginRoute ? <h4>Enter your delivery address</h4> : <h4>Confirm delivery address</h4>}
-                <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="checkout" multiLines={false} disable={false} />
-                <Input names="postalCode" type="text" label="Postal Code" pageType="checkout" multiLines={false} disable={false} />
-                <Input names="contactNumber" type="text" label="Contact Number" pageType="checkout" multiLines={false} disable={false} />
+                <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="checkout" multiLines={false} disable={false} autoFocus={false} />
+                <Input names="postalCode" type="text" label="Postal Code" pageType="checkout" multiLines={false} disable={false} autoFocus={false} />
+                <Input names="contactNumber" type="text" label="Contact Number" pageType="checkout" multiLines={false} disable={false} autoFocus={false} />
               </Fragment>
             ) : (
               ""

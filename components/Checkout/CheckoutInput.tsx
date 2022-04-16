@@ -21,7 +21,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
   return (
     <Fragment>
       {!props.deliveryMethod ? (
-        <Input names="contactNumPickUp" type="number" label="Contact Number" pageType="checkout" multiLines={false} disable={false} />
+        <Input names="contactNumPickUp" type="number" label="Contact Number" pageType="checkout" multiLines={false} disable={false} autoFocus={false} />
       ) : (
         ""
       )}
