@@ -15,48 +15,38 @@ const NavMainLinks = () => {
     <div className={classes.mainLinkDiv}>
       <Grid container>
         <Grid item>
-          <a href="/">
-            <button className={classes.mainLinkButton}>
-              <span>Home</span>
-            </button>
-          </a>
+          <Button href="/" className={classes.mainLinkButton}>
+            <span>Home</span>
+          </Button>
         </Grid>
         <Grid item>
-          <a href="/aboutUs">
-            <button className={classes.mainLinkButton}>
-              <span>About</span>
-            </button>
-          </a>
+          <Button href="/aboutUs" className={classes.mainLinkButton}>
+            <span>About</span>
+          </Button>
         </Grid>
         {session.data?.role === "admin" ? (
           <Grid item>
-            <a href="/products/addProduct">
-              <button className={classes.mainLinkButton}>
-                <span>Add Product</span>
-              </button>
-            </a>
+            <Button href="/products/addProduct" className={classes.mainLinkButton}>
+              <span>Add Product</span>
+            </Button>
           </Grid>
         ) : (
           ""
         )}
         {asPath !== "/" ? (
           <Grid item>
-            <a href="/products">
-              <button className={classes.mainLinkButton}>
-                <span>Menu</span>
-              </button>
-            </a>
+            <Button className={classes.mainLinkButton}>
+              <span>Menu</span>
+            </Button>
           </Grid>
         ) : (
           ""
         )}
         {session.status === "unauthenticated" ? (
           <Grid item>
-            <a href="/personnel/userLogin">
-              <button className={classes.mainLinkButton}>
-                <span>Login</span>
-              </button>
-            </a>
+            <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
+              <span>Login</span>
+            </Button>
           </Grid>
         ) : (
           <Button
