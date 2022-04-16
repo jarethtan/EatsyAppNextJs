@@ -46,9 +46,9 @@ const Footer = () => {
                     Logout
                   </Button>
                 )}
-                <Link href="/personnel/userRegister">
-                  <a className={classes.link}>Register</a>
-                </Link>
+                <Button href="/personnel/userRegister" className={classes.link}>
+                  Register
+                </Button>
               </div>
             </Grid>
             <Grid item xs={12} sm={2} order={{ xs: 1, sm: 3 }}>
@@ -57,28 +57,26 @@ const Footer = () => {
             <Grid item xs={6} sm={2.5} order={{ xs: 4, sm: 4 }}>
               <div className={classes.header}>About</div>
               <div>
-                <Link href="/profile">
-                  <a className={classes.link} onClick={profileAlert}>
-                    Profile
-                  </a>
-                </Link>
-                <Link href="/aboutUs">
-                  <a className={classes.link}>About Us</a>
-                </Link>
+                <Button href="/profile" className={classes.link} onClick={profileAlert}>
+                  Profile
+                </Button>
+                <Button href="/aboutUs" className={classes.link}>
+                  About Us
+                </Button>
               </div>
             </Grid>
             <Grid item xs={6} sm={2.5} order={{ xs: 5, sm: 5 }}>
               <div className={classes.header}>Follow Us</div>
               <div>
-                <Link href="/">
+                <Button href="/">
                   <FacebookIcon className={classes.icon} />
-                </Link>
-                <Link href="/">
+                </Button>
+                <Button href="/">
                   <InstagramIcon className={classes.instaIcon} />
-                </Link>
-                <Link href="/">
+                </Button>
+                <Button href="/">
                   <TwitterIcon className={classes.icon} />
-                </Link>
+                </Button>
               </div>
             </Grid>
             {/* <Grid item xs={6} sm={1} /> */}

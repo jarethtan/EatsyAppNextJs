@@ -30,9 +30,9 @@ const NavMainLinks: React.FC<{
       )}
       {session.status === "unauthenticated" ? (
         <button className={classes.mainLinkButton}>
-          <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-            <span className={classes.mainLinkButton}>Login</span>
-          </Button>
+          <Link href="/personnel/userLogin">
+            <a className={classes.mainLinkButton}>Login</a>
+          </Link>
         </button>
       ) : (
         <Button
@@ -42,7 +42,7 @@ const NavMainLinks: React.FC<{
           }}
           className={classes.mainLinkButton}
         >
-          <span>Logout</span>
+          <span className={classes.mainLinkButton}>Logout</span>
         </Button>
       )}
     </div>

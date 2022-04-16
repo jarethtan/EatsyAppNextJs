@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "../NavBar.module.css";
+import Link from "next/link";
 import { profileAlert } from "../../../lib/helpers/alertHelpers/profileAlert";
 import { Box, Tooltip, Avatar, Button } from "@mui/material";
 
@@ -10,13 +11,17 @@ const ProfileNavButton: React.FC<{
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Vist your account details">
         {userImage ? (
-          <Button href="/profile" onClick={profileAlert}>
-            <img src={userImage} alt="User Image" className={classes.profileAvatar} />
-          </Button>
+          <Link href="/profile">
+            <a onClick={profileAlert}>
+              <img src={userImage} alt="User Image" className={classes.profileAvatar} />
+            </a>
+          </Link>
         ) : (
-          <Button href="/profile" onClick={profileAlert}>
-            <Avatar className={classes.profileAvatar} alt="User Image" />
-          </Button>
+          <Link href="/profile">
+            <a onClick={profileAlert}>
+              <Avatar className={classes.profileAvatar} alt="User Image" />
+            </a>
+          </Link>
         )}
       </Tooltip>
     </Box>
