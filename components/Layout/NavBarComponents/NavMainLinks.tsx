@@ -33,6 +33,9 @@ const NavMainLinks: React.FC<{
           <a className={classes.mainLinkLink}>Login</a>
         </Link>
       ) : (
+        ""
+      )}
+      {session.status === "authenticated" ? (
         <Link href="">
           <a
             onClick={() => {
@@ -44,6 +47,8 @@ const NavMainLinks: React.FC<{
             Logout
           </a>
         </Link>
+      ) : (
+        ""
       )}
     </div>
   );
