@@ -21,7 +21,7 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Link href={link} className={classes.mainLinkButton}>
+          <Link href={link} key={index} className={classes.mainLinkButton}>
             {pages[index]}
           </Link>
         )
