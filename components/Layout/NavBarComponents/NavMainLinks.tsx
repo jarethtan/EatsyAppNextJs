@@ -17,25 +17,21 @@ const NavMainLinks: React.FC<{
   return (
     <div className={classes.mainLinkDiv}>
       {links.map((link, Index) => (
-        <button key={Index} className={classes.mainLinkButton}>
-          <Button href={link} className={classes.mainLinkButton}>
-            {pages[Index]}
-          </Button>
-        </button>
+        <Button key={Index} href={link} className={classes.mainLinkButton}>
+          <span className={classes.mainLinkButton}>{pages[Index]}</span>
+        </Button>
       ))}
       {session.data?.role === "admin" ? (
-        <button className={classes.mainLinkButton}>
-          <Button href="/products/addProduct" className={classes.mainLinkButton}>
-            Add Product
-          </Button>
-        </button>
+        <Button href="/products/addProduct" className={classes.mainLinkButton}>
+          <span className={classes.mainLinkButton}>Add Product</span>
+        </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
         <button className={classes.mainLinkButton}>
           <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-            Login
+            <span className={classes.mainLinkButton}>Login</span>
           </Button>
         </button>
       ) : (

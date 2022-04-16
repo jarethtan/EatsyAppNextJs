@@ -4,7 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Link from "next/link";
 import { profileAlert } from "../../lib/helpers/alertHelpers/profileAlert";
-import { Grid } from "@mui/material";
+import { Grid, Button } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { alertService } from "../../lib/services/alert";
 import { signOut } from "next-auth/react";
@@ -20,33 +20,31 @@ const Footer = () => {
             <Grid item xs={6} sm={2.5} order={{ xs: 2, sm: 1 }}>
               <div className={classes.header}>WebApp</div>
               <div>
-                <Link href="/">
-                  <a className={classes.link}>Home</a>
-                </Link>
-                <Link href="/products">
-                  <a className={classes.link}>Menu</a>
-                </Link>
+                <Button href="/" className={classes.link}>
+                  Home
+                </Button>
+                <Button href="/products" className={classes.link}>
+                  Menu
+                </Button>
               </div>
             </Grid>
             <Grid item xs={6} sm={2.5} order={{ xs: 3, sm: 2 }}>
               <div className={classes.header}>Access</div>
               <div>
                 {session.status === "unauthenticated" ? (
-                  <Link href="/personnel/userLogin">
-                    <a className={classes.link}>Login</a>
-                  </Link>
+                  <Button href="/personnel/userLogin" className={classes.link}>
+                    Login
+                  </Button>
                 ) : (
-                  <Link href="">
-                    <a
-                      className={classes.link}
-                      onClick={() => {
-                        signOut({ callbackUrl: `/` });
-                        alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-                      }}
-                    >
-                      Logout
-                    </a>
-                  </Link>
+                  <Button
+                    onClick={() => {
+                      signOut({ callbackUrl: `/` });
+                      alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+                    }}
+                    className={classes.link}
+                  >
+                    Logout
+                  </Button>
                 )}
                 <Link href="/personnel/userRegister">
                   <a className={classes.link}>Register</a>
