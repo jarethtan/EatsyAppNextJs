@@ -21,29 +21,29 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Button onClick={handleCloseNavMenu} key={link} className={classes.mainLinkButton}>
-            <Link href={link}>{pages[index]}</Link>
-          </Button>
+          <Link href={link} className={classes.mainLinkButton}>
+            {pages[index]}
+          </Link>
         )
       )}
       {session.data?.role === "admin" ? (
-        <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-          <Link href="/products/addProduct">Add Product</Link>
-        </Button>
+        <Link href="/products/addProduct" className={classes.mainLinkButton}>
+          Add Product
+        </Link>
       ) : (
         ""
       )}
       {asPath !== "/" ? (
-        <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-          <Link href="/products">Menu</Link>
-        </Button>
+        <Link href="/products" className={classes.mainLinkButton}>
+          Menu
+        </Link>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Button className={classes.mainLinkButton}>
-          <Link href="/personnel/userLogin">Login</Link>
-        </Button>
+        <Link href="/personnel/userLogin" className={classes.mainLinkButton}>
+          Login
+        </Link>
       ) : (
         <Button
           onClick={() => {
