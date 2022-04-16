@@ -45,8 +45,12 @@
 
 .titlePrimaryButton {
   font-family: "Roboto Slab";
+  text-transform: uppercase;
   background-color: rgb(255, 219, 88);
   border: 2px solid brown;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
   color: brown;
   position: absolute;
   top: 24rem;
