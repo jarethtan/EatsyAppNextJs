@@ -12,6 +12,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { loadCartFromDB } from "../../cartStorageOption";
 import { RegisterInputModel } from "../../models/formInputTypes";
+import { StylesProvider } from "@material-ui/core/styles";
 
 const links = ["/", "/aboutUs"];
 const pages = ["Home", "About"];
@@ -43,26 +44,34 @@ const NavBar = () => {
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
-    <AppBar position="sticky" className={classes.navBarBg}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <NavButtonIcon />
-          <NavIconButton handleCloseNavMenu={handleCloseNavMenu} handleOpenNavMenu={handleOpenNavMenu} anchorElNav={anchorElNav} links={links} pages={pages} />
-          <NavMainLinks handleCloseNavMenu={handleCloseNavMenu} links={links} pages={pages} />
-          <NavBarSearch />
-          {asPath !== "/checkout" ? (
-            <Link href="/cartPage">
-              <a className={classes.cartButton}>
-                <NavButtonCart />
-              </a>
-            </Link>
-          ) : (
-            ""
-          )}
-          <NavProfileButton userImage={userImage} />
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <StylesProvider injectFirst>
+      <AppBar position="sticky" className={classes.navBarBg}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <NavButtonIcon />
+            <NavIconButton
+              handleCloseNavMenu={handleCloseNavMenu}
+              handleOpenNavMenu={handleOpenNavMenu}
+              anchorElNav={anchorElNav}
+              links={links}
+              pages={pages}
+            />
+            <NavMainLinks handleCloseNavMenu={handleCloseNavMenu} links={links} pages={pages} />
+            <NavBarSearch />
+            {asPath !== "/checkout" ? (
+              <Link href="/cartPage">
+                <a className={classes.cartButton}>
+                  <NavButtonCart />
+                </a>
+              </Link>
+            ) : (
+              ""
+            )}
+            <NavProfileButton userImage={userImage} />
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </StylesProvider>
   );
 };
 

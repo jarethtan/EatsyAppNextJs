@@ -25,9 +25,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         <SessionProvider session={pageProps.session}>
           <div className="wrapperMain">
             <div className="wrapperContent">
-              <StylesProvider injectFirst>
-                <NavBar />
-              </StylesProvider>
+              <NavBar />
               <Alert />
               <NextNProgress color="rgb(16, 80, 16)" />
               <Component {...pageProps} />
