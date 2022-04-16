@@ -9,21 +9,19 @@ const ProfileNavButton: React.FC<{
 }> = ({ userImage }) => {
   return (
     <Box sx={{ flexGrow: 0 }}>
-      <Tooltip title="Vist your account details">
-        {userImage ? (
-          <Link href="/profile">
-            <a onClick={profileAlert}>
-              <img src={userImage} alt="User Image" className={classes.profileAvatar} />
-            </a>
-          </Link>
-        ) : (
-          <Link href="/profile">
-            <a onClick={profileAlert}>
-              <Avatar className={classes.profileAvatar} alt="User Image" />
-            </a>
-          </Link>
-        )}
-      </Tooltip>
+      {userImage ? (
+        <Link href="/profile">
+          <a onClick={profileAlert}>
+            <img src={userImage} alt="User Image" className={classes.profileAvatar} />
+          </a>
+        </Link>
+      ) : (
+        <Link href="/profile">
+          <a onClick={profileAlert}>
+            <Avatar className={classes.profileAvatar} alt="User Image" />
+          </a>
+        </Link>
+      )}
     </Box>
   );
 };

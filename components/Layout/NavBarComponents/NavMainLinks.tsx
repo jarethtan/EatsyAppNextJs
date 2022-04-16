@@ -17,33 +17,33 @@ const NavMainLinks: React.FC<{
   return (
     <div className={classes.mainLinkDiv}>
       {links.map((link, Index) => (
-        <Button key={Index} href={link} className={classes.mainLinkButton}>
-          <span className={classes.mainLinkButton}>{pages[Index]}</span>
+        <Button disableRipple key={Index} href={link} className={classes.mainLinkButton}>
+          <span className={classes.mainLinkSpan}>{pages[Index]}</span>
         </Button>
       ))}
       {session.data?.role === "admin" ? (
-        <Button href="/products/addProduct" className={classes.mainLinkButton}>
-          <span className={classes.mainLinkButton}>Add Product</span>
+        <Button disableRipple href="/products/addProduct" className={classes.mainLinkButton}>
+          <span className={classes.mainLinkSpan}>Add Product</span>
         </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <button className={classes.mainLinkButton}>
-          <Link href="/personnel/userLogin">
-            <a className={classes.mainLinkButton}>Login</a>
-          </Link>
-        </button>
+        <Link href="/personnel/userLogin">
+          <a className={classes.mainLinkLink}>Login</a>
+        </Link>
       ) : (
-        <Button
-          onClick={() => {
-            signOut({ callbackUrl: `/` });
-            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-          }}
-          className={classes.mainLinkButton}
-        >
-          <span className={classes.mainLinkButton}>Logout</span>
-        </Button>
+        <Link href="">
+          <a
+            onClick={() => {
+              signOut({ callbackUrl: `/` });
+              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+            }}
+            className={classes.mainLinkLink}
+          >
+            Logout
+          </a>
+        </Link>
       )}
     </div>
   );

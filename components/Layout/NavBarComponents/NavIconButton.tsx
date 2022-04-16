@@ -25,6 +25,7 @@ const NavIconButton: React.FC<{
         aria-haspopup="true"
         onClick={handleOpenNavMenu}
         color="inherit"
+        disabled
       >
         <MenuIcon sx={{ color: "brown" }} />
       </IconButton>
