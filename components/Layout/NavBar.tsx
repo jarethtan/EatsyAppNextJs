@@ -44,34 +44,26 @@ const NavBar = () => {
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
-    <StylesProvider injectFirst>
-      <AppBar position="sticky" className={classes.navBarBg}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <NavButtonIcon />
-            <NavIconButton
-              handleCloseNavMenu={handleCloseNavMenu}
-              handleOpenNavMenu={handleOpenNavMenu}
-              anchorElNav={anchorElNav}
-              links={links}
-              pages={pages}
-            />
-            <NavMainLinks handleCloseNavMenu={handleCloseNavMenu} links={links} pages={pages} />
-            <NavBarSearch />
-            {asPath !== "/checkout" ? (
-              <Link href="/cartPage">
-                <a className={classes.cartButton}>
-                  <NavButtonCart />
-                </a>
-              </Link>
-            ) : (
-              ""
-            )}
-            <NavProfileButton userImage={userImage} />
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </StylesProvider>
+    <AppBar position="sticky" className={classes.navBarBg}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <NavButtonIcon />
+          <NavIconButton handleCloseNavMenu={handleCloseNavMenu} handleOpenNavMenu={handleOpenNavMenu} anchorElNav={anchorElNav} links={links} pages={pages} />
+          <NavMainLinks handleCloseNavMenu={handleCloseNavMenu} links={links} pages={pages} />
+          <NavBarSearch />
+          {asPath !== "/checkout" ? (
+            <Link href="/cartPage">
+              <a className={classes.cartButton}>
+                <NavButtonCart />
+              </a>
+            </Link>
+          ) : (
+            ""
+          )}
+          <NavProfileButton userImage={userImage} />
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 

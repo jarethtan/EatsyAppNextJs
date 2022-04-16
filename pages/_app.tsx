@@ -4,7 +4,6 @@ import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Footer from "../components/Layout/Footer";
 import NavBar from "../components/Layout/NavBar";
-import { StylesProvider } from "@material-ui/core/styles";
 import { Fragment } from "react";
 import { Alert } from "../ui/Alert";
 import { SessionProvider } from "next-auth/react";
