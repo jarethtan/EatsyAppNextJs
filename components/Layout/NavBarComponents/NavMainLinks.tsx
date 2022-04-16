@@ -23,42 +23,37 @@ const NavMainLinks: React.FC<{
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
           <Button onClick={handleCloseNavMenu} key={link} className={classes.mainLinkButton}>
-            <Link href={link}>{pages[index]}</Link>
+            <a href={link}>{pages[index]}</a>
           </Button>
         )
       )}
       {session.data?.role === "admin" ? (
         <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-          <Link href="/products/addProduct">Add Product</Link>
+          <a href="/products/addProduct">Add Product</a>
         </Button>
       ) : (
         ""
       )}
       {asPath !== "/" ? (
         <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-          <Link href="/products">Menu</Link>
+          <a href="/products">Menu</a>
         </Button>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Fragment>
-          <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-            LOGIN
-          </Button>
-        </Fragment>
+        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
+          LOGIN
+        </Button>
       ) : (
-        <Button className={classes.mainLinkButton}>
-          <Typography
-            className={classes.word}
-            textAlign="center"
-            onClick={() => {
-              signOut({ callbackUrl: `/` });
-              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-            }}
-          >
-            Logout
-          </Typography>
+        <Button
+          onClick={() => {
+            signOut({ callbackUrl: `/` });
+            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+          }}
+          className={classes.mainLinkButton}
+        >
+          Logout
         </Button>
       )}
     </div>
