@@ -106,9 +106,10 @@
   border-radius: 50%;
 }
 
-.profileAvatar:hover {
+.profileAvatar1:hover,
+.profileAvatar2:hover {
   background-color: brown;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /***************************************** Modal Styling!! ***********************************************/
@@ -221,7 +222,7 @@
 }
 
 .searchButton:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   background-color: rgba(255, 255, 255, 0.4);
 }
 

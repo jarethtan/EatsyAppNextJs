@@ -15,9 +15,9 @@ const Input1: React.FC<{ receiveImageUrl: any }> = ({ receiveImageUrl }) => {
 
   return (
     <Fragment>
-      <Input names="firstName" type="text" label="First Name" pageType="register" multiLines={false} disable={false} />
-      <Input names="lastName" type="text" label="Last Name" pageType="register" multiLines={false} disable={false} />
-      <Input names="email" type="email" label="Email" pageType="register" multiLines={false} disable={false} />
+      <Input names="firstName" type="text" label="First Name" pageType="register" multiLines={false} disable={false} autoFocus={false} />
+      <Input names="lastName" type="text" label="Last Name" pageType="register" multiLines={false} disable={false} autoFocus={false} />
+      <Input names="email" type="email" label="Email" pageType="register" multiLines={false} disable={false} autoFocus={false} />
       <br />
       {imageUrl ? (
         <Fragment key={imageUrl}>
@@ -31,9 +31,9 @@ const Input1: React.FC<{ receiveImageUrl: any }> = ({ receiveImageUrl }) => {
       <Fragment>
         <ImageInput handlePreviewImage={handlePreviewImage} disable={false} name="userImage" />
       </Fragment>
-      <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="register" multiLines={false} disable={false} />
-      <Input names="postalCode" type="text" label="Postal Code" pageType="register" multiLines={false} disable={false} />
-      <Input names="contactNumber" type="text" label="Contact Number" pageType="register" multiLines={false} disable={false} />
+      <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="register" multiLines={false} disable={false} autoFocus={false} />
+      <Input names="postalCode" type="text" label="Postal Code" pageType="register" multiLines={false} disable={false} autoFocus={false} />
+      <Input names="contactNumber" type="text" label="Contact Number" pageType="register" multiLines={false} disable={false} autoFocus={false} />
     </Fragment>
   );
 };

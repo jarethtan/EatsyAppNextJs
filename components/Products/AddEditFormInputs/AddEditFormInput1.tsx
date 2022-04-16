@@ -18,9 +18,9 @@ const AddEditFormInput1 = () => {
   };
   return (
     <Fragment>
-      <Input names="productName" type="text" label="Product Name" pageType="product" multiLines={false} disable={false} />
-      <Input names="productDescription" type="text" label="Product Description" pageType="product" multiLines={true} disable={false} />
-      <Input names="productPrice" type="number" label="Product Price" pageType="product" multiLines={false} disable={false} />
+      <Input names="productName" type="text" label="Product Name" pageType="product" multiLines={false} disable={false} autoFocus={true} />
+      <Input names="productDescription" type="text" label="Product Description" pageType="product" multiLines={true} disable={false} autoFocus={false} />
+      <Input names="productPrice" type="number" label="Product Price" pageType="product" multiLines={false} disable={false} autoFocus={false} />
       <br />
       <br />
       <FormControl variant="outlined" className={classes.catSelector}>

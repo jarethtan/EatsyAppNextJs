@@ -10,7 +10,8 @@ const Input: React.FC<{
   disable: boolean;
   multiLines: boolean;
   pageType: string;
-}> = ({ names, type, label, disable, multiLines, pageType }) => {
+  autoFocus: boolean;
+}> = ({ names, type, label, disable, multiLines, pageType, autoFocus }) => {
   const { control } = useFormContext();
   return (
     <Fragment>
@@ -23,7 +24,7 @@ const Input: React.FC<{
         render={({ field, fieldState }) => (
           <TextField
             {...field}
-            autoFocus
+            autoFocus={autoFocus}
             type={type}
             label={label}
             variant="outlined"
