@@ -15,19 +15,25 @@ const NavMainLinks = () => {
     <div className={classes.mainLinkDiv}>
       <Grid container>
         <Grid item>
-          <a href="/" className={classes.mainLinkButton}>
-            Home
+          <a href="/">
+            <button className={classes.mainLinkButton}>
+              <span>Home</span>
+            </button>
           </a>
         </Grid>
         <Grid item>
-          <a href="/aboutUs" className={classes.mainLinkButton}>
-            About
+          <a href="/aboutUs">
+            <button className={classes.mainLinkButton}>
+              <span>About</span>
+            </button>
           </a>
         </Grid>
         {session.data?.role === "admin" ? (
           <Grid item>
-            <a href="/products/addProduct" className={classes.mainLinkButton}>
-              Add Product
+            <a href="/products/addProduct">
+              <button className={classes.mainLinkButton}>
+                <span>Add Product</span>
+              </button>
             </a>
           </Grid>
         ) : (
@@ -35,17 +41,23 @@ const NavMainLinks = () => {
         )}
         {asPath !== "/" ? (
           <Grid item>
-            <a href="/products" className={classes.mainLinkButton}>
-              Menu
+            <a href="/products">
+              <button className={classes.mainLinkButton}>
+                <span>Menu</span>
+              </button>
             </a>
           </Grid>
         ) : (
           ""
         )}
         {session.status === "unauthenticated" ? (
-          <Link href="/personnel/userLogin">
-            <Button className={classes.mainLinkButton}>Login</Button>
-          </Link>
+          <Grid item>
+            <a href="/personnel/userLogin">
+              <button className={classes.mainLinkButton}>
+                <span>Login</span>
+              </button>
+            </a>
+          </Grid>
         ) : (
           <Button
             onClick={() => {
