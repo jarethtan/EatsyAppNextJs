@@ -33,15 +33,15 @@ const NavMainLinks = () => {
         ) : (
           ""
         )}
-        {asPath !== "/" ? (
-          <Grid item>
-            <Button className={classes.mainLinkButton}>
-              <span>Menu</span>
-            </Button>
-          </Grid>
-        ) : (
+        {/* {asPath !== "/" ? ( */}
+        <Grid item>
+          <Button href="/products" className={classes.mainLinkButton}>
+            <span>Menu</span>
+          </Button>
+        </Grid>
+        {/* ) : (
           ""
-        )}
+        )} */}
         {session.status === "unauthenticated" ? (
           <Grid item>
             <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
