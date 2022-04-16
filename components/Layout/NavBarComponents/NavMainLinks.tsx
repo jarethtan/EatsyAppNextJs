@@ -26,6 +26,12 @@ const NavMainLinks: React.FC<{
           </Link>
         )
       )}
+      <Link href="/" className={classes.mainLinkButton}>
+        Home
+      </Link>
+      <Link href="/aboutUs" className={classes.mainLinkButton}>
+        About
+      </Link>
       {session.data?.role === "admin" ? (
         <Link href="/products/addProduct" className={classes.mainLinkButton}>
           Add Product
