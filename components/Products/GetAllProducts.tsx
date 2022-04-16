@@ -259,10 +259,8 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
                     <br />
                     <br />
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" className={classes.price}>
-                    ${product.productPrice}
-                  </Typography>
-                  <Button
+                  <span className={classes.price}>${product.productPrice}</span>
+                  <button
                     onClick={(event) => {
                       event.stopPropagation();
                       event.preventDefault();
@@ -271,7 +269,7 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
                     className={classes.cartButton}
                   >
                     Add to Cart
-                  </Button>
+                  </button>
                   <Button href={"/products/" + product._id} className={classes.detailsButton}>
                     Details
                   </Button>
