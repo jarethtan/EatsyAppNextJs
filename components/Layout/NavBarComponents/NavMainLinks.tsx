@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "../NavBar.module.css";
-import Link from "next/link";
-import { Box, Typography, Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
@@ -17,12 +16,16 @@ const NavMainLinks: React.FC<{
 
   return (
     <div className={classes.mainLinkDiv}>
-      <Button href="/" onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-        Home
-      </Button>
-      <Button href="/aboutUs" onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
-        About
-      </Button>
+      {links.map(
+        (
+          link,
+          index // this is the start of navbuttons when the navbar is uncollpased.
+        ) => (
+          <Button onClick={handleCloseNavMenu} key={link} className={classes.mainLinkButton}>
+            <Link href={link}>{pages[index]}</Link>
+          </Button>
+        )
+      )}
       {session.data?.role === "admin" ? (
         <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
           <Link href="/products/addProduct">Add Product</Link>
@@ -38,8 +41,8 @@ const NavMainLinks: React.FC<{
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-          Login
+        <Button className={classes.mainLinkButton}>
+          <Link href="/personnel/userLogin">Login</Link>
         </Button>
       ) : (
         <Button
