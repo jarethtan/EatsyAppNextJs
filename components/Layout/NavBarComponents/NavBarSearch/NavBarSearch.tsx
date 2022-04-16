@@ -36,9 +36,9 @@ const NavBarSearch = () => {
 
   return (
     <Fragment>
-      <Button className={classes.searchButton} onClick={handleOpen}>
+      <button className={classes.searchButton} onClick={handleOpen}>
         <SearchIcon className={classes.searchIcon} />
-      </Button>
+      </button>
       <Modal open={open} onClose={handleClose} className={classes.modal}>
         <Box className={classes.modalContainer}>
           <button

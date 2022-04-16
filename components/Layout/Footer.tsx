@@ -67,15 +67,15 @@ const Footer = () => {
             <Grid item xs={6} sm={2.5} order={{ xs: 5, sm: 5 }}>
               <div className={classes.header}>Follow Us</div>
               <div>
-                <Button href="/">
-                  <FacebookIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.icon} />
-                </Button>
-                <Button href="/">
-                  <InstagramIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.instaIcon} />
-                </Button>
-                <Button href="/">
-                  <TwitterIcon fontSize="medium" sx={{ color: "rgb(16, 80, 16)" }} className={classes.icon} />
-                </Button>
+                <Link href="/">
+                  <FacebookIcon className={classes.icon} />
+                </Link>
+                <Link href="/">
+                  <InstagramIcon className={classes.instaIcon} />
+                </Link>
+                <Link href="/">
+                  <TwitterIcon className={classes.icon} />
+                </Link>
               </div>
             </Grid>
           </Grid>

@@ -1,7 +1,7 @@
 .tool {
   display: flex;
   flex-direction: row;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 2rem;
 }
 
 .navBarBg {
