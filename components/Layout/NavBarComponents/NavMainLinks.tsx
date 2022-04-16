@@ -13,32 +13,32 @@ const NavMainLinks = () => {
 
   return (
     <div className={classes.mainLinkDiv}>
-      <Link href="/">
-        <Button className={classes.mainLinkButton}>Home</Button>
-      </Link>
+      <Button href="/" className={classes.mainLinkButton}>
+        Home
+      </Button>
       {session.data?.role === "admin" ? (
-        <Link href="/products/addProduct">
-          <Button className={classes.mainLinkButton}>Add Product</Button>
-        </Link>
+        <Button href="/products/addProduct" className={classes.mainLinkButton}>
+          Add Product
+        </Button>
       ) : (
         ""
       )}
       {asPath !== "/" && asPath !== "/personnel/userLogin" ? (
         <Fragment>
-          <Link href="/products">
-            <Button className={classes.mainLinkButton}>Menu</Button>
-          </Link>
-          <Link href="/aboutUs">
-            <Button className={classes.mainLinkButton}>About</Button>
-          </Link>
+          <Button href="/products" className={classes.mainLinkButton}>
+            Menu
+          </Button>
+          <Button href="/aboutUs" className={classes.mainLinkButton}>
+            About
+          </Button>
         </Fragment>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Link href="/personnel/userLogin">
-          <Button className={classes.mainLinkButton}>Login</Button>
-        </Link>
+        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
+          Login
+        </Button>
       ) : (
         <Button
           onClick={() => {
