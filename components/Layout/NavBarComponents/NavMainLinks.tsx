@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import classes from "../NavBar.module.css";
-import { Button, Link } from "@mui/material";
+import Link from "next/link";
+import { Button } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
@@ -21,34 +22,36 @@ const NavMainLinks: React.FC<{
           link,
           index // this is the start of navbuttons when the navbar is uncollpased.
         ) => (
-          <Link href={link} key={index} className={classes.mainLinkButton}>
-            {pages[index]}
+          <Link href="" key={index}>
+            <a className={classes.mainLinkButton} href={link}>
+              {pages[index]}
+            </a>
           </Link>
         )
       )}
-      <Link href="/" className={classes.mainLinkButton}>
-        Home
-      </Link>
-      <Link href="/aboutUs" className={classes.mainLinkButton}>
-        About
-      </Link>
       {session.data?.role === "admin" ? (
-        <Link href="/products/addProduct" className={classes.mainLinkButton}>
-          Add Product
+        <Link href="">
+          <a className={classes.mainLinkButton} href="/products/addProduct">
+            Add Product
+          </a>
         </Link>
       ) : (
         ""
       )}
       {asPath !== "/" ? (
-        <Link href="/products" className={classes.mainLinkButton}>
-          Menu
+        <Link href="">
+          <a className={classes.mainLinkButton} href="/products">
+            Menu
+          </a>
         </Link>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Link href="/personnel/userLogin" className={classes.mainLinkButton}>
-          Login
+        <Link href="">
+          <a className={classes.mainLinkButton} href="/personnel/userLogin">
+            Login
+          </a>
         </Link>
       ) : (
         <Button
