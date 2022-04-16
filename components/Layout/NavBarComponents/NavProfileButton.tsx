@@ -2,7 +2,8 @@ import React from "react";
 import classes from "../NavBar.module.css";
 import Link from "next/link";
 import { profileAlert } from "../../../lib/helpers/alertHelpers/profileAlert";
-import { Box, Tooltip, Avatar, Button } from "@mui/material";
+import { Box } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 
 const ProfileNavButton: React.FC<{
   userImage: any;
@@ -18,7 +19,7 @@ const ProfileNavButton: React.FC<{
       ) : (
         <Link href="/profile">
           <a onClick={profileAlert}>
-            <Avatar className={classes.profileAvatar} alt="User Image" />
+            <PersonIcon fontSize="large" className={classes.profileAvatar} />
           </a>
         </Link>
       )}

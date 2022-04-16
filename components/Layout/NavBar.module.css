@@ -99,9 +99,9 @@
 .profileAvatar {
   color: rgb(255, 219, 88);
   background-color: rgb(16, 80, 16);
-  height: 2.8rem;
-  width: 2.8rem;
-  margin-top: 0.4rem;
+  height: 2.6rem;
+  width: 2.6rem;
+  margin-top: 0.5rem;
   transition: all 0.1s ease-in-out;
   border-radius: 50%;
 }
@@ -245,7 +245,8 @@
   font: inherit;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0rem 0.2rem 0.5rem;
+  margin-right: 0.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;

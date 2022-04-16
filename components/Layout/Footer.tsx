@@ -16,15 +16,14 @@ const Footer = () => {
       <div>
         <div className={classes.container}>
           <Grid container>
-            {/* <Grid item xs={6} sm={1} /> */}
             <Grid item xs={6} sm={2.5} order={{ xs: 2, sm: 1 }}>
               <div className={classes.header}>WebApp</div>
               <div>
                 <Button href="/" className={classes.link}>
-                  Home
+                  <span className={classes.link}>Home</span>
                 </Button>
                 <Button href="/products" className={classes.link}>
-                  Menu
+                  <span className={classes.link}>Menu</span>
                 </Button>
               </div>
             </Grid>
@@ -33,7 +32,7 @@ const Footer = () => {
               <div>
                 {session.status === "unauthenticated" ? (
                   <Button href="/personnel/userLogin" className={classes.link}>
-                    Login
+                    <span className={classes.link}>Login</span>
                   </Button>
                 ) : (
                   <Button
@@ -43,11 +42,11 @@ const Footer = () => {
                     }}
                     className={classes.link}
                   >
-                    Logout
+                    <span className={classes.link}>Logout</span>
                   </Button>
                 )}
                 <Button href="/personnel/userRegister" className={classes.link}>
-                  Register
+                  <span className={classes.link}>Register</span>
                 </Button>
               </div>
             </Grid>
@@ -58,10 +57,10 @@ const Footer = () => {
               <div className={classes.header}>About</div>
               <div>
                 <Button href="/profile" className={classes.link} onClick={profileAlert}>
-                  Profile
+                  <span className={classes.link}>Profile</span>
                 </Button>
                 <Button href="/aboutUs" className={classes.link}>
-                  About Us
+                  <span className={classes.link}>About</span>
                 </Button>
               </div>
             </Grid>
@@ -69,17 +68,16 @@ const Footer = () => {
               <div className={classes.header}>Follow Us</div>
               <div>
                 <Button href="/">
-                  <FacebookIcon className={classes.icon} />
+                  <FacebookIcon fontSize="large" className={classes.icon} />
                 </Button>
                 <Button href="/">
-                  <InstagramIcon className={classes.instaIcon} />
+                  <InstagramIcon fontSize="large" className={classes.instaIcon} />
                 </Button>
                 <Button href="/">
-                  <TwitterIcon className={classes.icon} />
+                  <TwitterIcon fontSize="large" className={classes.icon} />
                 </Button>
               </div>
             </Grid>
-            {/* <Grid item xs={6} sm={1} /> */}
           </Grid>
           <div className={classes.bottom}>Eatsy Food App &reg; 2022</div>
         </div>

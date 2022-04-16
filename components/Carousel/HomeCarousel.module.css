@@ -89,9 +89,13 @@
   font-family: "Roboto Slab";
   background-color: rgb(255, 219, 88);
   border: 2px solid brown;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
   color: brown;
   position: absolute;
-  top: 10rem;
+  top: 24rem;
   font-weight: bold;
   transition: all 0.3s;
 }
