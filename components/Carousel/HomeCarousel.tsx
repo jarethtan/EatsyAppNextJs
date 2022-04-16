@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import classes from "./HomeCarousel.module.css";
+import Link from "next/link";
 import { Button } from "@mui/material";
 import ProductModel from "../../models/productModelClass";
 import { useDispatch } from "react-redux";
@@ -35,7 +36,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <span className={classes.titlePrimary3}>&quot;Affordable Prices&quot;</span>
           <span className={classes.titlePrimary4}>&quot;Quality Dishes&quot;</span>
           <button className={classes.titlePrimaryButton}>
-            <a href="/products">See our menu</a>
+            <Link href="/products">See our menu</Link>
           </button>
         </div>
         {props.selectedCarousel.length > 0 && props.selectedCarousel[0] !== undefined ? (
