@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import classes from "../NavBar.module.css";
 import Link from "next/link";
-import { Button, Grid } from "@mui/material";
+import { Button } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { alertService } from "../../../lib/services/alert";
@@ -13,53 +13,43 @@ const NavMainLinks = () => {
 
   return (
     <div className={classes.mainLinkDiv}>
-      <Grid container>
-        <Grid item>
-          <Button href="/" className={classes.mainLinkButton}>
-            <span>Home</span>
-          </Button>
-        </Grid>
-        <Grid item>
-          <Button href="/aboutUs" className={classes.mainLinkButton}>
-            <span>About</span>
-          </Button>
-        </Grid>
-        {session.data?.role === "admin" ? (
-          <Grid item>
-            <Button href="/products/addProduct" className={classes.mainLinkButton}>
-              <span>Add Product</span>
-            </Button>
-          </Grid>
-        ) : (
-          ""
-        )}
-        {/* {asPath !== "/" ? ( */}
-        <Grid item>
-          <Button href="/products" className={classes.mainLinkButton}>
-            <span>Menu</span>
-          </Button>
-        </Grid>
-        {/* ) : (
-          ""
-        )} */}
-        {session.status === "unauthenticated" ? (
-          <Grid item>
-            <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
-              <span>Login</span>
-            </Button>
-          </Grid>
-        ) : (
-          <Button
-            onClick={() => {
-              signOut({ callbackUrl: `/` });
-              alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
-            }}
-            className={classes.mainLinkButton}
-          >
-            <span>Logout</span>
-          </Button>
-        )}
-      </Grid>
+      <Link href="/">
+        <Button className={classes.mainLinkButton}>Home</Button>
+      </Link>
+      {session.data?.role === "admin" ? (
+        <Link href="/products/addProduct">
+          <Button className={classes.mainLinkButton}>Add Product</Button>
+        </Link>
+      ) : (
+        ""
+      )}
+      {asPath !== "/" ? (
+        <Fragment>
+          <Link href="/products">
+            <Button className={classes.mainLinkButton}>Menu</Button>
+          </Link>
+          <Link href="/aboutUs">
+            <Button className={classes.mainLinkButton}>About</Button>
+          </Link>
+        </Fragment>
+      ) : (
+        ""
+      )}
+      {session.status === "unauthenticated" ? (
+        <Link href="/personnel/userLogin">
+          <Button className={classes.mainLinkButton}>Login</Button>
+        </Link>
+      ) : (
+        <Button
+          onClick={() => {
+            signOut({ callbackUrl: `/` });
+            alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+          }}
+          className={classes.mainLinkButton}
+        >
+          <span>Logout</span>
+        </Button>
+      )}
     </div>
   );
 };

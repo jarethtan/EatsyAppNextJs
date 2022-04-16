@@ -36,7 +36,7 @@ const HomeCarousel: React.FC<{ selectedCarousel: ProductModel[] }> = (props) => 
           <span className={classes.titlePrimary3}>&quot;Affordable Prices&quot;</span>
           <span className={classes.titlePrimary4}>&quot;Quality Dishes&quot;</span>
           <Button href="/products" className={classes.titlePrimaryButton}>
-            <span>See our Menu</span>
+            See our menu
           </Button>
         </div>
         {props.selectedCarousel.length > 0 && props.selectedCarousel[0] !== undefined ? (

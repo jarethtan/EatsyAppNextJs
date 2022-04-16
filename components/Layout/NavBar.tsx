@@ -7,7 +7,6 @@ import NavButtonIcon from "./NavBarComponents/NavButtonIcon";
 import NavBarSearch from "./NavBarComponents/NavBarSearch/NavBarSearch";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AppBar, Toolbar, Container, Box } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { loadCartFromDB } from "../../cartStorageOption";
