@@ -23,7 +23,7 @@ const NavMainLinks = () => {
       ) : (
         ""
       )}
-      {asPath !== "/" ? (
+      {asPath !== "/" && asPath !== "/personnel/userLogin" ? (
         <Fragment>
           <Link href="/products">
             <Button className={classes.mainLinkButton}>Menu</Button>
