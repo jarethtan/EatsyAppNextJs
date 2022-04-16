@@ -130,20 +130,20 @@ import { useSelector } from "react-redux";
 
 const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
   const [searchResult, setSearchResult] = useState<ProductModel[] | null>(null);
-  useEffect(() => {
-    const btnScrollUp: any = document.querySelector("#btnScrollUp");
+  // useEffect(() => {
+  //   const btnScrollUp: any = document.querySelector("#btnScrollUp");
 
-    btnScrollUp.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    });
-    window.addEventListener("scroll", (e) => {
-      btnScrollUp.style.display = window.scrollY > 100 ? "block" : "none";
-    });
-  }, []); // useEffect for btnScrollUp. At the top of the page, it will hide itself.
+  //   btnScrollUp.addEventListener("click", function () {
+  //     window.scrollTo({
+  //       top: 0,
+  //       left: 0,
+  //       behavior: "smooth",
+  //     });
+  //   });
+  //   window.addEventListener("scroll", (e) => {
+  //     btnScrollUp.style.display = window.scrollY > 100 ? "block" : "none";
+  //   });
+  // }, []); // useEffect for btnScrollUp. At the top of the page, it will hide itself.
 
   const dispatch = useDispatch();
   const searchData = useSelector((state: any) => state.search);
@@ -186,9 +186,9 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
       ) : (
         ""
       )}
-      <button id="btnScrollUp">
+      {/* <button id="btnScrollUp">
         <ArrowUpwardIcon fontSize="large" />
-      </button>
+      </button> */}
       <Grid container justifyContent="center">
         {Products.sort((a, b) => a.productName.localeCompare(b.productName)).map((product) => (
           <Grid key={product._id} item xs={4} sm={3} md={4} lg={3}>
