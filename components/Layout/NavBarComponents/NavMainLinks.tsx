@@ -17,16 +17,12 @@ const NavMainLinks: React.FC<{
 
   return (
     <div className={classes.mainLinkDiv}>
-      {links.map(
-        (
-          link,
-          index // this is the start of navbuttons when the navbar is uncollpased.
-        ) => (
-          <Button onClick={handleCloseNavMenu} key={link} className={classes.mainLinkButton}>
-            <Link href={link}>{pages[index]}</Link>
-          </Button>
-        )
-      )}
+      <Button href="/" onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
+        Home
+      </Button>
+      <Button href="/aboutUs" onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
+        About
+      </Button>
       {session.data?.role === "admin" ? (
         <Button onClick={handleCloseNavMenu} className={classes.mainLinkButton}>
           <Link href="/products/addProduct">Add Product</Link>
@@ -42,8 +38,8 @@ const NavMainLinks: React.FC<{
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Button className={classes.mainLinkButton}>
-          <Link href="/personnel/userLogin">Login</Link>
+        <Button href="/personnel/userLogin" className={classes.mainLinkButton}>
+          Login
         </Button>
       ) : (
         <Button
