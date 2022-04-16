@@ -17,8 +17,8 @@ const NavMainLinks: React.FC<{
   return (
     <div className={classes.mainLinkDiv}>
       {links.map((link, Index) => (
-        <button className={classes.mainLinkButton}>
-          <Button key={Index} href={link} className={classes.mainLinkButton}>
+        <button key={Index} className={classes.mainLinkButton}>
+          <Button href={link} className={classes.mainLinkButton}>
             {pages[Index]}
           </Button>
         </button>
