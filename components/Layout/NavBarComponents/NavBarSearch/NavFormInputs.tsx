@@ -2,7 +2,7 @@ import classes from "../../NavBar.module.css";
 import { useState } from "react";
 import { Fragment } from "react";
 import { useFormContext, Controller } from "react-hook-form";
-import { TextField, Select, MenuItem, FormControl, InputLabel, FormHelperText } from "@mui/material";
+import { FormControl } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 
 const NavFormInputs = () => {
@@ -25,9 +25,18 @@ const NavFormInputs = () => {
   return (
     <Fragment>
       <FormControl variant="outlined" className={classes.selectForm}>
-        {searchFields !== "" ? "" : <InputLabel id="fieldSelectLabel">Search Field</InputLabel>}
-        <select {...register("fieldSelect")} id="fieldSelect" value={searchFields} onChange={onhandleField} className={classes.searchSelect}>
-          <option value=""> </option>, <option value="productName">Product Name</option>, <option value="productDescription">Product Description</option>,
+        <select
+          {...register("fieldSelect")}
+          id="fieldSelect"
+          value={searchFields}
+          onChange={onhandleField}
+          className={classes.searchSelect}
+          style={searchFields === "" ? { color: "rgb(105, 105, 105)" } : { color: "black" }}
+        >
+          <option value="" hidden>
+            Search Field
+          </option>
+          , <option value="productName">Product Name</option>, <option value="productDescription">Product Description</option>,
           <option value="productCategory">Product Category</option>,<option value="productPrice">Product Price</option>
         </select>
         <span style={{ color: "rgb(209, 63, 63)", background: "white", fontSize: "0.8rem" }}>{errors.fieldSelect ? errors.fieldSelect?.message : ""}</span>
