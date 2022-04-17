@@ -221,8 +221,11 @@
     display: none;
   }
 
-  .selectCarouselButton {
+  .selectCarouselSpan {
     margin-left: 22%;
+    font-size: 0.8rem;
+  }
+  .selectCarouselButton {
     font-size: 0.8rem;
   }
 }
@@ -310,7 +313,7 @@
     display: none;
   }
 
-  .selectCarouselButton {
+  .selectCarouselSpan {
     margin-left: 26%;
     font-size: 0.8rem;
   }
@@ -390,7 +393,7 @@
     top: 4rem;
   }
 
-  .selectCarouselButton {
+  .selectCarouselSpan {
     margin-left: 30%;
   }
 }
@@ -478,7 +481,7 @@
     top: 0rem;
   }
 
-  .selectCarouselButton {
+  .selectCarouselSpan {
     margin-left: 33%;
   }
 }
@@ -559,7 +562,7 @@
     height: 62vh;
   }
 
-  .selectCarouselButton {
+  .selectCarouselSpan {
     margin-left: 36%;
   }
 }

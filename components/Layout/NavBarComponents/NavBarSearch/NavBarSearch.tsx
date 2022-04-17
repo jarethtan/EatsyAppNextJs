@@ -4,12 +4,13 @@ import NavFormInputs from "../NavBarSearch/NavFormInputs";
 import CloseIcon from "@mui/icons-material/Close";
 import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Box, Modal, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
 import { addSearchFields } from "../../../../redux/search";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { searchFormSchema } from "../../../../yupSchema/searchForm";
+import Modal from "../../../../ui/Modal";
 
 const NavBarSearch = () => {
   const [open, setOpen] = useState(false);
@@ -39,8 +40,8 @@ const NavBarSearch = () => {
       <button className={classes.searchButton} onClick={handleOpen}>
         <SearchIcon className={classes.searchIcon} />
       </button>
-      <Modal open={open} onClose={handleClose} className={classes.modal}>
-        <Box className={classes.modalContainer}>
+      <Modal show={open} onClose={handleClose}>
+        {/* <Box className={classes.modalContainer}>
           <button
             onClick={() => {
               setOpen(false);
@@ -56,7 +57,7 @@ const NavBarSearch = () => {
               <NavFormInputs />
             </form>
           </FormProvider>
-        </Box>
+        </Box> */}
       </Modal>
     </Fragment>
   );
