@@ -3,6 +3,7 @@ import classes from "./GetAllProducts.module.css";
 import ProductModel from "../../models/productModelClass";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Link from "next/link";
+import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 import { clearSearchState } from "../../redux/search";
@@ -71,9 +72,9 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
       <button id="btnScrollUp">
         <ArrowUpwardIcon fontSize="large" />
       </button>
-      <Grid container justifyContent="center">
+      <div className={classes.flexContainer}>
         {Products.sort((a, b) => a.productName.localeCompare(b.productName)).map((product) => (
-          <Grid key={product._id} item xs={4} sm={3} md={4} lg={3}>
+          <div key={product._id}>
             <div className={classes.card}>
               <div className={classes.cardArea}>
                 <img src={product.productImage[0]} alt={product.productName} className={classes.productImage} />
@@ -105,9 +106,9 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
                 </div>
               </div>
             </div>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
     </div>
   );
 };

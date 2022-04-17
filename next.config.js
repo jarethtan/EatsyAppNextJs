@@ -20,6 +20,9 @@ const nextConfig = {
 
 module.exports = {
   nextConfig,
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
   env: {
     GITHUB_CLIENT_ID: "c01702a6fa355c32ebfe",
     GITHUB_CLIENT_SECRET: "099b1440e712e46ac555dedb795cc3f76efbd426",
