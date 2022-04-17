@@ -1,13 +1,15 @@
 import classes from "../../NavBar.module.css";
-import { useState } from "react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import { useRouter } from "next/router";
 import { useFormContext, Controller } from "react-hook-form";
-import { FormControl } from "@mui/material";
+import { Button } from "@mui/material";
 import { SelectChangeEvent } from "@mui/material/Select";
 
 const NavFormInputs = () => {
   const [searchFields, setSearchFields] = useState("");
   const [greaterLesser, setGreaterLesser] = useState("");
+
+  const router = useRouter();
   const {
     control,
     register,
@@ -88,6 +90,7 @@ const NavFormInputs = () => {
       <br />
       <br />
       <br />
+
       <button type="submit" className={classes.searchSubmitButton}>
         Search
       </button>

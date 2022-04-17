@@ -199,6 +199,10 @@
   transform: scale(1.07);
 }
 
+.cardArea {
+  position: relative;
+}
+
 .price {
   padding: 0.2rem;
   font-weight: bold;
@@ -216,7 +220,12 @@
 }
 
 .productImage {
-  height: 10rem;
+  width: 100%;
+  height: 14rem;
+}
+
+.cardContent {
+  padding: 1rem;
 }
 
 .productName {
