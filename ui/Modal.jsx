@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as ReactDOM from "react-dom";
 import classes from "./Modal.module.css";
-import Link from "next/link";
 
 const Modal = ({ show, onClose, children }) => {
   const [isBrowser, setIsBrowser] = useState(false);

@@ -14,43 +14,41 @@ const NavFormInputs = () => {
     formState: { errors },
   } = useFormContext();
 
-  const onhandleField = (event: SelectChangeEvent) => {
+  const onhandleField: any = (event: SelectChangeEvent) => {
     setSearchFields(event.target.value);
   };
 
-  const onhandleGtLt = (event: SelectChangeEvent) => {
+  const onhandleGtLt: any = (event: SelectChangeEvent) => {
     setGreaterLesser(event.target.value);
   };
 
   return (
     <Fragment>
-      <FormControl variant="outlined" className={classes.searchSelect}>
-        <InputLabel id="fieldSelectLabel">Search Field</InputLabel>
-        <Select {...register("fieldSelect")} labelId="fieldSelectLabel" label="Field Select" value={searchFields} onChange={onhandleField}>
-          <MenuItem value="productName">Product Name</MenuItem>, <MenuItem value="productDescription">Product Description</MenuItem>,
-          <MenuItem value="productCategory">Product Category</MenuItem>,<MenuItem value="productPrice">Product Price</MenuItem>
-        </Select>
-        <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>{errors.fieldSelect ? errors.fieldSelect?.message : ""}</FormHelperText>
+      <FormControl variant="outlined" className={classes.selectForm}>
+        {searchFields !== "" ? "" : <InputLabel id="fieldSelectLabel">Search Field</InputLabel>}
+        <select {...register("fieldSelect")} id="fieldSelect" value={searchFields} onChange={onhandleField} className={classes.searchSelect}>
+          <option value=""> </option>, <option value="productName">Product Name</option>, <option value="productDescription">Product Description</option>,
+          <option value="productCategory">Product Category</option>,<option value="productPrice">Product Price</option>
+        </select>
+        <span style={{ color: "rgb(209, 63, 63)", background: "white", fontSize: "0.8rem" }}>{errors.fieldSelect ? errors.fieldSelect?.message : ""}</span>
       </FormControl>
       <br />
       <br />
       {searchFields == "productPrice" ? (
         <Fragment>
-          <FormControl variant="outlined" className={classes.searchSelect}>
-            <InputLabel id="GreaterOrLessThanPriceLabel">Greater/Lesser</InputLabel>
-            <Select
+          <FormControl variant="outlined" className={classes.selectForm}>
+            <select
               {...register("greaterOrLessThanPrice")}
-              labelId="GreaterOrLessThanPriceLabel"
-              label="Greater Or Less Than Price"
+              id="GreaterOrLessThanPrice"
               value={greaterLesser}
               onChange={onhandleGtLt}
+              className={classes.searchSelect}
             >
-              <MenuItem value="greaterThan">Greater Than</MenuItem>, <MenuItem value="lesserThan">Lesser Than</MenuItem>,
-              <MenuItem value="equal">Equal</MenuItem>
-            </Select>
-            <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>
+              <option value="greaterThan">Greater Than</option>, <option value="lesserThan">Lesser Than</option>,<option value="equal">Equal</option>
+            </select>
+            <span style={{ color: "rgb(209, 63, 63)", background: "white", fontSize: "0.8rem" }}>
               {errors.greaterOrLessThanPrice ? errors.greaterOrLessThanPrice?.message : ""}
-            </FormHelperText>
+            </span>
           </FormControl>
           <br />
           <br />
@@ -63,16 +61,19 @@ const NavFormInputs = () => {
         control={control}
         defaultValue=""
         render={({ field }) => (
-          <TextField
-            {...field}
-            type={searchFields == "productPrice" ? "number" : "text"}
-            label="Field Parameter"
-            variant="outlined"
-            error={!!errors.fieldParameter}
-            helperText={errors.fieldParameter ? errors.fieldParameter?.message : ""}
-            className={classes.searchParameter}
-            autoComplete="off"
-          />
+          <Fragment>
+            <input
+              {...field}
+              type={searchFields == "productPrice" ? "number" : "text"}
+              id="Field Parameter"
+              className={classes.searchParameter}
+              placeholder="Search Parameter"
+              autoComplete="off"
+            />
+            <span style={{ color: "rgb(209, 63, 63)", background: "white", width: "50%", margin: "auto", display: "block", fontSize: "0.8rem" }}>
+              {!!errors.fieldParameter ? errors.fieldParameter?.message : ""}
+            </span>
+          </Fragment>
         )}
       />
       <br />
