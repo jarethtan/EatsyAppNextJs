@@ -24,16 +24,9 @@ const NavFormInputs = () => {
 
   return (
     <Fragment>
-      <FormControl variant="outlined" sx={{ width: "50%" }}>
+      <FormControl variant="outlined" className={classes.searchSelect}>
         <InputLabel id="fieldSelectLabel">Search Field</InputLabel>
-        <Select
-          {...register("fieldSelect")}
-          labelId="fieldSelectLabel"
-          label="Field Select"
-          value={searchFields}
-          onChange={onhandleField}
-          className={classes.searchSelect}
-        >
+        <Select {...register("fieldSelect")} labelId="fieldSelectLabel" label="Field Select" value={searchFields} onChange={onhandleField}>
           <MenuItem value="productName">Product Name</MenuItem>, <MenuItem value="productDescription">Product Description</MenuItem>,
           <MenuItem value="productCategory">Product Category</MenuItem>,<MenuItem value="productPrice">Product Price</MenuItem>
         </Select>
@@ -43,7 +36,7 @@ const NavFormInputs = () => {
       <br />
       {searchFields == "productPrice" ? (
         <Fragment>
-          <FormControl variant="outlined" sx={{ width: "50%" }}>
+          <FormControl variant="outlined" className={classes.searchSelect}>
             <InputLabel id="GreaterOrLessThanPriceLabel">Greater/Lesser</InputLabel>
             <Select
               {...register("greaterOrLessThanPrice")}
@@ -51,7 +44,6 @@ const NavFormInputs = () => {
               label="Greater Or Less Than Price"
               value={greaterLesser}
               onChange={onhandleGtLt}
-              className={classes.searchSelect}
             >
               <MenuItem value="greaterThan">Greater Than</MenuItem>, <MenuItem value="lesserThan">Lesser Than</MenuItem>,
               <MenuItem value="equal">Equal</MenuItem>
@@ -60,6 +52,7 @@ const NavFormInputs = () => {
               {errors.greaterOrLessThanPrice ? errors.greaterOrLessThanPrice?.message : ""}
             </FormHelperText>
           </FormControl>
+          <br />
           <br />
         </Fragment>
       ) : (

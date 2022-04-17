@@ -116,32 +116,21 @@
 
 /***************************************** Modal Styling!! ***********************************************/
 
-.modal {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: "50%";
-  left: "50%";
-  transform: "translate(-50%; -50%)";
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .modalContainer {
   display: flex;
   justify-content: center;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0);
-  margin-top: 10rem;
-  border-radius: 1rem;
   text-align: center;
-  padding: 3rem;
+  margin-top: 1rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .searchSelect {
   background-color: white;
+  width: 50%;
+  border-radius: 0.2rem;
   margin-bottom: 1rem;
 }
 
@@ -187,30 +176,33 @@
   transform: scale(1.05);
 }
 
-.modalCLoseButton {
+.modalCloseButton {
   position: absolute;
-  right: 1%;
-  top: 1%;
-  background-color: rgba(0, 0, 0, 0);
+  right: 2%;
+  top: 0.2%;
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 50%;
   border: none;
   height: 4rem;
   width: 4rem;
+  border: 2px solid white;
+  transition: all 0.1s ease-in-out;
 }
 
 .modalCLoseIcon {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: rgba(255, 255, 255, 1);
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
 
-.modalCLoseIcon:hover {
-  transform: scale(1.2);
+.modalCLoseIcon:hover,
+.modalCloseButton:hover {
+  transform: scale(1.1);
 }
 
-/***************************************** NavBarSearch Styling!! ***********************************************/
+/***************************************** NavBarSearch button Styling!! ***********************************************/
 
 .searchButton {
   border-radius: 50%;
@@ -381,6 +373,13 @@
 @media (max-width: 600px) {
   .word1 {
     display: none;
+  }
+  .modalCLoseIcon {
+    font-size: 2rem;
+  }
+  .modalCloseButton {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
