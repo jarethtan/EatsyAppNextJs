@@ -13,6 +13,7 @@
   background-color: white;
   border-radius: 1rem;
   height: 4.2rem;
+  width: 4.5rem;
   border: 1px solid rgb(16, 80, 16);
   box-shadow: 1px 2px 2px black;
   transition: all 0.2s ease-in-out;
@@ -68,8 +69,15 @@
     width: 100%;
   }
 }
+
 @media (max-width: 900px) {
   .box {
     width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 4rem;
   }
 }
