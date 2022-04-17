@@ -19,12 +19,17 @@
 }
 
 .word {
+  display: block;
   text-align: center;
   font-size: 0.7rem;
   font-weight: bolder;
   align-content: center;
   margin-top: 0.2rem;
   color: rgb(16, 80, 16);
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .imageContainer {

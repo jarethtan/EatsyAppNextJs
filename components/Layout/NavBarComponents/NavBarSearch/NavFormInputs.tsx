@@ -24,7 +24,7 @@ const NavFormInputs = () => {
 
   return (
     <Fragment>
-      <FormControl variant="outlined" sx={{ width: "50%" }}>
+      {/* <FormControl variant="outlined" sx={{ width: "50%" }}>
         <InputLabel id="fieldSelectLabel">Search Field</InputLabel>
         <Select
           {...register("fieldSelect")}
@@ -40,7 +40,7 @@ const NavFormInputs = () => {
         <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>{errors.fieldSelect ? errors.fieldSelect?.message : ""}</FormHelperText>
       </FormControl>
       <br />
-      <br />
+      <br /> */}
       {searchFields == "productPrice" ? (
         <Fragment>
           <FormControl variant="outlined" sx={{ width: "50%" }}>

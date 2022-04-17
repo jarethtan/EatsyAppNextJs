@@ -13,7 +13,7 @@ const IconBox = () => {
       <Grid container>
         {iconsArray.map((icon, i) => (
           <Grid item key={i} xs={3} sm={2} md={1} xl={1}>
-            <Card className={classes.card}>
+            <div className={classes.card}>
               <a
                 className={classes.iconLink}
                 onClick={() => {
@@ -21,13 +21,13 @@ const IconBox = () => {
                 }}
               >
                 <span className={classes.imageContainer}>
-                  <Image src={icon[0]} width="100%" height={50} alt="" className={classes.image} />
+                  <img src={icon[0]} width="100%" height={40} alt="" className={classes.image} />
                 </span>
-                <CardContent className={classes.content}>
-                  <Typography className={classes.word}>{icon[1]}</Typography>
-                </CardContent>
+                <div className={classes.content}>
+                  <span className={classes.word}>{icon[1]}</span>
+                </div>
               </a>
-            </Card>
+            </div>
           </Grid>
         ))}
       </Grid>
