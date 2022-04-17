@@ -15,23 +15,58 @@ const NavMainLinks: React.FC<{
   const { asPath } = useRouter();
 
   return (
+    // <div className={classes.mainLinkDiv}>
+    //   {links.map((link, Index) => (
+    //     <Button disableRipple key={Index} href={link} className={classes.mainLinkButton}>
+    //       <span className={classes.mainLinkSpan}>{pages[Index]}</span>
+    //     </Button>
+    //   ))}
+    //   {session.data?.role === "admin" ? (
+    //     <Button disableRipple href="/products/addProduct" className={classes.mainLinkButton}>
+    //       <span className={classes.mainLinkSpan}>Add Product</span>
+    //     </Button>
+    //   ) : (
+    //     ""
+    //   )}
+    //   {session.status === "unauthenticated" ? (
+    //     <Button disableRipple href="/personnel/userLogin" className={classes.mainLinkButton}>
+    //       <span className={classes.mainLinkSpan}>Login</span>
+    //     </Button>
+    //   ) : (
+    //     ""
+    //   )}
+    //   {session.status === "authenticated" ? (
+    //     <Button
+    //       disableRipple
+    //       onClick={() => {
+    //         signOut({ callbackUrl: `/` });
+    //         alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
+    //       }}
+    //       className={classes.mainLinkButton}
+    //     >
+    //       <span className={classes.mainLinkSpan}>Logout</span>
+    //     </Button>
+    //   ) : (
+    //     ""
+    //   )}
+    // </div>
     <div className={classes.mainLinkDiv}>
       {links.map((link, Index) => (
-        <Button disableRipple key={Index} href={link} className={classes.mainLinkButton}>
-          <span className={classes.mainLinkSpan}>{pages[Index]}</span>
-        </Button>
+        <Link key={Index} href={link}>
+          <a className={classes.mainLinkSpan}>{pages[Index]}</a>
+        </Link>
       ))}
       {session.data?.role === "admin" ? (
-        <Button disableRipple href="/products/addProduct" className={classes.mainLinkButton}>
-          <span className={classes.mainLinkSpan}>Add Product</span>
-        </Button>
+        <Link href="/products/addProduct">
+          <a className={classes.mainLinkSpan}>Add Product</a>
+        </Link>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
-        <Button disableRipple href="/personnel/userLogin" className={classes.mainLinkButton}>
-          <span className={classes.mainLinkSpan}>Login</span>
-        </Button>
+        <Link href="/personnel/userLogin">
+          <a className={classes.mainLinkSpan}>Login</a>
+        </Link>
       ) : (
         ""
       )}
