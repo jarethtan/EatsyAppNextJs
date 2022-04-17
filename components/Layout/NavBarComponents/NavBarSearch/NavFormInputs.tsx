@@ -24,7 +24,7 @@ const NavFormInputs = () => {
 
   return (
     <Fragment>
-      <FormControl variant="outlined" className={classes.selectForm}>
+      <div className={classes.selectForm}>
         <select
           {...register("fieldSelect")}
           id="fieldSelect"
@@ -40,12 +40,12 @@ const NavFormInputs = () => {
           <option value="productCategory">Product Category</option>,<option value="productPrice">Product Price</option>
         </select>
         <span style={{ color: "rgb(209, 63, 63)", background: "white", fontSize: "0.8rem" }}>{errors.fieldSelect ? errors.fieldSelect?.message : ""}</span>
-      </FormControl>
+      </div>
       <br />
       <br />
       {searchFields == "productPrice" ? (
         <Fragment>
-          <FormControl variant="outlined" className={classes.selectForm}>
+          <div className={classes.selectForm}>
             <select
               {...register("greaterOrLessThanPrice")}
               id="GreaterOrLessThanPrice"
@@ -58,7 +58,7 @@ const NavFormInputs = () => {
             <span style={{ color: "rgb(209, 63, 63)", background: "white", fontSize: "0.8rem" }}>
               {errors.greaterOrLessThanPrice ? errors.greaterOrLessThanPrice?.message : ""}
             </span>
-          </FormControl>
+          </div>
           <br />
           <br />
         </Fragment>
