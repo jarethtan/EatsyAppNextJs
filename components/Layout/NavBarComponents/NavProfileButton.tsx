@@ -14,7 +14,7 @@ const ProfileNavButton: React.FC<{ userImage: any }> = ({ userImage }) => {
           <img src={userImage} alt="User Image" className={classes.profileAvatar1} />
         </Button>
       ) : (
-        <Button href="/profile" onClick={profileAlert} disabled={asPath == "/checkout" ? true : false}>
+        <Button href="/profile" disableRipple onClick={profileAlert} disabled={asPath == "/checkout" ? true : false}>
           <PersonIcon sx={{ width: "2.6rem", height: "2.6rem" }} className={classes.profileAvatar2} />
         </Button>
       )}

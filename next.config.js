@@ -23,14 +23,14 @@ module.exports = {
   images: {
     domains: ["res.cloudinary.com"],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://eatsy-app-nextjs.vercel.app/:path*",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*",
+  //       destination: "https://eatsy-app-nextjs.vercel.app/:path*",
+  //     },
+  //   ];
+  // },
   env: {
     GITHUB_CLIENT_ID: "c01702a6fa355c32ebfe",
     GITHUB_CLIENT_SECRET: "099b1440e712e46ac555dedb795cc3f76efbd426",
