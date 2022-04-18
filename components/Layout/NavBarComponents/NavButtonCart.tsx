@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import CartIcon from "../../Cart/CartIcon";
 import classes from "../NavBar.module.css";
-import Link from "next/link";
 import ProductModel from "../../../models/productModelClass";
 import { useSelector } from "react-redux";
 
@@ -25,7 +24,7 @@ const NavCartButton = () => {
   // }, [cart]);
 
   return (
-    <Button href="/cartPage">
+    <Button href="/cartPage" sx={{ padding: "0" }}>
       <button className={classes.buttons}>
         <span className={classes.icons}>
           <CartIcon bump={btnClasses} />

@@ -24,7 +24,7 @@ const NavBarSearch = () => {
       <button className={classes.searchButton} onClick={handleOpen}>
         <SearchIcon className={classes.searchIcon} />
       </button>
-      <Modal show={open} onClose={handleClose}>
+      <Modal show={open} onClose={handleClose} modalFunction="navSearch">
         <NavSearchForm onChangeModalAction={onChangeModalAction} />
       </Modal>
     </Fragment>
