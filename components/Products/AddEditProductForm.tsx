@@ -16,7 +16,7 @@ import { ProductInputModel } from "../../models/formInputTypes";
 import { inputProductSchema } from "../../yupSchema/productForm";
 import { fileToDataURL } from "../../lib/middlewares/fileToDataUrl";
 import { alertService } from "../../lib/services/alert";
-import { Button } from "@mui/material";
+import { NEXT_URL } from "../../config";
 
 const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }> = (props) => {
   const [imageUrl, setImageUrl] = useState<string[]>([]);
@@ -65,7 +65,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
       } // logic is here incase the user checks and unchecks the deleteImage checkbox. by checks and unchecking, it will generate a false value instead of an empty string which will cause an error when passing into the backend. this is to convert it back to an empty string.
       if (formStatus) {
         setIsLoading(true);
-        const addProductToDBResponse = await fetch("/api/products/createProduct", {
+        const addProductToDBResponse = await fetch(`${NEXT_URL}/api/products/createProduct`, {
           // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
           method: "POST",
           headers: {
@@ -86,7 +86,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
         }
       } else {
         setIsLoading(true);
-        const editProductInputResponse = await fetch(`/api/products/${foundProduct?._id}`, {
+        const editProductInputResponse = await fetch(`${NEXT_URL}/api/products/${foundProduct?._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
