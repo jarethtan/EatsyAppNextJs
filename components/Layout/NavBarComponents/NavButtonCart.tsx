@@ -24,7 +24,7 @@ const NavCartButton = () => {
   // }, [cart]);
 
   return (
-    <Button href="/cartPage" sx={{ padding: "0" }}>
+    <Button href="/cartPage" disableRipple sx={{ padding: "0" }}>
       <button className={classes.buttons}>
         <span className={classes.icons}>
           <CartIcon bump={btnClasses} />

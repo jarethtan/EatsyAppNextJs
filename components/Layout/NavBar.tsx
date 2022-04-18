@@ -5,6 +5,7 @@ import NavProfileButton from "./NavBarComponents/NavProfileButton";
 import NavMainLinks from "./NavBarComponents/NavMainLinks";
 import NavButtonIcon from "./NavBarComponents/NavButtonIcon";
 import NavBarSearch from "./NavBarComponents/NavBarSearch/NavBarSearch";
+import { Fragment } from "react";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -47,10 +48,22 @@ const NavBar = () => {
     <div className={classes.navBarBg}>
       <div className={classes.tool}>
         <NavButtonIcon />
-        <NavIconButton handleCloseNavMenu={handleCloseNavMenu} handleOpenNavMenu={handleOpenNavMenu} anchorElNav={anchorElNav} links={links} pages={pages} />
-        <NavMainLinks links={links} pages={pages} />
-        <NavBarSearch />
-        {asPath !== "/checkout" ? <NavButtonCart /> : ""}
+        {asPath !== "/checkout" ? (
+          <Fragment>
+            <NavIconButton
+              handleCloseNavMenu={handleCloseNavMenu}
+              handleOpenNavMenu={handleOpenNavMenu}
+              anchorElNav={anchorElNav}
+              links={links}
+              pages={pages}
+            />
+            <NavMainLinks links={links} pages={pages} />
+            <NavBarSearch />
+            <NavButtonCart />
+          </Fragment>
+        ) : (
+          ""
+        )}
         <NavProfileButton userImage={userImage} />
       </div>
     </div>
