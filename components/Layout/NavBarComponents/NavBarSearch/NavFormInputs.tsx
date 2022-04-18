@@ -89,7 +89,6 @@ const NavFormInputs = () => {
       />
       <br />
       <br />
-      <br />
 
       <button type="submit" className={classes.searchSubmitButton}>
         Search
