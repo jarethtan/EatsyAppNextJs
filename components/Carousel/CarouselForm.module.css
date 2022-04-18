@@ -1,0 +1,19 @@
+.formInfo {
+  font-family: "Roboto Slab";
+  margin: 5rem 0 0 3rem;
+  font-size: 1rem;
+}
+
+.formSelect {
+  margin: 1rem 0 0 2.8rem;
+  min-width: 14rem;
+}
+
+.productSelector {
+  width: 10rem;
+}
+
+.carouSelectSubmit {
+  margin: 2rem 0 0 2.8rem;
+  font-size: 1.5rem;
+}

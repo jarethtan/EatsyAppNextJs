@@ -141,6 +141,11 @@
     margin-top: 1.2rem;
   }
 
+  .link {
+    margin: 0.3rem 0rem 0rem 0rem;
+    font-size: 0.8rem;
+  }
+
   .link:hover {
     font-size: 1rem;
   }

@@ -53,34 +53,33 @@ const NavMainLinks: React.FC<{
     <div className={classes.mainLinkDiv}>
       {links.map((link, Index) => (
         <Link key={Index} href={link}>
-          <a className={classes.mainLinkSpan}>{pages[Index]}</a>
+          <a className={classes.mainLinkButton}>{pages[Index]}</a>
         </Link>
       ))}
       {session.data?.role === "admin" ? (
         <Link href="/products/addProduct">
-          <a className={classes.mainLinkSpan}>Add Product</a>
+          <a className={classes.mainLinkButton}>Add Product</a>
         </Link>
       ) : (
         ""
       )}
       {session.status === "unauthenticated" ? (
         <Link href="/personnel/userLogin">
-          <a className={classes.mainLinkSpan}>Login</a>
+          <a className={classes.mainLinkButton}>Login</a>
         </Link>
       ) : (
         ""
       )}
       {session.status === "authenticated" ? (
-        <Button
-          disableRipple
+        <button
           onClick={() => {
             signOut({ callbackUrl: `/` });
             alertService.success(`Thank you for visiting Eatsy! See you again soon!`, { keepAfterRouteChange: true });
           }}
           className={classes.mainLinkButton}
         >
-          <span className={classes.mainLinkSpan}>Logout</span>
-        </Button>
+          <span>Logout</span>
+        </button>
       ) : (
         ""
       )}

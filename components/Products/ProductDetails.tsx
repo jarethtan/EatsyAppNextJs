@@ -6,7 +6,7 @@ import { alertService } from "../../lib/services/alert";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 import { useSession } from "next-auth/react";
-import { CardContent, Button, Typography, Card, CardActionArea, Switch, FormControlLabel, FormGroup } from "@mui/material";
+import { Button, Switch, FormControlLabel, FormGroup } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import { icons } from "../../public/CountryIcons";
 import { TextArea } from "semantic-ui-react";
@@ -54,8 +54,8 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
 
   return (
     <div className={classes.container}>
-      <Card className={classes.card}>
-        <CardActionArea component="div" disableRipple={true} sx={{ cursor: "auto" }}>
+      <div className={classes.card}>
+        <div className={classes.cardArea}>
           <Carousel className={classes.carousel}>
             {props.foundProduct.productImage.map((imageUrl, i) => (
               <div key={i}>
@@ -63,21 +63,19 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
               </div>
             ))}
           </Carousel>
-          <CardContent className={classes.content}>
-            <Typography variant="h5" component="div" className={props.foundProduct.productName.length > 17 ? classes.div1 : classes.div4}>
+          <div className={classes.content}>
+            <div className={props.foundProduct.productName.length > 17 ? classes.div1 : classes.div4}>
               <span className={classes.word}>Food:</span>
               {props.foundProduct.productName}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div" className={props.foundProduct.productName.length > 17 ? classes.div2 : classes.div5}>
-              <span className={classes.word}>Price:</span>${props.foundProduct.productPrice} {props.foundProduct.productPrice < 8 ? "/ Piece" : "/ dish"}
-            </Typography>
-            <Typography gutterBottom variant="h5" component="div" className={props.foundProduct.productName.length > 17 ? classes.div3 : classes.div6}>
+            </div>
+            <div className={props.foundProduct.productName.length > 17 ? classes.div2 : classes.div5}>
+              <span className={classes.word}>Price:</span>${props.foundProduct.productPrice} {props.foundProduct.productPrice < 8 ? "/ Piece" : ""}
+            </div>
+            <div className={props.foundProduct.productName.length > 17 ? classes.div3 : classes.div6}>
               <span className={classes.word}>Region:</span>
               <img src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))} alt="" width={60} height={35} />
-            </Typography>
-            <Typography variant="body1" color="text.secondary" className={classes.description}>
-              {props.foundProduct.productDescription}
-            </Typography>
+            </div>
+            <div className={classes.description}>{props.foundProduct.productDescription}</div>
             <FormGroup sx={{ my: 1 }}>
               <FormControlLabel control={<Switch onChange={onHandleRequest} />} label="Add Special Request" />
               {request ? <TextArea rows={6} onChange={(event) => setRequestContent(event.target.value)} /> : ""}
@@ -95,7 +93,7 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
                   }}
                   className={classes.cartButton1}
                 >
-                  Add Cart
+                  Cart
                 </Button>
                 <Button href={"/products/" + props.foundProduct._id + "/editProduct"} className={classes.editButton1}>
                   Edit
@@ -118,16 +116,16 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
                   }}
                   className={classes.cartButton2}
                 >
-                  Add to Cart
+                  Cart
                 </Button>
                 <Button href={"/products"} className={classes.backButton2}>
                   Go Back
                 </Button>
               </Fragment>
             )}
-          </CardContent>
-        </CardActionArea>
-      </Card>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

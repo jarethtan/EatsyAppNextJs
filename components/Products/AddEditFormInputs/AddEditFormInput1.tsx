@@ -1,7 +1,6 @@
 import classes from "../AddEditProductForm.module.css";
 import Input from "../../../ui/Input";
 import { Fragment, useState } from "react";
-import { MenuItem, FormControl, InputLabel, Select, FormHelperText } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { iconsArray } from "../../../public/CountryIcons";
@@ -13,7 +12,7 @@ const AddEditFormInput1 = () => {
     formState: { errors },
   } = useFormContext();
 
-  const handleChangeCat = (event: SelectChangeEvent) => {
+  const handleChangeCat: any = (event: SelectChangeEvent) => {
     setCat(event.target.value);
   };
   return (
@@ -23,19 +22,28 @@ const AddEditFormInput1 = () => {
       <Input names="productPrice" type="number" label="Product Price" pageType="product" multiLines={false} disable={false} autoFocus={false} />
       <br />
       <br />
-      <FormControl variant="outlined" className={classes.catSelector}>
-        <InputLabel id="productCategoryLabel">Product Category</InputLabel>
-        <Select {...register("productCategory")} labelId="productCategoryLabel" label="Product Category" value={cat} onChange={handleChangeCat}>
+      <div className={classes.catSelector}>
+        <select
+          {...register("productCategory")}
+          id="productCategory"
+          value={cat}
+          onChange={handleChangeCat}
+          className={classes.categorySelect}
+          style={cat === "" ? { color: "rgb(145, 145, 145)" } : { color: "black" }}
+        >
+          <option value="" hidden>
+            Product Category
+          </option>
           {iconsArray.map((country, i) => (
-            <MenuItem key={i} value={country[2]}>
+            <option key={i} value={country[2]}>
               {country[2]}
-            </MenuItem>
+            </option>
           ))}
-        </Select>
-        <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>
+        </select>
+        <span style={{ color: "rgb(255, 66, 66)", background: "white", fontSize: "0.8rem" }}>
           {errors.productCategory ? errors.productCategory?.message : ""}
-        </FormHelperText>
-      </FormControl>
+        </span>
+      </div>
       <br />
       <br />
     </Fragment>

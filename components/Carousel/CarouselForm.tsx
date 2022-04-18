@@ -1,6 +1,7 @@
+import classes from "./CarouselForm.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { MenuItem, FormControl, InputLabel, Checkbox, ListItemText, Select, Typography, Button, FormHelperText } from "@mui/material";
+import { MenuItem, FormControl, InputLabel, Checkbox, ListItemText, Select, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { carouselUploadSchema } from "../../yupSchema/carouselForm";
@@ -62,11 +63,9 @@ const CarouselForm: React.FC<{ allProducts: ProductModel[] }> = (props) => {
   };
   return (
     <form onSubmit={handleSubmit(onSubmitSelectedProducts)} noValidate>
-      <Typography sx={{ mx: 5, marginTop: 5 }}>
-        Select the dishes to display on the carousel in the homepage. Maximum of Four dishes can be selected.
-      </Typography>
+      <div className={classes.formInfo}>Select the dishes to display on the carousel in the homepage. Maximum of Four dishes can be selected.</div>
       <br />
-      <FormControl variant="outlined" sx={{ minWidth: 200, mx: 5, marginTop: 3 }}>
+      <FormControl variant="outlined" className={classes.formSelect}>
         <InputLabel id="productCheckboxLabel">Product Carousel</InputLabel>
         <Select
           {...register("selectedProducts")}
@@ -85,10 +84,11 @@ const CarouselForm: React.FC<{ allProducts: ProductModel[] }> = (props) => {
           ))}
         </Select>
       </FormControl>
-      <FormHelperText style={{ color: "rgb(209, 63, 63)", background: "white" }}>
-        {errors.selectedProducts ? errors.selectedProducts.message : ""}
-      </FormHelperText>
-      <Button type="submit" variant="contained" color="primary" sx={{ marginLeft: 5, marginTop: 3, fontSize: 24 }}>
+      <span style={{ color: "rgb(255, 66, 66)", background: "white", fontSize: "0.8rem" }}>
+        {errors.selectedProducts ? errors.selectedProducts?.message : ""}
+      </span>
+      <br />
+      <Button type="submit" variant="contained" color="primary" className={classes.carouSelectSubmit}>
         Submit
       </Button>
     </form>
