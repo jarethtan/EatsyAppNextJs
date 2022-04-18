@@ -17,9 +17,7 @@ const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
         return getOneProduct(id as string);
       }
     case "POST":
-      if (session?.role === "admin") {
-        return createProduct(req, res);
-      }
+      return createProduct(req, res);
     case "PUT":
       if (session?.role === "admin") {
         return editProduct(req, res);
