@@ -66,7 +66,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
       if (formStatus) {
         setIsLoading(true);
         try {
-          const addProductToDBResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/createProduct`, {
+          const addProductToDBResponse = await fetch(`/api/products/6232dcec7ef3ab78b00bad57`, {
             // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
             method: "POST",
             headers: {
@@ -86,7 +86,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
             alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
           }
         } catch (e: any) {
-          console.log(e.message, e.status);
+          console.log(e, e.message);
         }
       } else {
         setIsLoading(true);
