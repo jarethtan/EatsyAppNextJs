@@ -71,6 +71,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
           headers: {
             "Content-Type": "application/json",
           },
+          mode: "cors",
           body: JSON.stringify(data),
         });
         const addProductToDBStatus = await addProductToDBResponse.json();
