@@ -39,7 +39,7 @@ module.exports = {
     MONGODB_USER: "josh88",
     MONGODB_PASSWORD: "tgdwcd2xBoz2L6cA",
     MONGODB_DATABASE: "ReactEShop",
-    NEXT_PUBLIC_BASE_URL: "eatsy-app-nextjs.vercel.app",
+    NEXT_PUBLIC_BASE_URL: "eatsy-app-next-js.vercel.app",
     SECRET: "3989f4c911b02a60cd54f82475698555",
     JWT_SECRET: "brownie",
     NEXTAUTH_URL: "http://localhost:3000",
