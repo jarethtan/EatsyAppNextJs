@@ -75,15 +75,15 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
             body: JSON.stringify(data),
           });
           const addProductToDBStatus = await addProductToDBResponse.json();
-          if (addProductToDBStatus.message !== "Product created in Cloudinary and Mongodb Database") {
-            setIsLoading(false);
-            await router.push("/products/addProduct");
-            alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
-          } else {
+          if (addProductToDBResponse.status === 201) {
             setImageUrl([]);
             setIsLoading(false);
             await router.push(`/products/${addProductToDBStatus.newProductId}`);
             alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
+          } else {
+            setIsLoading(false);
+            await router.push("/products/addProduct");
+            alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
           }
         } catch (e: any) {
           console.log(e.message, e.status);

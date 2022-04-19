@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ProductDetails from "../../../components/Products/ProductDetails";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import ProductModel from "../../../models/productModelClass";
 import Error from "next/error";

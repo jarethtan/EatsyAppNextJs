@@ -1,8 +1,7 @@
-import React from "react";
 import { NextApiRequest, NextApiResponse } from "next";
 import { connectToDatabase } from "../../middlewares/mongodb";
 import { ObjectId } from "mongodb";
-import { carouselUploadSchema } from "../../../yupSchema/carouselForm";
+
 const storeSelectedCarousel = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const id: any = req.query.id;
