@@ -75,6 +75,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
           body: JSON.stringify(data),
         });
         const addProductToDBStatus = await addProductToDBResponse.json();
+        console.log(addProductToDBResponse);
         if (addProductToDBStatus.message !== "Product created in Cloudinary and Mongodb Database") {
           setIsLoading(false);
           await router.push("/products/addProduct");
