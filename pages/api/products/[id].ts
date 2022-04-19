@@ -9,21 +9,25 @@ import getOneProduct from "../../../lib/helpers/productHelpers/getOneProduct";
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req }); // using session to secure api routes.
   const id = req.query.id;
-  switch (req.method) {
-    case "GET":
-      if (id === "getAllProducts") {
-        return getAllProduct();
-      } else {
-        return getOneProduct(id as string);
-      }
-    case "POST":
-      return createProduct(req, res);
-    case "PUT":
-      return editProduct(req, res);
-    case "DELETE":
-      return deleteProduct(req, res);
-    default:
-      return res.status(405).end(`Method ${req.method} Not Allowed`);
+  try {
+    switch (req.method) {
+      case "GET":
+        if (id === "getAllProducts") {
+          return getAllProduct();
+        } else {
+          return getOneProduct(id as string);
+        }
+      case "POST":
+        return createProduct(req, res);
+      case "PUT":
+        return editProduct(req, res);
+      case "DELETE":
+        return deleteProduct(req, res);
+      default:
+        return res.status(405).end(`Method ${req.method} Not Allowed`);
+    }
+  } catch (e) {
+    console.log("ERRRRRORRRRRRRRRR", e);
   }
 };
 

@@ -5,7 +5,6 @@ import { deleteImageFolder, deleteImages } from "../../../cloudinary/imageSuppor
 
 const deleteProduct = async (request: NextApiRequest, response: NextApiResponse) => {
   try {
-    console.log("FOUNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", request.body.productImage);
     await deleteImages(request.body.productImage);
     await deleteImageFolder("Products", request.body.productCategory, request.body.productName);
     const client = await connectToDatabase();
