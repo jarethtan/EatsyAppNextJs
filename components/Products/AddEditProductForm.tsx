@@ -16,7 +16,7 @@ import { ProductInputModel } from "../../models/formInputTypes";
 import { inputProductSchema } from "../../yupSchema/productForm";
 import { fileToDataURL } from "../../lib/middlewares/fileToDataUrl";
 import { alertService } from "../../lib/services/alert";
-import { NEXT_URL } from "../../config";
+import { baseUrL } from "../../config";
 
 const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }> = (props) => {
   const [imageUrl, setImageUrl] = useState<string[]>([]);
@@ -66,7 +66,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
       if (formStatus) {
         setIsLoading(true);
         try {
-          const addProductToDBResponse = await fetch(`/api/products/createProduct`, {
+          const addProductToDBResponse = await fetch(`${baseUrL}/api/products/createProduct`, {
             // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
             method: "POST",
             headers: {
@@ -91,7 +91,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
         }
       } else {
         setIsLoading(true);
-        const editProductInputResponse = await fetch(`${NEXT_URL}/api/products/${foundProduct?._id}`, {
+        const editProductInputResponse = await fetch(`${baseUrL}/api/products/${foundProduct?._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
