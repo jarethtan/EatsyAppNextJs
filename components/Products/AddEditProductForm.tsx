@@ -70,6 +70,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Accept: "application/json; charset=UTF-8",
           },
           body: JSON.stringify(data),
         });

@@ -19,13 +19,9 @@ const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
     case "POST":
       return createProduct(req, res);
     case "PUT":
-      if (session?.role === "admin") {
-        return editProduct(req, res);
-      }
+      return editProduct(req, res);
     case "DELETE":
-      if (session?.role === "admin") {
-        return deleteProduct(req, res);
-      }
+      return deleteProduct(req, res);
     default:
       return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
