@@ -65,26 +65,29 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
       } // logic is here incase the user checks and unchecks the deleteImage checkbox. by checks and unchecking, it will generate a false value instead of an empty string which will cause an error when passing into the backend. this is to convert it back to an empty string.
       if (formStatus) {
         setIsLoading(true);
-        const addProductToDBResponse = await fetch(`/api/products/createProduct`, {
-          // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json; charset=UTF-8",
-          },
-          body: JSON.stringify(data),
-        });
-        const addProductToDBStatus = await addProductToDBResponse.json();
-        console.log(addProductToDBResponse);
-        if (addProductToDBStatus.message !== "Product created in Cloudinary and Mongodb Database") {
-          setIsLoading(false);
-          await router.push("/products/addProduct");
-          alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
-        } else {
-          setImageUrl([]);
-          setIsLoading(false);
-          await router.push(`/products/${addProductToDBStatus.newProductId}`);
-          alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
+        try {
+          const addProductToDBResponse = await fetch(`/api/products/createProduct`, {
+            // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(data),
+          });
+          const addProductToDBStatus = await addProductToDBResponse.json();
+          if (addProductToDBStatus.message !== "Product created in Cloudinary and Mongodb Database") {
+            setIsLoading(false);
+            await router.push("/products/addProduct");
+            alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
+          } else {
+            setImageUrl([]);
+            setIsLoading(false);
+            await router.push(`/products/${addProductToDBStatus.newProductId}`);
+            alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
+          }
+        } catch (e) {
+          console.log(e);
         }
       } else {
         setIsLoading(true);
