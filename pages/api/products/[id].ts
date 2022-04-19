@@ -18,6 +18,7 @@ const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
           return getOneProduct(id as string);
         }
       case "POST":
+        console.log("CREATE PRODUCT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         return createProduct(req, res);
       case "PUT":
         return editProduct(req, res);
