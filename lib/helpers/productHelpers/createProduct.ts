@@ -41,7 +41,6 @@ const createProduct = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(400).json({ message: "Create product error", body: "Fail to insert product fields into MongoDB" });
     }
   } catch (e: any) {
-    console.log(e);
     return res.status(e.status).json({ message: "Error occured while creating product.", body: `Error message: ${e.message}` });
   }
 };

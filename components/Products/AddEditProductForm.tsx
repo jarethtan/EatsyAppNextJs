@@ -86,8 +86,8 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
             await router.push(`/products/${addProductToDBStatus.newProductId}`);
             alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
           }
-        } catch (e) {
-          console.log(e);
+        } catch (e: any) {
+          console.log(e.message, e.status);
         }
       } else {
         setIsLoading(true);
