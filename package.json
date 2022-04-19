@@ -1,6 +1,7 @@
 {
   "name": "reacteshop",
   "private": true,
+  "main": "pages/index.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
