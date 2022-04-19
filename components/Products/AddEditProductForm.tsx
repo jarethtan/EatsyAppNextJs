@@ -66,27 +66,28 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
       if (formStatus) {
         setIsLoading(true);
         try {
-          const addProductToDBResponse = await fetch(`/api/products/6232dcec7ef3ab78b00bad57`, {
+          const addProductToDBResponse = await fetch("/api/products/createProduct", {
             // send to next api folder under products [id].js file. the api end route of "createProduct" is written here as a dynamic route even though it is not an id number. this is so that we dont have to create another file in the api product route folder and group all route into one file [id].js. if not we will have one file index.ts just for general api route and [id].ts file for specific product id route for edit/delete/show.
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
+            credentials: "same-origin",
             body: JSON.stringify(data),
           });
-          const addProductToDBStatus = await addProductToDBResponse.text();
+          const addProductToDBStatus = await addProductToDBResponse.json();
           if (addProductToDBResponse.status === 201) {
             setImageUrl([]);
             setIsLoading(false);
-            await router.push(`/products}`);
-            alertService.success(addProductToDBStatus, { keepAfterRouteChange: true });
+            await router.push(`/products/${addProductToDBStatus.newProductId}`);
+            alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
           } else {
             setIsLoading(false);
             await router.push("/products/addProduct");
-            alertService.error(`${addProductToDBStatus}: ${addProductToDBStatus}`, { autoClose: false, keepAfterRouteChange: false });
+            alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
           }
         } catch (e: any) {
-          console.log(e, e.message);
+          console.log(e, e.data, e.message);
         }
       } else {
         setIsLoading(true);
