@@ -74,16 +74,16 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
             },
             body: JSON.stringify(data),
           });
-          const addProductToDBStatus = await addProductToDBResponse.json();
+          const addProductToDBStatus = await addProductToDBResponse.text();
           if (addProductToDBResponse.status === 201) {
             setImageUrl([]);
             setIsLoading(false);
-            await router.push(`/products/${addProductToDBStatus.newProductId}`);
-            alertService.success(addProductToDBStatus.message, { keepAfterRouteChange: true });
+            await router.push(`/products}`);
+            alertService.success(addProductToDBStatus, { keepAfterRouteChange: true });
           } else {
             setIsLoading(false);
             await router.push("/products/addProduct");
-            alertService.error(`${addProductToDBStatus.message}: ${addProductToDBStatus.body}`, { autoClose: false, keepAfterRouteChange: false });
+            alertService.error(`${addProductToDBStatus}: ${addProductToDBStatus}`, { autoClose: false, keepAfterRouteChange: false });
           }
         } catch (e: any) {
           console.log(e, e.message);
