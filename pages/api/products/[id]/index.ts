@@ -1,9 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
-import createProduct from "../../../../lib/helpers/productHelpers/createProduct";
 import editProduct from "../../../../lib/helpers/productHelpers/editProduct";
 import deleteProduct from "../../../../lib/helpers/productHelpers/deleteProduct";
-import getAllProduct from "../../../../lib/helpers/productHelpers/getAllProduct";
 import getOneProduct from "../../../../lib/helpers/productHelpers/getOneProduct";
 
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -12,11 +10,7 @@ const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (req.method) {
       case "GET":
-        if (id === "getAllProducts") {
-          return getAllProduct();
-        } else {
-          return getOneProduct(id as string);
-        }
+        return getOneProduct(id as string);
       case "PUT":
         if (session?.role === "admin") {
           return editProduct(req, res);

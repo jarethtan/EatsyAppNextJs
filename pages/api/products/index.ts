@@ -1,12 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import createProduct from "../../../lib/helpers/productHelpers/createProduct";
+import getAllProduct from "../../../lib/helpers/productHelpers/getAllProduct";
 
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req }); // using session to secure api routes.
   const id = req.query.id;
   try {
     switch (req.method) {
+      case "GET":
+        return getAllProduct();
       case "POST":
         if (session?.role === "admin") {
           return createProduct(req, res);

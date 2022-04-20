@@ -23,23 +23,23 @@ const Product: React.FC<{ foundProduct: ProductModel; status: number; message: s
   );
 };
 
-export async function getStaticPaths() {
-  try {
-    const { body } = await getAllProduct();
-    const allProducts = body;
-    return {
-      fallback: false,
-      paths: allProducts.map((product: any) => ({
-        // will return an array of objects with params to make the page rendering dynamic
-        params: { productId: product._id.toString() }, // it will come in ObjectId(id) format. we need to string to convert it to a string
-      })),
-    };
-  } catch (e) {
-    console.log("Error occured when retrieving all product details to create unqie category array", e);
-  }
-}
+// export async function getStaticPaths() {
+//   try {
+//     const { body } = await getAllProduct();
+//     const allProducts = body;
+//     return {
+//       fallback: false,
+//       paths: allProducts.map((product: any) => ({
+//         // will return an array of objects with params to make the page rendering dynamic
+//         params: { productId: product._id.toString() }, // it will come in ObjectId(id) format. we need to string to convert it to a string
+//       })),
+//     };
+//   } catch (e) {
+//     console.log("Error occured when retrieving all product details to create unqie category array", e);
+//   }
+// }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps = async (context: any) => {
   const { productId } = context.params!; // ! is non null assertion to tell typescript that there indeed is a value
   const response = await getOneProduct(productId as string);
   const { message, body: foundProduct, status } = response;
