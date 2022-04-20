@@ -24,7 +24,7 @@ const ShowAllProducts: React.FC<{ allProducts: ProductModel[]; status: number; m
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerProps = async () => {
   const { body: allProducts, message, status } = await getAllProduct();
   return {
     props: { allProducts, status, message },
