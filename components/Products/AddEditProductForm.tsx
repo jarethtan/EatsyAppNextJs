@@ -90,7 +90,7 @@ const AddEditProductForm: React.FC<{ foundProductForEdit: ProductModel | null }>
         }
       } else {
         setIsLoading(true);
-        const editProductInputResponse = await fetch(`${baseUrL}/api/products/${foundProduct?._id}`, {
+        const editProductInputResponse = await fetch(`/api/products/${foundProduct?._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
