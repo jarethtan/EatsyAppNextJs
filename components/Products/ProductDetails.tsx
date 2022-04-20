@@ -28,7 +28,7 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
 
   const onDeleteProduct = async () => {
     if (session.data?.role === "admin") {
-      const deleteProductResponse = await fetch(`/api/products`, {
+      const deleteProductResponse = await fetch(`/api/products/delete`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
