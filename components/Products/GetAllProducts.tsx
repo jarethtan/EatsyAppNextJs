@@ -63,7 +63,7 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
   const Products: ProductModel[] = searchResult !== null ? searchResult : props.allProducts;
 
   return (
-    <div>
+    <div className={classes.container}>
       {searchResult !== null && searchResult.length === 0 ? (
         <h3 className={classes.searchMessage}>We are sorry. There are no matching results generated for your search request.</h3>
       ) : (
@@ -72,6 +72,13 @@ const GetAllProducts: React.FC<{ allProducts: ProductModel[] }> = (props) => {
       <button id="btnScrollUp">
         <ArrowUpwardIcon fontSize="large" />
       </button>
+      {searchResult !== null ? (
+        <button onClick={() => setSearchResult(null)} className={classes.clearSearchBtn}>
+          Clear Search
+        </button>
+      ) : (
+        ""
+      )}
       <div className={classes.flexContainer}>
         {Products.sort((a, b) => a.productName.localeCompare(b.productName)).map((product) => (
           <div key={product._id}>

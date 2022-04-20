@@ -1,8 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .flexContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.clearSearchBtn {
+  margin: auto;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 16rem;
+  border: 2px solid rgb(16, 80, 16);
+  color: rgb(16, 80, 16);
+  background-color: rgb(255, 219, 88);
+  cursor: pointer;
+  border-radius: 0.2rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.clearSearchBtn:hover {
+  color: brown;
+  transform: scale(1.05);
+  border: 2px solid brown;
 }
 
 .card {
