@@ -16,7 +16,7 @@
     "incremental": true
   },
   "include": [
-    "lib/helpers/productHelpers/editProduct.js",
+    "lib/helpers/productHelpers/editProduct.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

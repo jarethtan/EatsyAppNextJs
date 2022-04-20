@@ -4,15 +4,15 @@ import { ObjectId } from "mongodb";
 import { uploadProductSchema } from "../../../yupSchema/productForm";
 import { uploadImages, deleteImages, deleteImageFolder } from "../../../cloudinary/imageSupport";
 
-const editProduct = async (req, res) => {
-  const id = req.query.id;
+const editProduct = async (req: NextApiRequest, res: NextApiResponse) => {
+  const id: any = req.query.id;
   try {
     req.body = await uploadProductSchema.validate(req.body, {
       stripUnknown: true,
       strict: true,
       abortEarly: false,
     });
-  } catch (error) {
+  } catch (error: any) {
     return res.status(400).json({ message: `Backend ${error.name} when updating product`, body: error.message, status: 400 });
   }
   let { productName, productCategory, productDescription, productImage, productPrice, deleteImage } = req.body;
@@ -20,13 +20,13 @@ const editProduct = async (req, res) => {
     const client = await connectToDatabase();
     const db = client.db();
     const foundProduct = await db.collection("products").findOne({ _id: new ObjectId(id) });
-    const deletedImage = Array.from(new Set(deleteImage)); // transform deleteImage into an array from a string
+    const deletedImage: string[] = Array.from(new Set(deleteImage)); // transform deleteImage into an array from a string
     if (
       (deletedImage.length > 0 && foundProduct?.productImage.length - deletedImage.length === 1) ||
       (deletedImage.length > 0 && foundProduct?.productImage.length - deletedImage.length === 2)
     ) {
-      const editImageArrayMongoResponse = await db
-        .collection("products")
+      const editImageArrayMongoResponse: any = await db
+        .collection("products") // @ts-ignore
         .findOneAndUpdate({ _id: new ObjectId(id) }, { $pull: { productImage: { $in: deletedImage } } }); // update productImage array URL in mongodb database by the selected image deleted in edit form.
       if (editImageArrayMongoResponse.lastErrorObject.n > 0) {
         console.log(`Image(s) URL deleted from ${foundProduct?.productName}'s product image array in MongoDB database.`);
@@ -137,7 +137,7 @@ const editProduct = async (req, res) => {
         body: `${foundProduct?.productName} product must have at least one image. Unable to delete image until additional image(s) is/are added.`,
       });
     }
-  } catch (e) {
+  } catch (e: any) {
     return res.status(e.status).json({ message: "Error occured while updating product.", body: `Error message: ${e.message}` });
   }
 };
