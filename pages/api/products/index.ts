@@ -5,7 +5,6 @@ import getAllProduct from "../../../lib/helpers/productHelpers/getAllProduct";
 
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req }); // using session to secure api routes.
-  const id = req.query.id;
   try {
     switch (req.method) {
       case "GET":

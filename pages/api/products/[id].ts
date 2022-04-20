@@ -1,16 +1,14 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
-import editProduct from "../../../../lib/helpers/productHelpers/editProduct";
-import deleteProduct from "../../../../lib/helpers/productHelpers/deleteProduct";
-import getOneProduct from "../../../../lib/helpers/productHelpers/getOneProduct";
+import editProduct from "../../../lib/helpers/productHelpers/editProduct";
+import deleteProduct from "../../../lib/helpers/productHelpers/deleteProduct";
+// NOTE:
 
 const handlers = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req }); // using session to secure api routes.
   const id = req.query.id;
   try {
     switch (req.method) {
-      case "GET":
-        return getOneProduct(id as string);
       case "PUT":
         if (session?.role === "admin") {
           return editProduct(req, res);

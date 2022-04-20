@@ -73,7 +73,13 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
             </div>
             <div className={props.foundProduct.productName.length > 17 ? classes.div3 : classes.div6}>
               <span className={classes.word}>Region:</span>
-              <img src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))} alt="" width={60} height={35} />
+              <img
+                src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))}
+                alt=""
+                width={60}
+                height={35}
+                className={classes.countryIcon}
+              />
             </div>
             <div className={classes.description}>{props.foundProduct.productDescription}</div>
             <FormGroup sx={{ my: 1 }}>
