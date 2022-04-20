@@ -30,7 +30,7 @@ const Home: React.FC<{ allProducts: ProductModel[]; selectedCarousels: ProductMo
   );
 };
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
   const { body: allProducts } = await getAllProduct();
   const selectedCarousels = await getSelectedCarousel();
   const { body: allUsers } = await getAllUsers();
