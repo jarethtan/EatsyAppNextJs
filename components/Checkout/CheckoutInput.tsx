@@ -6,7 +6,7 @@ import TimePicker from "@mui/lab/TimePicker";
 import DatePicker from "@mui/lab/DatePicker";
 import Input from "../../ui/Input";
 import { format } from "date-fns";
-import { Tooltip, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useFormContext, Controller } from "react-hook-form";
 
 export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (props) => {
@@ -65,7 +65,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
           defaultValue=""
           render={({ field: { onChange, value } }) => (
             <TimePicker
-              label={props.deliveryMethod ? "Delivery Time" : "Pick-up Time"}
+              label={props.deliveryMethod ? "Delivery Time (10am - 10pm)" : "Pick-up Time (10am - 10pm)"}
               value={value}
               ampm={false}
               onChange={(value) => onChange(value)}
@@ -73,17 +73,15 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
               minTime={new Date(0, 0, 0, 10)}
               maxTime={new Date(0, 0, 0, 22)}
               renderInput={(params) => (
-                <Tooltip title="Delivery/Pick-up time between 10am - 10pm">
-                  <TextField
-                    id="selectTime"
-                    {...params}
-                    onFocus={readOnlyOnFocus}
-                    error={!!errors.selectTime}
-                    helperText={errors.selectTime ? errors.selectTime?.message : ""}
-                    style={{ width: "100%" }}
-                    className={classes.dateTimeInput}
-                  />
-                </Tooltip>
+                <TextField
+                  id="selectTime"
+                  {...params}
+                  onFocus={readOnlyOnFocus}
+                  error={!!errors.selectTime}
+                  helperText={errors.selectTime ? errors.selectTime?.message : ""}
+                  style={{ width: "100%" }}
+                  className={classes.dateTimeInput}
+                />
               )}
             />
           )}

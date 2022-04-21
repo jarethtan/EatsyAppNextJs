@@ -24,9 +24,9 @@
 }
 
 .deliveryOptionButton:hover {
-  background-color: rgb(16, 80, 16);
-  color: white;
-  font-size: 0.9rem;
+  background-color: white;
+  box-shadow: 0 0 2px rgb(16, 80, 16);
+  transform: scale(1.1);
 }
 
 .paymentNote {

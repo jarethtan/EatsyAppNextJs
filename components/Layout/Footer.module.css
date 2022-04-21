@@ -46,7 +46,9 @@
 }
 
 .innerButton {
+  margin-top: 0.5rem;
   border: none;
+  cursor: pointer;
   background-color: inherit;
 }
 

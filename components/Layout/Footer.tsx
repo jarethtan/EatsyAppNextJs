@@ -67,21 +67,15 @@ const Footer = () => {
             <Grid item xs={6} sm={2.5} order={{ xs: 5, sm: 5 }}>
               <div className={classes.header}>Follow Us</div>
               <div>
-                <Button disableRipple href="/">
-                  <button className={classes.innerButton}>
-                    <FacebookIcon className={classes.icon} />
-                  </button>
-                </Button>
-                <Button disableRipple href="/">
-                  <button className={classes.innerButton}>
-                    <InstagramIcon className={classes.instaIcon} />
-                  </button>
-                </Button>
-                <Button disableRipple href="/">
-                  <button className={classes.innerButton}>
-                    <TwitterIcon className={classes.icon} />
-                  </button>
-                </Button>
+                <button className={classes.innerButton}>
+                  <FacebookIcon className={classes.icon} />
+                </button>
+                <button className={classes.innerButton}>
+                  <InstagramIcon className={classes.instaIcon} />
+                </button>
+                <button className={classes.innerButton}>
+                  <TwitterIcon className={classes.icon} />
+                </button>
               </div>
             </Grid>
           </Grid>

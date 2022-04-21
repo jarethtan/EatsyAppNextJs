@@ -10,14 +10,14 @@ const PaymentButtons = () => {
     <Fragment>
       <div>
         <button className={classes.appleButton} type="submit">
-          <AppleIcon className={classes.appleIcon} />
+          <AppleIcon fontSize="large" className={classes.appleIcon} />
         </button>
         <button className={classes.creditCardButton} type="submit">
-          <CreditCardIcon className={classes.creditCardIcon} />
+          <CreditCardIcon fontSize="large" className={classes.creditCardIcon} />
         </button>
 
         <button className={classes.cryptoButton} type="submit">
-          <CurrencyBitcoinIcon className={classes.cryptoIcon} />
+          <CurrencyBitcoinIcon fontSize="large" className={classes.cryptoIcon} />
         </button>
       </div>
     </Fragment>
