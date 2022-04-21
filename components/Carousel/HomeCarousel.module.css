@@ -18,7 +18,7 @@
   position: absolute;
   width: 12rem;
   height: auto;
-  top: 6rem;
+  top: 5rem;
   left: 15rem;
 }
 
@@ -167,7 +167,7 @@
 @media (max-width: 481px) {
   .eatsyIcon {
     width: 10rem;
-    top: 2vh;
+    top: 1vh;
     left: 5%;
   }
 

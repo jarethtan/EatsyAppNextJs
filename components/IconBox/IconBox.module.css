@@ -1,11 +1,10 @@
 .box {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 8%;
   background-color: white;
   padding: 0rem;
   border-radius: 1rem;
-  width: 75%;
+  width: 80%;
   justify-content: space-evenly;
   text-align: center;
   margin: 1rem auto 0rem auto;
@@ -13,10 +12,11 @@
 
 .card {
   margin: 0.7rem;
+  flex: 0 1 5.5%;
   background-color: white;
   border-radius: 1rem;
   height: 4.2rem;
-  width: 4.5rem;
+  min-width: 4rem;
   border: 1px solid rgb(16, 80, 16);
   box-shadow: 1px 2px 2px black;
   transition: all 0s ease-in-out;

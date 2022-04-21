@@ -65,7 +65,7 @@ const MovingCarousel: React.FC<{ accumOrderForEachProduct: [] }> = (props) => {
             <br />
             <br />
             <Button href={"/products/" + product[4]} className={classes.buttonDetails}>
-              <VisibilityIcon />
+              <VisibilityIcon className={classes.carouIcon} />
             </Button>
             <Button
               className={classes.buttonCart}
@@ -83,7 +83,7 @@ const MovingCarousel: React.FC<{ accumOrderForEachProduct: [] }> = (props) => {
                 )
               }
             >
-              <AddShoppingCartIcon />
+              <AddShoppingCartIcon className={classes.carouIcon} />
             </Button>
             <span className={classes.spanPrice}>${product[3]}</span>
           </div>

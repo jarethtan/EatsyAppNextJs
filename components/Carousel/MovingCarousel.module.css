@@ -91,7 +91,6 @@
   padding: 0.6rem 0.5rem 0.4rem 0.5rem;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
   width: 33.33%;
   right: 33.33%;
   position: absolute;
@@ -134,7 +133,6 @@
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  font-size: 15px;
   width: 33.33%;
   right: 66.666%;
   position: absolute;
@@ -200,7 +198,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .title1 {
     font-size: 1.4rem;
     margin-top: 1rem;
@@ -218,7 +216,8 @@
 
   .card {
     height: 5rem;
-    margin: 1rem 2rem;
+    margin: 1rem 0rem;
+    max-width: 11rem;
   }
 
   .card:hover {
@@ -238,18 +237,21 @@
   }
 
   .buttonCart {
-    padding: 0.4rem 0.1rem 0rem 0.1rem;
+    padding: 0.4rem 0rem 0rem 0rem;
     font-size: 0.5rem;
+    right: 30.666%;
   }
 
   .spanPrice {
-    padding: 0.5rem 0.8rem 0.3rem 0.8rem;
-    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+
+    font-size: 1.05rem;
   }
 
   .buttonDetails {
-    padding: 0.4rem 0.1rem 0rem 0.1rem;
+    padding: 0.4rem 0rem 0rem 0rem;
     font-size: 0.5rem;
+    right: 62.666%;
   }
 }
 
