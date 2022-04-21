@@ -48,7 +48,7 @@ const IconBox = () => {
   return (
     <div className={classes.box}>
       {iconsArray.map((icon, i) => (
-        <div className={classes.card}>
+        <div key={i} className={classes.card}>
           <a
             className={classes.iconLink}
             onClick={() => {
