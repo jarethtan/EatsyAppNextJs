@@ -47,21 +47,25 @@ const CheckoutItems: React.FC<{ user: RegisterInputModel }> = (props) => {
       </Head>
       {isLoading ? (
         <div className={classes.container}>
-          <h1 className="pageHeader">Checkout in progress...</h1>
+          <h1 className="pageHeader" style={{ textAlign: "center" }}>
+            Checkout in progress...
+          </h1>
           <LoadingSpinner />
         </div>
       ) : (
-        <div suppressHydrationWarning className={classes.container}>
-          <h1 className="pageHeader">Checkout Page</h1>
-          <Grid container>
-            <Grid item xs={12} md={9} order={{ xs: 2, md: 1 }}>
+        <Fragment>
+          <h1 className="pageHeader" style={{ textAlign: "center" }}>
+            Checkout Page
+          </h1>
+          <div suppressHydrationWarning className={classes.checkOutContainer}>
+            <div className={classes.checkOutListContainer}>
               <ProductCheckoutList cart={cart} />
-            </Grid>
-            <Grid item xs={12} md={3} order={{ xs: 1, md: 2 }}>
+            </div>
+            <div className={classes.checkOutFormContainer}>
               <CheckoutForm totalCartPrice={totalCartPrice} user={props.user} userCart={userCart} />
-            </Grid>
-          </Grid>
-        </div>
+            </div>
+          </div>
+        </Fragment>
       )}
     </Fragment>
   );

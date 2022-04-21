@@ -1,12 +1,27 @@
-.container {
+.checkOutContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.checkOutListContainer {
   padding: 2rem;
   text-align: center;
+  width: 75%;
 }
+
+.checkOutFormContainer {
+  padding: 0 2%;
+  text-align: center;
+  width: 25%;
+}
+
 .header {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
 }
+
 .header div {
   flex: 1;
   text-align: center;
@@ -18,6 +33,7 @@
   color: brown;
   margin-bottom: 2rem;
 }
+
 .body {
   display: flex;
   justify-content: space-between;
@@ -61,6 +77,19 @@
 }
 
 @media (max-width: 1050px) {
+  .checkOutContainer {
+    flex-direction: column-reverse;
+  }
+
+  .checkOutListContainer {
+    width: 100%;
+  }
+
+  .checkOutFormContainer {
+    width: 40%;
+    margin: auto;
+  }
+
   .header div {
     font-size: 1rem;
   }
@@ -86,6 +115,10 @@
 }
 
 @media (max-width: 650px) {
+  .checkOutFormContainer {
+    width: 60%;
+  }
+
   .header div {
     font-size: 0.8rem;
   }
@@ -141,8 +174,8 @@
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 1rem;
+  .checkOutFormContainer {
+    width: 90%;
   }
 
   .header div {

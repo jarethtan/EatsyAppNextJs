@@ -75,7 +75,7 @@ const CheckoutForm: React.FC<{ totalCartPrice: string; user: RegisterInputModel;
     }
   };
   return (
-    <div className={classes.formContainer}>
+    <div>
       {isLoading ? (
         <div className={classes.container}>
           <h1 className="pageHeader">Checkout in progress...</h1>

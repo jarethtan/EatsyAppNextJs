@@ -64,7 +64,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
           defaultValue=""
           render={({ field: { onChange, value } }) => (
             <TimePicker
-              label={props.deliveryMethod ? "Delivery Time" : "Pick-up Time"}
+              label={props.deliveryMethod ? "Delivery Time (10am - 10pm)" : "Pick-up Time (10am - 10pm)"}
               value={value}
               ampm={false}
               onChange={(value) => onChange(value)}

@@ -9,7 +9,7 @@ const ProductCheckoutList: React.FC<{ cart: ProductModel[] }> = (props) => {
       {props.cart === undefined ? (
         <p>Loading Cart...</p>
       ) : (
-        <div className={classes.container}>
+        <div>
           <div className={classes.header}>
             <div className={classes.imageTitle}>Image</div>
             <div>Dish</div>
