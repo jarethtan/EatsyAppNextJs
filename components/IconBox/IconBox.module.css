@@ -19,7 +19,7 @@
   width: 4.5rem;
   border: 1px solid rgb(16, 80, 16);
   box-shadow: 1px 2px 2px black;
-  transition: all 0.2s ease-in-out;
+  transition: all 0s ease-in-out;
 }
 
 .word {
@@ -61,23 +61,9 @@
   background-color: rgb(172, 172, 172);
 }
 
-/* @media (max-width: 1400px) {
-  .box {
-    width: 90%;
-  }
+.card:active .imageContainer {
+  background-color: rgb(172, 172, 172);
 }
-
-@media (max-width: 1100px) {
-  .box {
-    width: 80%;
-  }
-}
-
-@media (max-width: 900px) {
-  .box {
-    width: 80%;
-  }
-} */
 
 @media (max-width: 600px) {
   .card {

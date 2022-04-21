@@ -2,11 +2,11 @@ import React from "react";
 import classes from "../NavBar.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import { Box, IconButton, MenuItem, Typography } from "@mui/material";
+import Modal from "../../../ui/Modal";
+import { Box, IconButton } from "@mui/material";
 import { useSession } from "next-auth/react";
 import { alertService } from "../../../lib/services/alert";
 import { signOut } from "next-auth/react";
-import Modal from "../../../ui/Modal";
 
 const NavIconButton: React.FC<{
   links: string[];
@@ -19,7 +19,16 @@ const NavIconButton: React.FC<{
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-      <IconButton size="large" aria-label="Collapsed Nav Bar Menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
+      <IconButton
+        disableRipple
+        size="large"
+        aria-label="Collapsed Nav Bar Menu"
+        aria-controls="menu-appbar"
+        aria-haspopup="true"
+        onClick={handleOpenNavMenu}
+        color="inherit"
+        className={classes.iconButton}
+      >
         <MenuIcon sx={{ color: "brown" }} />
       </IconButton>
       <Modal // this menu is for the list of nav button when collpasing the the navbar

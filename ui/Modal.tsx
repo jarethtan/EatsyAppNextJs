@@ -16,7 +16,7 @@ const Modal: React.FC<{ show: boolean; onClose: any; children: any; modalFunctio
 
   const modalContent = show ? (
     <div
-      onClick={handleCloseClick}
+      onClick={modalFunction !== "navSearch" ? handleCloseClick : () => ""}
       className={classes.modalOverlay}
       style={modalFunction !== "navSearch" ? { backgroundColor: "rgba(0, 0, 0, 0)" } : { backgroundColor: "rgba(0, 0, 0, 0.75)" }}
     >
