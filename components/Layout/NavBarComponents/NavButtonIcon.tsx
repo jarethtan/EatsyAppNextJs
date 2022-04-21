@@ -1,22 +1,22 @@
 import React from "react";
 import classes from "../NavBar.module.css";
-import { Typography, Button, Box } from "@mui/material";
+import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 
 const NavButtonIcon = () => {
   const { asPath } = useRouter();
   return (
     <div style={{ flexGrow: 0 }}>
-      <Typography variant="h6" noWrap component="div" sx={{ display: { xs: "none", md: "flex" }, cursor: asPath == "/checkout" ? "not-allowed" : "pointer" }}>
+      <div className={classes.eatsyContainer1} style={{ cursor: asPath == "/checkout" ? "not-allowed" : "pointer" }}>
         <Button href="/" disabled={asPath == "/checkout" ? true : false}>
           <img src="/eatsyIcons/EatsyNavIcon.jpeg" alt="" className={classes.eatsyIcon} />
         </Button>
-      </Typography>
-      <Typography variant="h6" noWrap component="div" sx={{ display: { xs: "flex", md: "none" }, cursor: asPath == "/checkout" ? "not-allowed" : "pointer" }}>
+      </div>
+      <div className={classes.eatsyContainer2} style={{ cursor: asPath == "/checkout" ? "not-allowed" : "pointer" }}>
         <Button href="/" disabled={asPath == "/checkout" ? true : false}>
           <img src="/eatsyIcons/EatsyNavIcon.jpeg" alt="" className={classes.eatsyIcon} />
         </Button>
-      </Typography>
+      </div>
     </div>
   );
 };

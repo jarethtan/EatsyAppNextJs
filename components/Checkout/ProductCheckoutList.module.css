@@ -76,6 +76,13 @@
   font-weight: 1000;
 }
 
+.dateTimeInput {
+  width: 100%;
+  border: 1px solid gray;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
 @media (max-width: 1050px) {
   .checkOutContainer {
     flex-direction: column-reverse;

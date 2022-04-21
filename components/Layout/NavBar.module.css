@@ -12,6 +12,13 @@
   box-shadow: 0 0 15px gray;
 }
 
+.cartButton {
+  margin: auto 0;
+  margin-left: auto;
+}
+
+/***************************************** Eatsy Icon styling!! ***********************************************/
+
 .eatsyIcon {
   height: 3rem;
   width: 3rem;
@@ -25,9 +32,12 @@
   animation: scooterMove 1500ms ease-out;
 }
 
-.cartButton {
-  margin: auto 0;
-  margin-left: auto;
+.eatsyContainer1 {
+  display: flex;
+}
+
+.eatsyContainer2 {
+  display: none;
 }
 
 /***************************************** Nav uncollapse MainLink styling!! ***********************************************/
@@ -396,8 +406,17 @@
   .searchTitle {
     font-size: 2.5rem;
   }
+
   .modalCLoseIcon {
     font-size: 2.5rem;
+  }
+
+  .eatsyContainer1 {
+    display: none;
+  }
+
+  .eatsyContainer2 {
+    display: flex;
   }
 }
 

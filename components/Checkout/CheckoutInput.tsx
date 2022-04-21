@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
-import { useFormContext, Controller } from "react-hook-form";
-import TextField from "@mui/material/TextField";
+import classes from "./ProductCheckoutList.module.css";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TimePicker from "@mui/lab/TimePicker";
 import DatePicker from "@mui/lab/DatePicker";
-import { format } from "date-fns";
-import { Tooltip } from "@mui/material";
 import Input from "../../ui/Input";
+import { format } from "date-fns";
+import { Tooltip, TextField } from "@mui/material";
+import { useFormContext, Controller } from "react-hook-form";
 
 export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (props) => {
   const {
@@ -49,6 +49,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
                   autoComplete="off"
                   helperText={errors.selectDate ? errors.selectDate?.message : ""}
                   style={{ width: "100%" }}
+                  className={classes.dateTimeInput}
                 />
               )}
             />
@@ -80,6 +81,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
                     error={!!errors.selectTime}
                     helperText={errors.selectTime ? errors.selectTime?.message : ""}
                     style={{ width: "100%" }}
+                    className={classes.dateTimeInput}
                   />
                 </Tooltip>
               )}
