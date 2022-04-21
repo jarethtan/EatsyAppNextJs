@@ -58,11 +58,11 @@
 }
 
 .card:active {
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(202, 202, 202);
 }
 
 .card:active .imageContainer {
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(202, 202, 202);
 }
 
 @media (max-width: 600px) {

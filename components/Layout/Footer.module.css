@@ -45,12 +45,16 @@
   animation: scooterMove 3s ease-in-out;
 }
 
+.innerButton {
+  border: none;
+  background-color: inherit;
+}
+
 .icon,
 .instaIcon {
   color: rgb(16, 80, 16);
-  font-size: 3rem;
+  font-size: 2.6rem;
   transition: all 0.1s ease-in-out;
-  padding: 0rem 0.3rem;
 }
 
 .icon:hover {
