@@ -64,7 +64,7 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
           defaultValue=""
           render={({ field: { onChange, value } }) => (
             <TimePicker
-              label={props.deliveryMethod ? "Delivery Time (10am - 10pm)" : "Pick-up Time (10am - 10pm)"}
+              label={props.deliveryMethod ? "Delivery Time" : "Pick-up Time"}
               value={value}
               ampm={false}
               onChange={(value) => onChange(value)}
@@ -92,3 +92,24 @@ export const DeliveryPickupTimeInput: React.FC<{ deliveryMethod: boolean }> = (p
 };
 
 export default DeliveryPickupTimeInput;
+
+// <Fragment>
+//   {!props.deliveryMethod ? (
+//     <Input names="contactNumPickUp" type="number" label="Contact Number" pageType="checkout" multiLines={false} disable={false} autoFocus={false} />
+//   ) : (
+//     ""
+//   )}
+//   <br />
+//   <br />
+//   <LocalizationProvider dateAdapter={AdapterDateFns}>
+//     <Controller
+//       name="selectTime"
+//       control={control}
+//       defaultValue=""
+//       render={({ field: { onChange, value } }) => (
+//         <input type="datetime-local" step={900} value={value} onChange={(value) => onChange(value)} className={classes.dateTimeInput} />
+//       )}
+//     />
+//     <span style={{ color: "rgb(255, 66, 66)", background: "white", fontSize: "0.8rem" }}>{errors.selectTime ? errors.selectTime?.message : ""}</span>
+//   </LocalizationProvider>
+// </Fragment>;

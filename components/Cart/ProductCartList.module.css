@@ -72,12 +72,14 @@
 
 .checkoutButton {
   background-color: rgb(16, 80, 16);
+  width: 18%;
+  margin: auto;
   color: rgb(255, 219, 88);
   font-size: 1.5rem;
   font-weight: bolder;
   letter-spacing: 1px;
   outline: none;
-  padding: 0.5rem 0.8rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 0.5rem;
   border: 2px solid rgb(16, 80, 16);
   box-shadow: 0 2px 5px grey;
