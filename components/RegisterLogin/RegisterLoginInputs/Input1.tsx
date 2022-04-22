@@ -1,7 +1,7 @@
 import Input from "../../../ui/Input";
+import ImageInput from "../../../ui/ImageInput";
 import { Fragment, useState } from "react";
 import { fileToDataURL } from "../../../lib/middlewares/fileToDataUrl";
-import ImageInput from "../../../ui/ImageInput";
 
 const Input1: React.FC<{ receiveImageUrl: any }> = ({ receiveImageUrl }) => {
   const [imageUrl, setImageUrl] = useState<string>("");

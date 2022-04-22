@@ -195,3 +195,9 @@ body::-webkit-scrollbar-thumb:active {
   transition: 0.2s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 600px) {
+  .pageHeader {
+    font-size: 1.8rem;
+  }
+}
