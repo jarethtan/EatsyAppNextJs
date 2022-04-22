@@ -166,9 +166,10 @@
 
 @media (max-width: 481px) {
   .eatsyIcon {
-    width: 10rem;
-    top: 1vh;
-    left: 5%;
+    width: 8rem;
+    height: 7rem;
+    top: 2vh;
+    left: 6%;
   }
 
   .titlePrimary2 {
@@ -201,25 +202,25 @@
   }
 
   .titleSecondary1 {
-    top: 5rem;
+    top: 3.5rem;
     left: 1rem;
     font-size: 1.3rem;
   }
 
   .titleSecondary2 {
-    top: 8rem;
+    top: 6rem;
     left: 1rem;
     font-size: 1rem;
   }
 
   .titleSecondary3 {
-    top: 10rem;
+    top: 8.5rem;
     left: 1rem;
     font-size: 1rem;
   }
 
   .titleSecondaryButton {
-    top: 12.5rem;
+    top: 11.5rem;
     left: 1rem;
     font-size: 1rem;
   }
