@@ -1,36 +1,28 @@
-// const { nanoid } = require("nanoid");
-// const crypto = require("crypto");
+const { nanoid } = require("nanoid");
+const crypto = require("crypto");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 };
 
-// const generateCsp = () => {
-//   const hash = crypto.createHash("sha256");
-//   hash.update(nanoid());
-//   const production = process.env.NODE_ENV === "production";
+const generateCsp = () => {
+  const hash = crypto.createHash("sha256");
+  hash.update(nanoid());
+  const production = process.env.NODE_ENV === "production";
 
-//   return `default-src 'self' http://localhost:3000 ; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
-//     "base64"
-//   )}' 'self' 'unsafe-inline' ${
-//     production ? "" : "'unsafe-eval'"
-//   }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000`;
-// };
+  return `default-src 'self' http://localhost:3000 ; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
+    "base64"
+  )}' 'self' 'unsafe-inline' ${
+    production ? "" : "'unsafe-eval'"
+  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000`;
+};
 
 module.exports = {
   nextConfig,
   images: {
     domains: ["res.cloudinary.com"],
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/api/:path*",
-  //       destination: "https://eatsy-app-nextjs.vercel.app/:path*",
-  //     },
-  //   ];
-  // },
   env: {
     GITHUB_CLIENT_ID: "c01702a6fa355c32ebfe",
     GITHUB_CLIENT_SECRET: "099b1440e712e46ac555dedb795cc3f76efbd426",
@@ -53,10 +45,10 @@ module.exports = {
     {
       source: "/(.*)",
       headers: [
-        // {
-        //   key: "Content-Security-Policy",
-        //   value: generateCsp(),
-        // },
+        {
+          key: "Content-Security-Policy",
+          value: generateCsp(),
+        },
         {
           key: "X-DNS-Prefetch-Control",
           value: "on",
