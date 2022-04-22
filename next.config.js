@@ -11,7 +11,7 @@ const generateCsp = () => {
   hash.update(nanoid());
   const production = process.env.NODE_ENV === "production";
 
-  return `default-src 'self' http://localhost:3000 ; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
+  return `default-src 'self' http://localhost:3000 https://eatsy-app-next-js-jarethtan.vercel.app/ https://eatsy-app-next-oc8svwvfh-jarethtan.vercel.app/ https://eatsy-app-next-js-git-main-jarethtan.vercel.app/ ; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; script-src 'sha256-${hash.digest(
     "base64"
   )}' 'self' 'unsafe-inline' ${
     production ? "" : "'unsafe-eval'"
