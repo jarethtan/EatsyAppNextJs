@@ -34,8 +34,8 @@
 
 .card {
   font-family: "Roboto Slab";
-  margin: 1.5rem auto;
-  width: 22rem;
+  margin: 1.5rem 0.5rem;
+  width: 21.5rem;
   transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
 }

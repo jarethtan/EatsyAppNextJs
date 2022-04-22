@@ -1,8 +1,9 @@
 import React from "react";
 import getOneUser from "../lib/helpers/userHelpers/getOneUser";
-import { getSession } from "next-auth/react";
+import Head from "next/head";
 import Error from "next/error";
 import UserProfile from "../components/Profile/UserProfile";
+import { getSession } from "next-auth/react";
 
 const Profile: React.FC<{ userProfile: object; status: number; message: string }> = (props) => {
   if (props.status > 300) {
@@ -10,6 +11,10 @@ const Profile: React.FC<{ userProfile: object; status: number; message: string }
   }
   return (
     <div>
+      <Head>
+        <title>User Profile</title>
+        <meta name="description" content="User Profile Page" />
+      </Head>
       <UserProfile userProfile={props.userProfile} />
     </div>
   );
