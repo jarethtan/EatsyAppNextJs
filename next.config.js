@@ -15,7 +15,7 @@ const generateCsp = () => {
     "base64"
   )}' 'self' 'unsafe-inline' ${
     production ? "" : "'unsafe-eval'"
-  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000 https://eatsy-app-next-js-jarethtan.vercel.app/ https://eatsy-app-next-oc8svwvfh-jarethtan.vercel.app/ https://eatsy-app-next-js-git-main-jarethtan.vercel.app/`;
+  }; font-src https://fonts.gstatic.com 'self' data:; img-src https://res.cloudinary.com https://s.gravatar.com https://avatars.githubusercontent.com https://lh3.googleusercontent.com 'self' data:; connect-src http://localhost:3000 https://eatsy-app-next-js-jarethtan.vercel.app/ https://eatsy-app-next-oc8svwvfh-jarethtan.vercel.app/ https://eatsy-app-next-js-git-main-jarethtan.vercel.app/ https://eatsy-app-next-js.vercel.app/api/auth/session  https://eatsy-app-next-js.vercel.app/_next/data/fOAhjDR5Af_fZFm3qpugr/index.json https://eatsy-app-next-js.vercel.app/_next/static/css/d20e9ea84c9a5480.css https://eatsy-app-next-js.vercel.app/_next/static/css/1ec32d8cf33a974c.css https://eatsy-app-next-js.vercel.app/_next/static/css/411f7593dc5a8374.css https://eatsy-app-next-js.vercel.app/_next/static/css/da4aafe200e8d77b.css`;
 };
 
 module.exports = {
