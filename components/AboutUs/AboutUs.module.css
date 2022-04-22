@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 7rem 5rem 7rem;
+  padding: 1.5rem 7rem 5rem 7rem;
   width: 60%;
   text-align: center;
   margin: 8rem auto 6rem auto;
@@ -22,9 +22,9 @@
   left: 0;
   border-radius: 1rem;
   background-image: url("/eatsyIcons/EatsyIcon.jpeg");
-  background-size: 12rem;
+  background-size: 10rem;
   background-repeat: space;
-  opacity: 0.15;
+  opacity: 0.1;
   z-index: -1;
 }
 
