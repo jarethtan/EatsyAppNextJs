@@ -28,9 +28,7 @@ const Input1: React.FC<{ receiveImageUrl: any }> = ({ receiveImageUrl }) => {
         ""
       )}
       <br />
-      <Fragment>
-        <ImageInput handlePreviewImage={handlePreviewImage} disable={false} name="userImage" />
-      </Fragment>
+      <ImageInput handlePreviewImage={handlePreviewImage} disable={false} name="userImage" />
       <Input names="deliveryAddress" type="text" label="Delivery Address" pageType="register" multiLines={false} disable={false} autoFocus={false} />
       <Input names="postalCode" type="text" label="Postal Code" pageType="register" multiLines={false} disable={false} autoFocus={false} />
       <Input names="contactNumber" type="text" label="Contact Number" pageType="register" multiLines={false} disable={false} autoFocus={false} />

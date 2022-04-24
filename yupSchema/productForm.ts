@@ -39,9 +39,13 @@ export const inputProductSchema = yup.object().shape({
     .test("fileSize", "The file is too large", (value) => {
       return value === null || (value && value[0] && value[0].size <= 3000000); // value && value[0] is require confirm there is a value then go to value.size to look up the size
     })
-    .test("filetype", "Only jpeg, jpg and svg formats are supported", (value) => {
+    .test("filetype", "Only support jpeg, png and svg formats", (value) => {
       return (
-        value === null || (value && value[0] && value[0].type === ("image/jpeg" || "image/jpg" || "image/svg")) //value && value[0] is require confirm there is a value then go to value.size to look up the type
+        value === null ||
+        (value && value[0] && value[0].type === "image/jpeg") ||
+        (value && value[0] && value[0].type === "image/jpg") ||
+        (value && value[0] && value[0].type === "image/svg") ||
+        (value && value[0] && value[0].type === "image/png") //value && value[0] is require confirm there is a value then go to value.size to look up the type
       );
     }),
 }); // yup schema for product input validation

@@ -64,14 +64,14 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
             ))}
           </Carousel>
           <div className={classes.content}>
-            <div className={props.foundProduct.productName.length > 17 ? classes.div1 : classes.div4}>
+            <div className={props.foundProduct.productName.length > 12 ? classes.div1 : classes.div4}>
               <span className={classes.word}>Food:</span>
               {props.foundProduct.productName}
             </div>
-            <div className={props.foundProduct.productName.length > 17 ? classes.div2 : classes.div5}>
+            <div className={props.foundProduct.productName.length > 12 ? classes.div2 : classes.div5}>
               <span className={classes.word}>Price:</span>${props.foundProduct.productPrice} {props.foundProduct.productPrice < 8 ? "/ Piece" : ""}
             </div>
-            <div className={props.foundProduct.productName.length > 17 ? classes.div3 : classes.div6}>
+            <div className={props.foundProduct.productName.length > 12 ? classes.div3 : classes.div6}>
               <span className={classes.word}>Region:</span>
               <img
                 src={icons.find((element) => element.includes(props.foundProduct.productCategory.replace(/ /g, "")))}
@@ -84,7 +84,7 @@ const ProductDetails: React.FC<{ foundProduct: ProductModel }> = (props) => {
             <div className={classes.description}>{props.foundProduct.productDescription}</div>
             <FormGroup sx={{ my: 1 }}>
               <FormControlLabel control={<Switch onChange={onHandleRequest} />} label="Add Special Request" />
-              {request ? <TextArea rows={6} onChange={(event) => setRequestContent(event.target.value)} /> : ""}
+              {request ? <TextArea sx={{ width: "100%" }} rows={6} onChange={(event) => setRequestContent(event.target.value)} /> : ""}
             </FormGroup>
             <br />
             <br />

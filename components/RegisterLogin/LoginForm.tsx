@@ -4,7 +4,7 @@ import Input2 from "./RegisterLoginInputs/Input2";
 import LoadingSpinner from "../../ui/LoadingSpinner";
 import Swal from "sweetalert2";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form"; // use formprovider to split the different type of input field into two different components.
 import { LoginInputModel } from "../../models/formInputTypes";
@@ -124,11 +124,23 @@ const LoginForm: React.FC<{ providers: object }> = (props) => {
               to register.
             </p>
             <p>
-              Are you an Adminstrator? Click{" "}
-              <Link href="/personnel/adminLogin">
-                <a className={classes.register}>here</a>
-              </Link>{" "}
-              to login.
+              {router.asPath === "/personnel/userLogin" ? (
+                <Fragment>
+                  Are you an Adminstrator? Click{" "}
+                  <Link href="/personnel/adminLogin">
+                    <a className={classes.register}>here</a>
+                  </Link>{" "}
+                  to login.
+                </Fragment>
+              ) : (
+                <Fragment>
+                  Are you a User? Click{" "}
+                  <Link href="/personnel/userLogin">
+                    <a className={classes.register}>here</a>
+                  </Link>{" "}
+                  to login.
+                </Fragment>
+              )}
             </p>
           </FormProvider>
         </div>

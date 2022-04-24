@@ -12,7 +12,7 @@ const ImageInput: React.FC<{ handlePreviewImage: any; disable: boolean; name: st
     <Fragment>
       {name === "productImage" ? <br /> : ""}
       <input
-        {...register(name === "productImage" ? "productImage" : " userImage")}
+        {...register(name === "productImage" ? "productImage" : "userImage")}
         type="file"
         multiple
         onChange={handlePreviewImage}

@@ -34,17 +34,17 @@
 }
 
 .div1 {
-  width: 48%;
+  width: 50%;
   text-align: start;
 }
 
 .div2 {
-  width: 28%;
+  width: 22%;
   text-align: center;
 }
 
 .div3 {
-  width: 24%;
+  width: 28%;
   text-align: end;
 }
 
@@ -215,7 +215,7 @@
   .div4,
   .div5,
   .div6 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   .description {
     font-size: 0.9rem;
@@ -345,13 +345,13 @@
 }
 @media (min-width: 1200px) {
   .container {
-    width: 35%;
+    width: 40%;
     padding: 2rem;
     height: auto;
   }
   .image,
   .carousel {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
   }
 }

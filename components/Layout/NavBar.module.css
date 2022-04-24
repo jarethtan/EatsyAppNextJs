@@ -111,7 +111,7 @@
 
 .profileAvatar1 {
   color: rgb(255, 219, 88);
-  background-color: rgb(16, 80, 16);
+  background-color: white;
   height: 2.8rem;
   width: 2.8rem;
   transition: all 0.1s ease-in-out;
