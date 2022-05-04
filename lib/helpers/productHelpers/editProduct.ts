@@ -48,7 +48,7 @@ const editProduct = async (req: NextApiRequest, res: NextApiResponse) => {
           const newImgArrWithCloudinaryFolder = await uploadImages(foundProductUpdatedImage?.productImage, productName, productCategory); // create new cloudinary folder path with updated productName or productCategory OR both.
           newImgArrForNewCatOrName.push(...newImgArrWithCloudinaryFolder);
           await deleteImages(foundProductUpdatedImage?.productImage);
-          await deleteImageFolder("Products", foundProduct?.productCategory, foundProduct?.productName); // delete folder and folder oath of outdated category or product name
+          await deleteImageFolder("Products", foundProduct?.productCategory, foundProduct?.productName); // delete folder and folder path of old category or product name
         }
         const updateExistingProductResponse = await db.collection("products").findOneAndUpdate(
           { _id: new ObjectId(id) },

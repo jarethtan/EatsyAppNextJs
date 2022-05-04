@@ -29,7 +29,7 @@ module.exports = {
     GOOGLE_CLIENT_ID: "907168694604-01a2g10vfp7i1gbloum9sj3pk9301lo5.apps.googleusercontent.com",
     GOOGLE_CLIENT_SECRET: "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",
     MONGODB_USER: "josh88",
-    MONGODB_PASSWORD: "tgdwcd2xBoz2L6cA",
+    MONGODB_PASSWORD: "EqfcH2uxpu4lln4x",
     MONGODB_DATABASE: "ReactEShop",
     NEXT_PUBLIC_VERCEL_URL: "https://eatsy-app-next-lm00qzawx-jarethtan.vercel.app/",
     SECRET: "3989f4c911b02a60cd54f82475698555",
