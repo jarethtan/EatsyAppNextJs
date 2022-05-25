@@ -84,7 +84,8 @@ const CarouselForm: React.FC<{ allProducts: ProductModel[] }> = (props) => {
           ))}
         </Select>
       </FormControl>
-      <span style={{ color: "rgb(255, 66, 66)", background: "white", fontSize: "0.8rem" }}>
+      <br />
+      <span style={{ marginLeft: "3rem", color: "rgb(255, 66, 66)", background: "white", fontSize: "0.8rem" }}>
         {errors.selectedProducts ? errors.selectedProducts?.message : ""}
       </span>
       <br />
