@@ -56,7 +56,11 @@ Project dependencies are list in package.json file. To see and review the code, 
 
 When entering the site the first time, the user will be directed to the homepage with the home carousel, category election and most popular dishes
 
+![image](https://user-images.githubusercontent.com/61606168/170201977-f44588a3-4d9a-4a7a-88ea-444f3eb1d65d.png)
+
 In the navbar, navigate through the different options.
+
+![image](https://user-images.githubusercontent.com/61606168/170201993-2a24c043-7f8d-4705-9e10-5664c9047cf7.png)
 
 In login, you have three options to login. via credential, google or github.
 
@@ -66,6 +70,10 @@ username: user12345
 password: user12345
 
 To check out the administrative CRUD functions, please visit in the admin login page link at the bottom of the user login page. The administrative credential can be provided upon request.
+
+![image](https://user-images.githubusercontent.com/61606168/170202046-36980536-cdf6-4a3c-bc4e-5d39008327df.png)
+
+![image](https://user-images.githubusercontent.com/61606168/170202076-2a2b6c9f-d83e-49aa-8071-8bd5bcabfd00.png)
 
 With administrative control, you can add product (one of the nav tab) or select products to display in carousel (homepage image with a green button at the bottom of screenshot) or edit/delete products (product detail image).
 
